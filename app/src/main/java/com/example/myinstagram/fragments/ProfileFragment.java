@@ -1,8 +1,16 @@
 package com.example.myinstagram.fragments;
 
+import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.myinstagram.Post;
+import com.example.myinstagram.R;
 import com.parse.FindCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
@@ -13,16 +21,17 @@ import java.util.List;
 
 public class ProfileFragment extends PostsFragment {
 
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_posts, container, false);
+    }
+
     @Override
     protected void queryPosts() {
-        super.queryPosts();
         ParseQuery<Post> postQuery = new ParseQuery<Post>(Post.class);
         postQuery.include(Post.KEY_USER);
-        // limiting into 20 posts
-        // can change to any number as requirement
         postQuery.setLimit(20);
-
-        // only gets the posts of signed in user
         postQuery.whereEqualTo(Post.KEY_USER, ParseUser.getCurrentUser());
         postQuery.addDescendingOrder(Post.KEY_CREATED_AT);
         postQuery.findInBackground(new FindCallback<Post>() {

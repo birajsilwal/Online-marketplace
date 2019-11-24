@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.parse.LogInCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 
@@ -49,15 +50,25 @@ public class LoginActivity extends AppCompatActivity {
                     Log.e(TAG, "Issue with login");
                     e.printStackTrace();
                     return;
+                }else if (user != null){
+                    goMainActivity();
+                }else {
+                    Log.e(TAG, "error");
                 }
-                goMainActivity();
             }
         });
+
     }
 
     private void goMainActivity() {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
+        finish();
+    }
+
+    private void gotoLogin(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
         finish();
     }
 }
