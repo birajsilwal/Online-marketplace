@@ -51,7 +51,8 @@ public class LoginActivity extends AppCompatActivity {
                     e.printStackTrace();
                     return;
                 }else if (user != null){
-                    goMainActivity();
+//                    goMainActivity();
+                    goHomeScreen();
                 }else {
                     Log.e(TAG, "error");
                 }
@@ -66,9 +67,17 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
-    private void gotoLogin(){
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+    private void goHomeScreen() {
+        Intent i = new Intent(this, homeScreen.class);
+        startActivity(i);
         finish();
     }
+
+
+
+//    private void gotoLogin(){
+//        Intent intent = new Intent(this, LoginActivity.class);
+//        startActivity(intent);
+//        finish();
+//    }
 }
