@@ -1,4 +1,4 @@
-package com.example.myinstagram;
+package com.example.mylobo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.parse.LogInCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 

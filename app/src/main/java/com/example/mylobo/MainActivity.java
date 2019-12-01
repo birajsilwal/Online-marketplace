@@ -1,4 +1,4 @@
-package com.example.myinstagram;
+package com.example.mylobo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,11 +7,10 @@ import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-import com.example.myinstagram.fragments.ComposeFragment;
-import com.example.myinstagram.fragments.PostsFragment;
-import com.example.myinstagram.fragments.ProfileFragment;
+import com.example.mylobo.fragments.ComposeFragment;
+import com.example.mylobo.fragments.PostsFragment;
+import com.example.mylobo.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.myinstagram.fragments;
+package com.example.mylobo.fragments;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -21,18 +21,14 @@ import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
-import com.example.myinstagram.MainActivity;
-import com.example.myinstagram.Post;
-import com.example.myinstagram.R;
-import com.parse.FindCallback;
+import com.example.mylobo.Post;
+import com.example.mylobo.R;
 import com.parse.ParseException;
 import com.parse.ParseFile;
-import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.io.File;
-import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -169,6 +165,4 @@ public class ComposeFragment extends Fragment {
             }
         });
     }
-
-
 }

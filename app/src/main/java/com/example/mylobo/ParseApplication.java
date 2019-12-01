@@ -1,4 +1,4 @@
-package com.example.myinstagram;
+package com.example.mylobo;
 
 import android.app.Application;
 

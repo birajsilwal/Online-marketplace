@@ -1,14 +1,14 @@
-package com.example.myinstagram;
+package com.example.mylobo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Marketplace extends AppCompatActivity {
+public class myBooks extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_marketplace);
+        setContentView(R.layout.activity_my_books);
     }
 }

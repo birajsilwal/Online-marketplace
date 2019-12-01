@@ -1,4 +1,4 @@
-package com.example.myinstagram.fragments;
+package com.example.mylobo.fragments;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -8,18 +8,30 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myinstagram.Post;
-import com.example.myinstagram.R;
+import com.example.mylobo.Post;
+import com.example.mylobo.PostsAdapter;
+import com.example.mylobo.R;
 import com.parse.FindCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
-import com.parse.ParseUser;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileFragment extends PostsFragment {
+public class PostsFragment extends Fragment {
+
+    public static final String TAG = "PostsFragment";
+
+    private RecyclerView rvPosts;
+    protected PostsAdapter adapter;
+    protected List<Post> mPosts;
+
+    // onCreateView is the lifecycle method in fragments
+    // onCreateView to inflate the view
 
     @Nullable
     @Override
@@ -28,11 +40,30 @@ public class ProfileFragment extends PostsFragment {
     }
 
     @Override
-    protected void queryPosts() {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        rvPosts = view.findViewById(R.id.rvPosts);
+
+        // create the data source
+        // instantiate post
+        mPosts = new ArrayList<>();
+
+        // create the adapter
+        adapter = new PostsAdapter(getContext(), mPosts);
+
+        // set the adapter on the recycler view
+        rvPosts.setAdapter(adapter);
+        // set the layout manager on the recycler view
+        rvPosts.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        queryPosts();
+    }
+
+    protected void queryPosts(){
         ParseQuery<Post> postQuery = new ParseQuery<Post>(Post.class);
         postQuery.include(Post.KEY_USER);
+        // limiting into 20 posts
+        // can change to any number as requirement
         postQuery.setLimit(20);
-        postQuery.whereEqualTo(Post.KEY_USER, ParseUser.getCurrentUser());
         postQuery.addDescendingOrder(Post.KEY_CREATED_AT);
         postQuery.findInBackground(new FindCallback<Post>() {
             @Override

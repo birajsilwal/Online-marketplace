@@ -1,4 +1,4 @@
-package com.example.myinstagram;
+package com.example.mylobo;
 
 import androidx.appcompat.app.AppCompatActivity;
 

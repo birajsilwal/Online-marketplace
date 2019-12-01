@@ -1,4 +1,4 @@
-package com.example.myinstagram;
+package com.example.mylobo;
 
 import com.parse.ParseClassName;
 import com.parse.ParseFile;
