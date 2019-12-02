@@ -1,8 +1,10 @@
-package com.example.mylobo;
+package com.example.mylobo.myBooks;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.mylobo.R;
 
 public class myBooks extends AppCompatActivity {
 

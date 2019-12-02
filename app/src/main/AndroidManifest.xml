@@ -14,11 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        tools:targetApi="m">
-        <activity android:name="com.example.mylobo.myBooks"></activity>
-        <activity android:name="com.example.mylobo.Marketplace" />
-        <activity android:name="com.example.mylobo.homeScreen"
-                  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/> <!-- make sure within the application tag, otherwise app will crash with XmlResourceParser errors -->
+        tools:targetApi="m"
+        tools:ignore="GoogleAppIndexingWarning">
+
+         <!-- make sure within the application tag, otherwise app will crash with XmlResourceParser errors -->
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.codepath.fileprovider"
@@ -36,7 +36,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.mylobo.MainActivity" />
-    </application>
 
+        <activity android:name="com.example.mylobo.Marketplace"
+                  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name="com.example.mylobo.MainActivity"
+                  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name="com.example.mylobo.myBooks.myBooks"/>
+        <activity android:name="com.example.mylobo.homeScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+    </application>
 </manifest>
