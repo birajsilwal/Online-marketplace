@@ -8,18 +8,34 @@
     tools:context=".Marketplace"
     android:orientation="vertical">
 
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/ic_back" />
 
     <FrameLayout
         android:id="@+id/flContainerMarketplace"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigation_marketplace"/>
+        android:layout_above="@id/bottom_navigation_marketplace"
+        android:layout_marginTop="30dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_marketplace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
         app:menu="@menu/menu_bottom_navigation_marketplace" />
+
+
+
+
+
+
 
 </RelativeLayout>
