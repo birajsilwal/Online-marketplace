@@ -1,4 +1,4 @@
-package com.example.mylobo;
+package com.example.mylobo.myLobos;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.mylobo.R;
 import com.parse.ParseFile;
 
 import java.util.List;

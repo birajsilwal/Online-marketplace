@@ -12,8 +12,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mylobo.Post;
-import com.example.mylobo.PostsAdapter;
+import com.example.mylobo.myLobos.Post;
+import com.example.mylobo.myLobos.PostsAdapter;
 import com.example.mylobo.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;

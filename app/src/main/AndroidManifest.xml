@@ -37,9 +37,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.example.mylobo.Marketplace"
+        <activity android:name="com.example.mylobo.Marketplace.Marketplace"
                   android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name="com.example.mylobo.MainActivity"
+        <activity android:name="com.example.mylobo.myLobos.MainActivity"
                   android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name="com.example.mylobo.myBooks.myBooks"/>
         <activity android:name="com.example.mylobo.homeScreen"

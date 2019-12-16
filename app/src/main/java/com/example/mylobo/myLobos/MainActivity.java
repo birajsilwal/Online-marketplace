@@ -1,4 +1,4 @@
-package com.example.mylobo;
+package com.example.mylobo.myLobos;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.mylobo.R;
 import com.example.mylobo.fragments.ComposeFragment;
 import com.example.mylobo.fragments.PostsFragment;
 import com.example.mylobo.fragments.ProfileFragment;

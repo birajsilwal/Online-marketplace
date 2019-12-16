@@ -2,6 +2,8 @@ package com.example.mylobo;
 
 import android.app.Application;
 
+import com.example.mylobo.Marketplace.PostMarketplace;
+import com.example.mylobo.myLobos.Post;
 import com.parse.Parse;
 import com.parse.ParseObject;
 

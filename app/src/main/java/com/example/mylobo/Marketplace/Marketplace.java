@@ -1,21 +1,21 @@
-package com.example.mylobo.fragmentsMarketplace;
-
-import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+package com.example.mylobo.Marketplace;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mylobo.Post;
-import com.example.mylobo.PostMarketplace;
-import com.example.mylobo.PostsAdapterMarketplace;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
+
 import com.example.mylobo.R;
+import com.example.mylobo.fragmentsMarketplace.ComposeFragmentMarketplace;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -23,35 +23,29 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostsFragmentMarketplace extends Fragment {
-
-    public static final String TAG = "PFMarketplace";
+public class Marketplace extends AppCompatActivity {
 
     private RecyclerView rvPostsMarkerplace;
     private PostsAdapterMarketplace adapterMarketplace;
     private List<PostMarketplace> mPostsMarketplace;
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_post_marketplace, container, false);
-    }
-
-    // 1. created this after adding recycler view in the layout
+    public static final String TAG = "Marketplace";
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        rvPostsMarkerplace = view.findViewById(R.id.rvPostsMp);
-
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_marketplace);
+        rvPostsMarkerplace = findViewById(R.id.rvPostsMp);
         // 2. create the data source. This will be a list of different post objects. gets from PostMarketplace
         mPostsMarketplace = new ArrayList<>();
         // 3. now create the adapter
-        adapterMarketplace = new PostsAdapterMarketplace(getContext(), mPostsMarketplace);
+        adapterMarketplace = new PostsAdapterMarketplace(this, mPostsMarketplace);
         // 4. set the adapter on the recycler view. This adapter tells the recycler view how to show the content onto the screen
         rvPostsMarkerplace.setAdapter(adapterMarketplace);
+        // 1. created this after adding recycler view in the layout
         // 5. set the layout manager on the recycler view
         // TODO:look at the linerlayout manager here
-        rvPostsMarkerplace.setLayoutManager(new LinearLayoutManager(getContext()));
+        rvPostsMarkerplace.setLayoutManager(new LinearLayoutManager(this));
         queryPostMarketplace();
     }
 

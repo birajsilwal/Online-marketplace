@@ -21,7 +21,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
-import com.example.mylobo.Post;
+import com.example.mylobo.myLobos.Post;
 import com.example.mylobo.R;
 import com.parse.ParseException;
 import com.parse.ParseFile;

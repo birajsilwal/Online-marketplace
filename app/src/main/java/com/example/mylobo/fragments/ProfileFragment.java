@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.mylobo.Post;
+import com.example.mylobo.myLobos.Post;
 import com.example.mylobo.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;

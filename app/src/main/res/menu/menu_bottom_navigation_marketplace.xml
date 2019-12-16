@@ -2,14 +2,12 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/action_home_mp"
-        android:icon="@mipmap/ic_home_outline_foreground"
-        android:title="Home"
-        app:showAsAction="always" />
+
     <item
         android:id="@+id/action_compose_mp"
-        android:icon="@mipmap/ic_new_post_outline_foreground"
-        android:title="compose"
+        android:icon="@mipmap/ic_menu_foreground"
+        android:title=""
+        android:visible="true"
         app:showAsAction="always" />
+
 </menu>
