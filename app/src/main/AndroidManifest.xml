@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.example.mylobo.ParseApplication"
+        android:name=".ParseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,11 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        tools:targetApi="m"
-        tools:ignore="GoogleAppIndexingWarning">
-
-         <!-- make sure within the application tag, otherwise app will crash with XmlResourceParser errors -->
-
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:targetApi="m">
+        <!-- make sure within the application tag, otherwise app will crash with XmlResourceParser errors -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.codepath.fileprovider"
@@ -29,21 +27,30 @@
                 android:resource="@xml/fileprovider" />
         </provider>
 
-        <activity android:name="com.example.mylobo.LoginActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Marketplace.Marketplace"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".myLobos.MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".myBooks.myBooks" />
+        <activity
+            android:name=".homeScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
-        <activity android:name="com.example.mylobo.Marketplace.Marketplace"
-                  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name="com.example.mylobo.myLobos.MainActivity"
-                  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name="com.example.mylobo.myBooks.myBooks"/>
-        <activity android:name="com.example.mylobo.homeScreen"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".MenuActivity.MenuActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity android:name=".fragmentsMarketplace.ComposeFragmentMarketplace"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
     </application>
+
 </manifest>

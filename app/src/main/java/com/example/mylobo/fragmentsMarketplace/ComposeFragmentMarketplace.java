@@ -8,19 +8,17 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
-import androidx.fragment.app.Fragment;
 
+import com.example.mylobo.Marketplace.Marketplace;
 import com.example.mylobo.Marketplace.PostMarketplace;
 import com.example.mylobo.R;
 import com.parse.ParseException;
@@ -30,40 +28,34 @@ import com.parse.SaveCallback;
 
 import java.io.File;
 
-import static android.app.Activity.RESULT_OK;
-
-public class ComposeFragmentMarketplace extends Fragment {
+public class ComposeFragmentMarketplace extends AppCompatActivity {
 
     public static final String TAG = "CFMarketplace";
 
     private EditText etTitle;
     private Button btnCaptureImage;
-    private ImageView ivPostImage;
-    private Button btnSubmit;
+    private ImageView ivPostImageMp;
+    private Button btnSubmitMp;
+    ImageView ivBackCompose;
+
+
 
     public final static int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 1034;
     public String photoFileName = "photo.jpg";
-    private File photoFile;
-
-    // same code as ComposeFragment. see comments there
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_compose_marketplace, container, false);
-    }
+    File photoFile;
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        etTitle = view.findViewById(R.id.etTitle);
-        btnCaptureImage = view.findViewById(R.id.btCaptureImage);
-        ivPostImage = view.findViewById(R.id.ivPostImage);
-        btnSubmit = view.findViewById(R.id.btSubmit);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_compose_marketplace);
 
-        // for capturing image
-        // launchCamera and getPhotoFileUri used method
-        // see comments on ComposeFragments
-        // TODO: import methods from ComposeFragment instead of copying same code
+        etTitle = findViewById(R.id.etTitleMp);
+        btnCaptureImage = findViewById(R.id.btnCaptureImageMp);
+        ivPostImageMp = findViewById(R.id.ivPostImageMp);
+        btnSubmitMp = findViewById(R.id.btnSubmitMp);
+        ivBackCompose = findViewById(R.id.ivBackCompose);
+
+
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,32 +63,45 @@ public class ComposeFragmentMarketplace extends Fragment {
             }
         });
 
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
+        btnSubmitMp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = etTitle.getText().toString();
-                // might not this user. Instead we need to display price of an item
+                String title =  etTitle.getText().toString();
                 ParseUser user = ParseUser.getCurrentUser();
-                if (photoFile == null || ivPostImage.getDrawable() == null){
-                    Log.e(TAG, "no photo to submit");
-                    Toast.makeText(getContext(), "There is no photo", Toast.LENGTH_SHORT).show();
+                if (photoFile == null || ivPostImageMp.getDrawable() == null) {
+                    // if there is no photo taken, post will no be submit
+                    Log.e(TAG, "No photo to submit");
+                    Toast.makeText(ComposeFragmentMarketplace.this, "There is no photo", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                savePostMarketplace(title, user, photoFile);
+                savePost(title, user, photoFile);
+            }
+        });
+
+        ivBackCompose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ComposeFragmentMarketplace.this, Marketplace.class);
+                startActivity(i);
+//                finish();
             }
         });
     }
 
     private void launchCamera() {
-
+        // create Intent to take a picture and return control to the calling application
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // Create a File reference to access to future access
         photoFile = getPhotoFileUri(photoFileName);
 
-        // Universal resource indicator (Uri). Its a pointer where out file lives. codepath is my content provider for this project
-        Uri fileProvider = FileProvider.getUriForFile(getContext(), "com.codepath.fileprovider", photoFile);
+        // wrap File object into a content provider
+        // required for API >= 24
+        Uri fileProvider = FileProvider.getUriForFile(ComposeFragmentMarketplace.this, "com.codepath.fileprovider", photoFile);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider);
 
-        if (intent.resolveActivity(getContext().getPackageManager()) != null) {
+        // If you call startActivityForResult() using an intent that no app can handle, your app will crash.
+        // So as long as the result is not null, it's safe to use the intent.
+        if (intent.resolveActivity(getPackageManager()) != null) {
             // Start the image capture intent to take photo
             startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
         }
@@ -112,43 +117,55 @@ public class ComposeFragmentMarketplace extends Fragment {
                 Bitmap takenImage = BitmapFactory.decodeFile(photoFile.getAbsolutePath());
                 // RESIZE BITMAP, see section below
                 // Load the taken image into a preview
-                ivPostImage.setImageBitmap(takenImage);
+                ivPostImageMp.setImageBitmap(takenImage);
             } else { // Result was a failure
-                Toast.makeText(getContext(), "Picture wasn't taken!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Picture wasn't taken!", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
+
+
     // Returns the File for a photo stored on disk given the fileName
     public File getPhotoFileUri(String fileName) {
-        File mediaStorageDir = new File(getContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES), TAG);
+        // Get safe storage directory for photos
+        // Use `getExternalFilesDir` on Context to access package-specific directories.
+        // This way, we don't need to request external read/write runtime permissions.
+        File mediaStorageDir = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), TAG);
 
+        // Create the storage directory if it does not exist
         if (!mediaStorageDir.exists() && !mediaStorageDir.mkdirs()){
             Log.d(TAG, "failed to create directory");
         }
+
+        // Return the file target for the photo based on filename
         File file = new File(mediaStorageDir.getPath() + File.separator + fileName);
+
         return file;
     }
 
-    private void savePostMarketplace(String title, ParseUser parseUser, File photoFile) {
+
+    private void savePost(String title, ParseUser parseUser, File photoFile) {
         PostMarketplace postMarketplace = new PostMarketplace();
         postMarketplace.setTitle(title);
         postMarketplace.setUser(parseUser);
         postMarketplace.setImage(new ParseFile(photoFile));
-//        postMarketplace.setImage();
         postMarketplace.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
-                if (e != null) {
-                    Log.d(TAG, "Error with query");
+                if (e != null){
+                    Log.d(TAG, "Error while saving");
                     e.printStackTrace();
                     return;
                 }
                 Log.d(TAG, "Success");
                 etTitle.setText("");
-                ivPostImage.setImageResource(0);
+                ivPostImageMp.setImageResource(0);
+
             }
         });
     }
 
+
 }
+
