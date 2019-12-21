@@ -10,6 +10,28 @@
     android:orientation="vertical"
     android:layout_margin="10dp">
 
+    <TextView
+        android:id="@+id/tvmyLobo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="80sp"
+        android:fontFamily="@font/authenia"
+        android:text="myLobo"
+        android:textFontWeight="300"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-30dp"
+        android:layout_marginStart="45dp"
+        android:textSize="30sp"
+        android:fontFamily="@font/garamond_light"
+        android:textColor="@color/black"
+        android:text="Study Smart" />
+
+
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="match_parent"

@@ -33,6 +33,7 @@ public class ComposeFragmentMarketplace extends AppCompatActivity {
     public static final String TAG = "CFMarketplace";
 
     private EditText etTitle;
+    private EditText etPrice;
     private Button btnCaptureImage;
     private ImageView ivPostImageMp;
     private Button btnSubmitMp;
@@ -50,6 +51,7 @@ public class ComposeFragmentMarketplace extends AppCompatActivity {
         setContentView(R.layout.fragment_compose_marketplace);
 
         etTitle = findViewById(R.id.etTitleMp);
+        etPrice = findViewById(R.id.etPriceMp);
         btnCaptureImage = findViewById(R.id.btnCaptureImageMp);
         ivPostImageMp = findViewById(R.id.ivPostImageMp);
         btnSubmitMp = findViewById(R.id.btnSubmitMp);
@@ -67,6 +69,7 @@ public class ComposeFragmentMarketplace extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String title =  etTitle.getText().toString();
+                String price = etPrice.getText().toString();
                 ParseUser user = ParseUser.getCurrentUser();
                 if (photoFile == null || ivPostImageMp.getDrawable() == null) {
                     // if there is no photo taken, post will no be submit
@@ -74,7 +77,7 @@ public class ComposeFragmentMarketplace extends AppCompatActivity {
                     Toast.makeText(ComposeFragmentMarketplace.this, "There is no photo", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                savePost(title, user, photoFile);
+                savePost(title, price,  user, photoFile);
             }
         });
 
@@ -145,9 +148,10 @@ public class ComposeFragmentMarketplace extends AppCompatActivity {
     }
 
 
-    private void savePost(String title, ParseUser parseUser, File photoFile) {
+    private void savePost(String title, String price, ParseUser parseUser, File photoFile) {
         PostMarketplace postMarketplace = new PostMarketplace();
         postMarketplace.setTitle(title);
+        postMarketplace.setPrice(price);
         postMarketplace.setUser(parseUser);
         postMarketplace.setImage(new ParseFile(photoFile));
         postMarketplace.saveInBackground(new SaveCallback() {
@@ -161,7 +165,9 @@ public class ComposeFragmentMarketplace extends AppCompatActivity {
                 Log.d(TAG, "Success");
                 etTitle.setText("");
                 ivPostImageMp.setImageResource(0);
-
+                etPrice.setText("");
+                Intent i = new Intent(ComposeFragmentMarketplace.this, Marketplace.class);
+                startActivity(i);
             }
         });
     }

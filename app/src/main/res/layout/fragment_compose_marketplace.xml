@@ -23,6 +23,13 @@
         android:inputType="none"
         android:hint="Description..." />
 
+    <EditText
+        android:id="@+id/etPriceMp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="price"/>
+
     <Button
         android:id="@+id/btnCaptureImageMp"
         android:layout_width="match_parent"

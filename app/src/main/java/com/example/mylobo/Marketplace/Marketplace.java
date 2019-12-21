@@ -55,9 +55,6 @@ public class Marketplace extends AppCompatActivity {
         });
 
 
-
-
-
         rvPostsMarkerplace = findViewById(R.id.rvPostsMp);
 
         // 2. create the data source. This will be a list of different post objects. gets from PostMarketplace

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -54,6 +55,7 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
 
         private TextView tvTitle;
         private ImageView ivImageMp;
+        private TextView etPriceMp;
 
         // pull out a reference to each of the items in our item posts mp
         public ViewHolder(View itemView) {
@@ -61,11 +63,13 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
 
             tvTitle = itemView.findViewById(R.id.tvTitleMp);
             ivImageMp = itemView.findViewById(R.id.ivImageMp);
+            etPriceMp = itemView.findViewById(R.id.etPriceMp);
         }
 
         // responsible for taking a post and binding it to the view that we have here
         public void bind(PostMarketplace postMarketplace){
             tvTitle.setText(postMarketplace.getTitle());
+            etPriceMp.setText(postMarketplace.getPrice());
             ParseFile image = postMarketplace.getImage();
             if (image != null) {
                 Glide.with(contextMarketplace).load(image.getUrl()).into(ivImageMp);
@@ -74,3 +78,25 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
