@@ -1,10 +1,12 @@
 package com.example.mylobo.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,6 +14,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mylobo.MenuActivity.MenuActivity;
+import com.example.mylobo.MenuActivity.MenuActivitymyLobos;
+import com.example.mylobo.homeScreen;
 import com.example.mylobo.myLobos.Post;
 import com.example.mylobo.myLobos.PostsAdapter;
 import com.example.mylobo.R;
@@ -21,6 +26,7 @@ import com.parse.ParseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class PostsFragment extends Fragment {
 
@@ -29,6 +35,8 @@ public class PostsFragment extends Fragment {
     private RecyclerView rvPosts;
     protected PostsAdapter adapter;
     protected List<Post> mPosts;
+    ImageView ivBackPost;
+    ImageView ivMenuPost;
 
     // onCreateView is the lifecycle method in fragments
     // onCreateView to inflate the view
@@ -36,7 +44,26 @@ public class PostsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_posts, container, false);
+        View view =  inflater.inflate(R.layout.fragment_posts, container, false);
+        ivBackPost = view.findViewById(R.id.ivBackPost);
+        ivMenuPost = view.findViewById(R.id.ivMenuPost);
+        ivBackPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), homeScreen.class);
+                startActivity(i);
+            }
+        });
+
+        ivMenuPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), MenuActivitymyLobos.class);
+                startActivity(i);
+            }
+        });
+
+        return view;
     }
 
     @Override
@@ -83,4 +110,6 @@ public class PostsFragment extends Fragment {
             }
         });
     }
+
+
 }

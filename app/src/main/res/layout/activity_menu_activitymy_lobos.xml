@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity.MenuActivitymyLobos">
+
+    <ImageView
+        android:id="@+id/ivBackMenu"
+        android:layout_width="55dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="340dp"
+        android:layout_marginBottom="14dp"
+        android:src="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/tvHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="196dp"
+        android:paddingLeft="100dp"
+        android:textSize="25sp"
+        android:text="Home" />
+    <TextView
+        android:id="@+id/tvBookmark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="256dp"
+        android:textSize="25sp"
+        android:paddingLeft="100dp"
+        android:text="Bookmarks" />
+
+    <TextView
+        android:id="@+id/tvNandS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="316dp"
+        android:textSize="25sp"
+        android:paddingLeft="100dp"
+        android:text="Notification and Sound" />
+
+    <TextView
+        android:id="@+id/tvSettting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="376dp"
+        android:textSize="25sp"
+        android:paddingLeft="100dp"
+        android:text="Settings" />
+
+    <TextView
+        android:id="@+id/tvPandS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="436dp"
+        android:textSize="25sp"
+        android:paddingLeft="100dp"
+        android:text="Privacy and Security" />
+
+    <TextView
+        android:id="@+id/tvLogOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="496dp"
+        android:textSize="25sp"
+        android:paddingLeft="100dp"
+        android:text="Log Out" />
+
+</RelativeLayout>

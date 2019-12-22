@@ -53,9 +53,12 @@
             android:name=".fragmentsMarketplace.ComposeFragmentMarketplace"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".LogoutActivity" />
-
-        <activity android:name=".SignupActivity"
+        <activity
+            android:name=".SignupActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".MenuActivity.MenuActivitymyLobos"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
     </application>
 
 </manifest>
