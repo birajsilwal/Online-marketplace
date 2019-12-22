@@ -21,6 +21,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
+import com.example.mylobo.myLobos.MainActivity;
 import com.example.mylobo.myLobos.Post;
 import com.example.mylobo.R;
 import com.parse.ParseException;
@@ -147,7 +148,7 @@ public class ComposeFragment extends Fragment {
     }
 
     private void savePost(String description, ParseUser parseUser, File photoFile) {
-        Post post = new Post();
+        final Post post = new Post();
         post.setDescription(description);
         post.setUser(parseUser);
         post.setImage(new ParseFile(photoFile));
@@ -162,6 +163,8 @@ public class ComposeFragment extends Fragment {
                 Log.d(TAG, "Success!");
                 etDescription.setText("");
                 ivPostImage.setImageResource(0);
+                Intent i = new Intent(getContext(), MainActivity.class);
+                startActivity(i);
             }
         });
     }

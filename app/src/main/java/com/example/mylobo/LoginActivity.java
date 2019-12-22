@@ -29,9 +29,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        etUsername = findViewById(R.id.etUsername);
+        etUsername = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
-        btnLogin = findViewById(R.id.btnLogin);
+        btnLogin = findViewById(R.id.btnSignup);
         tvSignUp = findViewById(R.id.tvSignUp);
         tvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,12 +60,14 @@ public class LoginActivity extends AppCompatActivity {
                 if (e != null){
                     // TODO: better error handling
                     Log.e(TAG, "Issue with login");
+                    Toast.makeText(LoginActivity.this, "Login Error.", Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                     return;
                 }else if (user != null){
                     goHomeScreen();
                 }else {
                     Log.e(TAG, "error");
+                    Toast.makeText(LoginActivity.this, "Login Error.", Toast.LENGTH_SHORT).show();
                 }
             }
         });

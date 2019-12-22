@@ -10,7 +10,6 @@
     android:orientation="vertical"
     android:layout_margin="10dp">
 
-
     <TextView
         android:id="@+id/tvmyLobo"
         android:layout_width="wrap_content"
@@ -41,7 +40,7 @@
         app:layout_constraintTop_toTopOf="@+id/tvmyLobo" />
 
     <EditText
-        android:id="@+id/etUsername"
+        android:id="@+id/etEmail"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
@@ -63,10 +62,10 @@
         android:paddingLeft="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnSignup"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -92,7 +91,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tvNoAccount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSignup" />
 
     <Button
         android:id="@+id/buttonright"
@@ -107,7 +106,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tvSignUp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSignup" />
 
     <TextView
         android:id="@+id/tvOR"
@@ -119,7 +118,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonright"
         app:layout_constraintStart_toEndOf="@+id/buttonleft"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignup"
         app:layout_constraintVertical_bias="0.062" />
 
     <TextView

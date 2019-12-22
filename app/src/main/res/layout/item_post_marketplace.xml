@@ -34,7 +34,7 @@
     <Button
         android:id="@+id/buttonBelow"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="15dp"
         android:layout_below="@+id/ivImageMp"
         android:layout_alignParentStart="true"
         android:layout_marginTop="0dp"
