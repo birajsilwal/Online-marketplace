@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/ivImageMp"
+        android:layout_width="match_parent"
+        android:layout_height="313dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvTitleMp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textSize="30sp"
+        android:textColor="@color/black_95_transparent"
+        android:text="TextView" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="12dp"
+            android:text="$" />
+
+        <EditText
+            android:id="@+id/etPriceMp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:background="@android:color/transparent"
+            android:text="price" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/black_95_transparent"
+        android:layout_marginTop="16dp"
+        android:textSize="25dp"
+        android:text="Description" />
+
+    <TextView
+        android:id="@+id/tvDescriptionDetail"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="In great condition" />
+
+    <TextView
+        android:id="@+id/tvSellerInformation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black_95_transparent"
+        android:textSize="25dp"
+        android:text="Seller Information" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/biraj"
+            app:civ_border_color="#63666A"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/tvSeller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="9dp"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="20dp"
+            android:text="Seller" />
+
+    </RelativeLayout>
+
+</LinearLayout>

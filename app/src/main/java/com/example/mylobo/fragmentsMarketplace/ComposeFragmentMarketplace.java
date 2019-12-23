@@ -57,7 +57,6 @@ public class ComposeFragmentMarketplace extends AppCompatActivity {
         btnSubmitMp = findViewById(R.id.btnSubmitMp);
         ivBackCompose = findViewById(R.id.ivBackCompose);
 
-
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -171,7 +170,5 @@ public class ComposeFragmentMarketplace extends AppCompatActivity {
             }
         });
     }
-
-
 }
 

@@ -11,9 +11,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.FindCallback;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -41,6 +45,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // This is for better User Experience as user do not have to log in every time they use app
+        // User only have to log in once until they log out manually
+        if (ParseUser.getCurrentUser() != null) {
+            // User is directly sent to homeScreen
+            goHomeScreen();
+        }
+
+        // If users have logged or user is logging in first time then they have to enter username and password
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +77,8 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }else if (user != null){
                     goHomeScreen();
-                }else {
+                }
+                else {
                     Log.e(TAG, "error");
                     Toast.makeText(LoginActivity.this, "Login Error.", Toast.LENGTH_SHORT).show();
                 }

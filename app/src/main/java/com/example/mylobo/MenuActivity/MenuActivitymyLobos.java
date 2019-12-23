@@ -2,6 +2,7 @@ package com.example.mylobo.MenuActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -58,6 +59,8 @@ public class MenuActivitymyLobos extends AppCompatActivity {
             ParseUser currentUser = ParseUser.getCurrentUser();
             Intent i = new Intent(MenuActivitymyLobos.this, LoginActivity.class);
             startActivity(i);
+//            finish();
+
         }
     });
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,49 +14,150 @@
         android:id="@+id/tvmyLobo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="80sp"
         android:fontFamily="@font/authenia"
         android:text="myLobo"
-        android:textFontWeight="300"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textFontWeight="400"
+        android:textSize="90sp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvStudySmart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-30dp"
-        android:layout_marginStart="45dp"
-        android:textSize="30sp"
-        android:fontFamily="@font/garamond_light"
+        android:layout_marginTop="78dp"
+        android:fontFamily="@font/garamond"
+        android:text="Study Smart"
         android:textColor="@color/black"
-        android:text="Study Smart" />
+        android:textFontWeight="500"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.650"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvmyLobo" />
 
     <EditText
         android:id="@+id/etEmail"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
         android:ems="10"
-        android:hint="User Name"
+        android:hint="user name (abc@unm.edu)"
         android:inputType="text"
-        android:layout_marginTop="10dp"/>
+        android:paddingLeft="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStudySmart" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etPassword"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        app:passwordToggleEnabled="true">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword"/>
-    </com.google.android.material.textfield.TextInputLayout>
+        android:layout_marginTop="25dp"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <Button
         android:id="@+id/btnSignup"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:layout_marginTop="50dp"
+        android:text="Login"
+        android:gravity="center"
+        android:background="@color/login"
+        android:alpha="0.55"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
-</LinearLayout>
+
+    <Button
+        android:id="@+id/buttonleft"
+        android:layout_width="135dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="237dp"
+        android:layout_marginBottom="25dp"
+        android:background="@color/black"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/tvNoAccount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignup" />
+
+    <Button
+        android:id="@+id/buttonright"
+        android:layout_width="135dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="25dp"
+        android:background="@color/black"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/tvSignUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignup" />
+
+    <TextView
+        android:id="@+id/tvOR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OR"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonright"
+        app:layout_constraintStart_toEndOf="@+id/buttonleft"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignup"
+        app:layout_constraintVertical_bias="0.062" />
+
+    <TextView
+        android:id="@+id/tvNoAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="Don't have an account?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOR" />
+
+    <TextView
+        android:id="@+id/tvSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="Sign Up."
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvNoAccount"
+        app:layout_constraintTop_toBottomOf="@+id/tvOR" />
+
+    <ImageView
+        android:id="@+id/ivLobo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="29dp"
+        android:src="@drawable/lobo"
+        android:alpha="0.1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNoAccount" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

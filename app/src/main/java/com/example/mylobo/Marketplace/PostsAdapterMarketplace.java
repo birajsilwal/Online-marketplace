@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -14,13 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.model.Model;
 import com.example.mylobo.R;
 import com.parse.ParseFile;
-import com.parse.ParseObject;
 
-import java.nio.FloatBuffer;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMarketplace.ViewHolder>{
@@ -48,16 +43,20 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final PostMarketplace postMarketplace = postsMarketplace.get(position);
         holder.tvTitle.setText(postMarketplace.getTitle());
+        holder.etPriceMp.setText(postMarketplace.getPrice());
+
         holder.bind(postMarketplace);
 
-        final ParseFile image = postMarketplace.getImage();
+//        final ParseFile image = postMarketplace.getImage();
 
         holder.rlMarketplace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(contextMarketplace, DetailPostMarketplace.class);
-                i.putExtra("image", image);
+//                i.putExtra("image", image);
                 i.putExtra("title", postMarketplace.getTitle());
+                i.putExtra("price", postMarketplace.getPrice());
+                i.putExtra("username", postMarketplace.getUser().getUsername());
                 contextMarketplace.startActivity(i);
             }
         });
@@ -96,7 +95,6 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
                 Glide.with(contextMarketplace).load(image.getUrl()).into(ivImageMp);
             }
         }
-
     }
 }
 
