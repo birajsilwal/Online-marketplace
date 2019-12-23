@@ -19,7 +19,7 @@ android {
     }
     sourceSets {
         main {
-            res.srcDirs = ['src/main/res', 'src/main/res/layout/Marketplace', 'src/main/res/layout/myLobos']
+            res.srcDirs = ['src/main/res', 'src/main/res/layout/Marketplace', 'src/main/res/layout/mylobos']
         }
     }
 }

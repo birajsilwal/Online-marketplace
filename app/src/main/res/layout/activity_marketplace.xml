@@ -27,7 +27,21 @@
         android:id="@+id/rvPostsMp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginTop="40dp"/>
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:fontFamily="@font/authenia"
+        android:gravity="top"
+        android:text="Marketplace"
+        android:textColor="@color/black_95_transparent"
+        android:textSize="35sp" />
 
 </RelativeLayout>

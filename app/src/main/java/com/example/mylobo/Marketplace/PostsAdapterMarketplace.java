@@ -1,20 +1,26 @@
 package com.example.mylobo.Marketplace;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.model.Model;
 import com.example.mylobo.R;
 import com.parse.ParseFile;
+import com.parse.ParseObject;
 
+import java.nio.FloatBuffer;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMarketplace.ViewHolder>{
@@ -40,8 +46,21 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        PostMarketplace postMarketplace = postsMarketplace.get(position);
+        final PostMarketplace postMarketplace = postsMarketplace.get(position);
+        holder.tvTitle.setText(postMarketplace.getTitle());
         holder.bind(postMarketplace);
+
+        final ParseFile image = postMarketplace.getImage();
+
+        holder.rlMarketplace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(contextMarketplace, DetailPostMarketplace.class);
+                i.putExtra("image", image);
+                i.putExtra("title", postMarketplace.getTitle());
+                contextMarketplace.startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -51,11 +70,12 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
 
     // Inner class. It is defined first because we want the PostAdapterMp to extend recycler view adapter parametrized
     // by this view holder so some of the return methods and parameter inputs will reference view holder rather than the generic view holder
-    class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvTitle;
-        private ImageView ivImageMp;
+        public ImageView ivImageMp;
         private TextView etPriceMp;
+        private RelativeLayout rlMarketplace;
 
         // pull out a reference to each of the items in our item posts mp
         public ViewHolder(View itemView) {
@@ -64,6 +84,7 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
             tvTitle = itemView.findViewById(R.id.tvTitleMp);
             ivImageMp = itemView.findViewById(R.id.ivImageMp);
             etPriceMp = itemView.findViewById(R.id.etPriceMp);
+            rlMarketplace = itemView.findViewById(R.id.rlMarketplace);
         }
 
         // responsible for taking a post and binding it to the view that we have here
