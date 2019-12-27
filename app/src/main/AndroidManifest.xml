@@ -4,6 +4,8 @@
     package="com.example.mylobo">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
     <application
         android:name=".ParseApplication"
@@ -61,6 +63,7 @@
             android:name=".MenuActivity.MenuActivitymyLobos"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".Marketplace.DetailPostMarketplace" />
+        <activity android:name=".Lobochat.ChatActivity"/>
     </application>
 
 </manifest>

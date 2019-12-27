@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.mylobo.R;
 import com.parse.ParseFile;
+import com.parse.ParseObject;
 
 import java.util.List;
 
@@ -44,19 +45,21 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
         final PostMarketplace postMarketplace = postsMarketplace.get(position);
         holder.tvTitle.setText(postMarketplace.getTitle());
         holder.etPriceMp.setText(postMarketplace.getPrice());
-
         holder.bind(postMarketplace);
+        final ParseFile image = postMarketplace.getImage();
 
-//        final ParseFile image = postMarketplace.getImage();
+        final ParseObject newImage = new ParseObject("NewImage");
 
         holder.rlMarketplace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(contextMarketplace, DetailPostMarketplace.class);
-//                i.putExtra("image", image);
                 i.putExtra("title", postMarketplace.getTitle());
                 i.putExtra("price", postMarketplace.getPrice());
                 i.putExtra("username", postMarketplace.getUser().getUsername());
+
+//                i.putExtra("image", image);
+                newImage.put("image", image);
                 contextMarketplace.startActivity(i);
             }
         });

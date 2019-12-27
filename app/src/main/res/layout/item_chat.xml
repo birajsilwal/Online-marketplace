@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivProfileOther"
+        app:civ_border_color="#63666A"
+        app:civ_border_width="2dp"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="5dp"
+        android:contentDescription="@string/profile_other"
+        android:src="@drawable/ironman"/>
+
+    <TextView
+        android:id="@+id/tvBody"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:padding="15dp"
+        android:textSize="18sp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivProfileMe"
+        app:civ_border_color="#63666A"
+        app:civ_border_width="2dp"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="5dp"
+        android:src="@drawable/biraj" />
+</LinearLayout>

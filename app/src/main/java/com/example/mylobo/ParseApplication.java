@@ -2,6 +2,7 @@ package com.example.mylobo;
 
 import android.app.Application;
 
+import com.example.mylobo.Lobochat.Message;
 import com.example.mylobo.Marketplace.PostMarketplace;
 import com.example.mylobo.myLobos.Post;
 import com.parse.Parse;
@@ -14,6 +15,8 @@ public class ParseApplication extends Application {
 
         ParseObject.registerSubclass(Post.class);
         ParseObject.registerSubclass(PostMarketplace.class);
+        ParseObject.registerSubclass(Message.class);
+
 
         // set applicationId, and server server based on the values in the Heroku settings.
         // clientKey is not needed unless explicitly configured

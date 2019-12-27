@@ -8,13 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.mylobo.Lobochat.ChatActivity;
 import com.example.mylobo.Marketplace.Marketplace;
 import com.example.mylobo.myBooks.myBooks;
 import com.example.mylobo.myLobos.MainActivity;
 
 public class homeScreen extends AppCompatActivity {
 
-    Button btnMarketplace, btnMyLobos, btnMybooks;
+    Button btnMarketplace, btnMyLobos, btnMybooks, btnLobochat;
     ImageView ivMarketplace;
 
     @Override
@@ -26,6 +27,7 @@ public class homeScreen extends AppCompatActivity {
         btnMybooks = findViewById(R.id.btnMyBooks);
         btnMyLobos = findViewById(R.id.btnMyLobos);
         ivMarketplace = findViewById(R.id.ivMarketplace);
+        btnLobochat = findViewById(R.id.btnLobochat);
 
         // takes to mylobos
         btnMyLobos.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +61,14 @@ public class homeScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(homeScreen.this, myBooks.class);
+                startActivity(intent);
+            }
+        });
+
+        btnLobochat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(homeScreen.this, ChatActivity.class);
                 startActivity(intent);
             }
         });

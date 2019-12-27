@@ -19,7 +19,7 @@ android {
     }
     sourceSets {
         main {
-            res.srcDirs = ['src/main/res', 'src/main/res/layout/Marketplace', 'src/main/res/layout/mylobos']
+            res.srcDirs = ['src/main/res', 'src/main/res/layout/Marketplace', 'src/main/res/layout/mylobos', 'src/main/res/layout/lobochat']
         }
     }
 }
@@ -48,6 +48,8 @@ dependencies {
 
 
     implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 
 }

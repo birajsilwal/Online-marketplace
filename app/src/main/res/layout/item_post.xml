@@ -6,44 +6,58 @@
     android:id="@+id/rlPost"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="0dp"
     android:orientation="vertical">
 
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="6dp"
-        android:src="@drawable/biraj"
-        app:civ_border_color="#63666A"
-        app:civ_border_width="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvHandle"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="13dp"
-        android:layout_toEndOf="@+id/profile_image"
-        android:text="Biraj"
-        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
+        android:id="@+id/rlitemPost">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/biraj"
+            app:civ_border_color="#63666A"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvHandle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@+id/profile_image"
+            android:text="Biraj"
+            android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
+
+        <ImageView
+            android:id="@+id/ivMore"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="15dp"
+            android:src="@mipmap/ic_more_foreground" />
+
+
+    </RelativeLayout>
 
     <ImageView
         android:id="@+id/ivImage"
         android:layout_width="match_parent"
-        android:layout_below="@id/tvHandle"
-        android:layout_height="300dp"
+        android:layout_height="450dp"
+        android:layout_below="@id/rlitemPost"
+        android:layout_marginTop="10dp"
         android:scaleType="centerCrop"
-        android:layout_marginTop="20dp"
         tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
 
     <ImageView
@@ -69,22 +83,21 @@
     <TextView
         android:id="@+id/tvDescription"
         android:layout_width="match_parent"
-        android:layout_height="27dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
-        android:textSize="20sp"
+        android:textSize="14sp"
         android:textColor="@color/black_95_transparent"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="16dp"
         tools:text="hipster attempt" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="15dp"
+        android:layout_height="10dp"
         android:layout_below="@+id/tvDescription"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="-10dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/loboGray"
         android:text="" />
 
 

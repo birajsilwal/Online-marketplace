@@ -9,9 +9,13 @@
 
 
     <ImageView
-        android:id="@+id/ivImageMp"
-        android:layout_width="match_parent"
-        android:layout_height="313dp"
+        android:id="@+id/ivImageDMp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:scaleType="centerCrop"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView

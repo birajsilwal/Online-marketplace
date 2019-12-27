@@ -7,7 +7,9 @@
     <color name="username">#ED8B00</color>
     <color name="login">#ED8B00</color>
     <color name="split_line">#BA0C2F</color>
-    <color name="split_line_1">#63666A</color>
+    <color name="loboGray">#63666A</color>
+    <color name="loboSilver">#a7a8aa</color>
+    <color name="pureBlack">#000000</color>
 
 
     <color name="action_bar_semi_transparent_white">#bfffffff</color>

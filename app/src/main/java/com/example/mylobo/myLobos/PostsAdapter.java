@@ -1,7 +1,6 @@
 package com.example.mylobo.myLobos;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,20 +38,35 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
 
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         final Post post = posts.get(position);
         holder.bind(post);
         final ParseFile image = post.getImage();
-        // Post Layout as rlPost
-        holder.rlPost.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+
+        holder.ivMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context, DetailActivity.class);
-                i.putExtra("image", image);
-                i.putExtra("description", post.getDescription());
-                context.startActivity(i);
+                String objectId = post.getObjectId();
+                post.deleteInBackground();
             }
         });
+
+
+
+        // Post Layout as rlPost
+//        holder.rlPost.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(context, DetailActivity.class);
+//                i.putExtra("image", image);
+//                i.putExtra("description", post.getDescription());
+//                context.startActivity(i);
+//            }
+//        });
     }
 
     @Override
@@ -66,6 +80,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         private ImageView ivImage;
         private TextView tvDescription;
         public RelativeLayout rlPost;
+        private ImageView ivMore;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -73,6 +88,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             ivImage = itemView.findViewById(R.id.ivImage);
             tvDescription = itemView.findViewById(R.id.tvDescription);
             rlPost = itemView.findViewById(R.id.rlPost);
+            ivMore = itemView.findViewById(R.id.ivMore);
         }
 
         public void bind(Post post){

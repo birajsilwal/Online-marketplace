@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -17,6 +18,7 @@ public class SignupActivity extends AppCompatActivity {
     private EditText etEmail;
     private EditText etPassword;
     private Button btnSignup;
+    private ImageView ivBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,16 @@ public class SignupActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnSignup = findViewById(R.id.btnSignup);
+        ivBack = findViewById(R.id.ivBack);
+
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SignupActivity.this, LoginActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override

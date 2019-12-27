@@ -23,6 +23,7 @@ import com.example.mylobo.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,7 +87,7 @@ public class PostsFragment extends Fragment {
     }
 
     protected void queryPosts(){
-        ParseQuery<Post> postQuery = new ParseQuery<Post>(Post.class);
+        final ParseQuery<Post> postQuery = new ParseQuery<Post>(Post.class);
         postQuery.include(Post.KEY_USER);
         // limiting into 20 posts
         // can change to any number as requirement
@@ -105,11 +106,12 @@ public class PostsFragment extends Fragment {
 
                 for (int i = 0; i < posts.size(); i++) {
                     Post post = posts.get(i);
-                    Log.d(TAG, "post: " + post.getDescription() + ", Username: " + post.getUser().getUsername());
+                    Log.d(TAG, "ObjectID: " + post.getObjectId() +
+                                    ", post: " + post.getDescription() +
+                                    ", Username: " + post.getUser().getUsername()
+                                    );
                 }
             }
         });
     }
-
-
 }
