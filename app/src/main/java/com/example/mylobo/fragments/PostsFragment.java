@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.mylobo.MenuActivity.MenuActivitymyLobos;
 import com.example.mylobo.homeScreen;
@@ -38,6 +39,8 @@ public class PostsFragment extends Fragment {
     ImageView ivMenuPost;
     ImageView bt_press;
     RelativeLayout rlitemPost;
+    protected SwipeRefreshLayout swipeContainer;
+
 
     // onCreateView is the lifecycle method in fragments
     // onCreateView to inflate the view
@@ -87,6 +90,18 @@ public class PostsFragment extends Fragment {
         // set the layout manager on the recycler view
         rvPosts.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        swipeContainer = view.findViewById(R.id.swipeContainer);
+
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Your code to refresh the list here.
+                // Make sure you call swipeContainer.setRefreshing(false)
+                // once the network request has completed successfully.
+                queryPosts();
+            }
+        });
+
         queryPosts();
     }
 
@@ -108,12 +123,18 @@ public class PostsFragment extends Fragment {
                 mPosts.addAll(posts);
                 adapter.notifyDataSetChanged();
 
+                adapter.notifyDataSetChanged();
+                // Remember to CLEAR OUT old items before appending in the new ones
+                adapter.clear();
+                // ...the data has come back, add new items to your adapter...
+                adapter.addAll(posts);
+                // Now we call setRefreshing(false) to signal refresh has finished
+                swipeContainer.setRefreshing(false);
+
+
                 for (int i = 0; i < posts.size(); i++) {
                     Post post = posts.get(i);
-                    Log.d(TAG, "ObjectID: " + post.getObjectId() +
-                                    ", post: " + post.getDescription() +
-                                    ", Username: " + post.getUser().getUsername()
-                                    );
+                    Log.d(TAG, "ObjectID: " + post.getObjectId() + ", post: " + post.getDescription() + ", Username: " + post.getUser().getUsername());
                 }
             }
         });

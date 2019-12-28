@@ -15,7 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.mylobo.R;
+import com.parse.Parse;
 import com.parse.ParseFile;
+import com.parse.ParseUser;
 
 import java.util.List;
 
@@ -38,8 +40,6 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
     }
 
     // binds the data in given position into the ViewHolder holder
-
-
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         final Post post = posts.get(position);
@@ -66,6 +66,18 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
 //                context.startActivity(i);
 //            }
 //        });
+
+        // Username of each posts
+        String isMe = post.getUser().getUsername();
+        Log.i("birajpost", isMe);
+
+        String currUser = ParseUser.getCurrentUser().getObjectId();
+        ParseUser postId = post.getUser();
+        String stringPostId = String.valueOf(postId);
+
+        if (currUser.equals(stringPostId)){
+            holder.ivDelete.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -80,7 +92,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         private ImageView ivImage;
         private TextView tvDescription;
         public RelativeLayout rlPost;
-//        private ImageView ivMore;
+        private ImageView ivDelete;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -88,9 +100,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             ivImage = itemView.findViewById(R.id.ivImage);
             tvDescription = itemView.findViewById(R.id.tvDescription);
             rlPost = itemView.findViewById(R.id.rlPost);
-//            ivMore = itemView.findViewById(R.id.ivMore);
-
-//            ivMore.setOnCreateContextMenuListener(this);
+            ivDelete = itemView.findViewById(R.id.ivDelete);
         }
 
         public void bind(Post post){
@@ -101,23 +111,25 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
                 Glide.with(context).load(image.getUrl()).into(ivImage);
             }
             tvDescription.setText(post.getDescription());
-        }
 
-//        @Override
-//        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-//
-//            menu.add(this.getAdapterPosition(), 121, 0, "Delete this item");
-//            menu.add(this.getAdapterPosition(), 122, 1, "Add to wish list");
-//
-//        }
+
+        }
     }
 
-//    public void removeItem(int i){
-//        Post post = null;
-//        int id = Integer.parseInt(post.getObjectId());
-//        post.deleteInBackground();
-//        notifyDataSetChanged();
-//    }
+    /* Within the RecyclerView.Adapter class */
+
+    // Clean all elements of the recycler
+    public void clear() {
+        posts.clear();
+        notifyDataSetChanged();
+    }
+
+    // Add a list of items -- change to type used
+    public void addAll(List<Post> list) {
+        posts.addAll(list);
+        notifyDataSetChanged();
+    }
+
 }
 
 
