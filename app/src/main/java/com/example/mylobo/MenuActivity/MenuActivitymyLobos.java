@@ -2,7 +2,6 @@ package com.example.mylobo.MenuActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,30 +9,27 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mylobo.LoginActivity;
-import com.example.mylobo.Marketplace.Marketplace;
 import com.example.mylobo.R;
-import com.example.mylobo.fragments.PostsFragment;
-import com.example.mylobo.fragmentsMarketplace.ComposeFragmentMarketplace;
 import com.example.mylobo.homeScreen;
 import com.example.mylobo.myLobos.MainActivity;
 import com.parse.ParseUser;
 
 public class MenuActivitymyLobos extends AppCompatActivity {
 
-    public static final String TAG = "MenuActivity";
-    TextView tvHome;
+    public static final String TAG = "MenuActivityMarketplace";
+    TextView btnHome;
     ImageView ivBackMenu;
-    TextView tvLogOut;
+    TextView btnLogOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_menu_activitymy_lobos);
+    setContentView(R.layout.activity_menu_mylobos);
 
-    ivBackMenu = findViewById(R.id.ivBackMenu);
-    tvHome = findViewById(R.id.tvHome);
-    tvLogOut = findViewById(R.id.tvLogOut);
+    ivBackMenu = findViewById(R.id.ivBackMenuMp);
+    btnHome = findViewById(R.id.btnHome);
+    btnLogOut = findViewById(R.id.btnLogOut);
 
         ivBackMenu.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -43,7 +39,7 @@ public class MenuActivitymyLobos extends AppCompatActivity {
         }
     });
 
-        tvHome.setOnClickListener(new View.OnClickListener() {
+        btnHome.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Intent i = new Intent(MenuActivitymyLobos.this, homeScreen.class);
@@ -52,7 +48,7 @@ public class MenuActivitymyLobos extends AppCompatActivity {
     });
 
 
-        tvLogOut.setOnClickListener(new View.OnClickListener() {
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             ParseUser.logOut();

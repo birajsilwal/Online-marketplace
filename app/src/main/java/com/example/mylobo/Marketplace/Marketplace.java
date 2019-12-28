@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.mylobo.MenuActivity.MenuActivity;
+import com.example.mylobo.MenuActivity.MenuActivityMarketplace;
 import com.example.mylobo.R;
 import com.example.mylobo.homeScreen;
 import com.parse.FindCallback;
@@ -40,7 +40,7 @@ public class Marketplace extends AppCompatActivity {
         ivMenuMp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Marketplace.this, MenuActivity.class);
+                Intent i = new Intent(Marketplace.this, MenuActivityMarketplace.class);
                 startActivity(i);
             }
         });

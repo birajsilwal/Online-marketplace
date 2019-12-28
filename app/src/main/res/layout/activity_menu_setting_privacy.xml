@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity.MenuActivitySettingPrivacy">
+
+    <Button
+        android:id="@+id/btnNotificationSound"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="152dp"
+        android:gravity="start|center_vertical"
+        android:paddingStart="120dp"
+        android:text="Notification &amp; Sound"
+        android:textAllCaps="false"
+        android:textSize="27sp" />
+
+    <Button
+        android:id="@+id/btnPrivacy"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/btnNotificationSound"
+        android:layout_marginTop="0dp"
+        android:gravity="start|center_vertical"
+        android:paddingStart="120dp"
+        android:text="Privacy"
+        android:textAllCaps="false"
+        android:textSize="27sp" />
+
+    <Button
+        android:id="@+id/btnLanguage"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/btnPrivacy"
+        android:layout_marginTop="0dp"
+        android:gravity="start|center_vertical"
+        android:paddingStart="120dp"
+        android:text="Language"
+        android:textAllCaps="false"
+        android:textSize="27sp" />
+
+</RelativeLayout>
