@@ -40,14 +40,14 @@
             android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
 
         <ImageView
-            android:id="@+id/ivMore"
+            android:id="@+id/ivDelete"
             android:layout_width="16dp"
             android:layout_height="16dp"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="15dp"
-            android:src="@mipmap/ic_more_foreground" />
-
+            android:src="@mipmap/ic_delete_foreground"
+            />
 
     </RelativeLayout>
 
@@ -71,14 +71,26 @@
         app:srcCompat="@mipmap/ic_comment1_foreground" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/ivAddtofavorite"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_below="@+id/ivImage"
         android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginEnd="193dp"
         app:srcCompat="@mipmap/ic_star_foreground" />
+
+    <ImageView
+        android:id="@+id/ivReport"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/ivImage"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="15dp"
+        app:srcCompat="@mipmap/ic_report_foreground" />
 
     <TextView
         android:id="@+id/tvDescription"

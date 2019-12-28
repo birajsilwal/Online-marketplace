@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.mylobo.R;
 import com.example.mylobo.fragments.ComposeFragment;
@@ -17,6 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
+//    private PostsAdapter postsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,24 @@ public class MainActivity extends AppCompatActivity {
         // Set default selection
         bottomNavigationView.setSelectedItemId(R.id.action_home);
     }
+
+//    @Override
+//    public boolean onContextItemSelected(MenuItem item) {
+//
+//        switch (item.getItemId()) {
+//            case 121:
+//                postsAdapter.removeItem(item.getGroupId());
+//
+//                Toast.makeText(this, "Item deleted...", Toast.LENGTH_SHORT).show();
+//                return true;
+//
+//            case 122:
+//                Toast.makeText(this, "Item added...", Toast.LENGTH_SHORT).show();
+//                return true;
+//            default:
+//                return super.onContextItemSelected(item);
+//        }
+//    }
 }
 
 

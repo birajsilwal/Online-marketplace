@@ -1,6 +1,8 @@
 package com.example.mylobo.myLobos;
 
 import android.content.Context;
+import android.util.Log;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
 
     private Context context;
     private List<Post> posts;
+    int myposition;
 
     public PostsAdapter(Context context, List<Post> posts) {
         this.context = context;
@@ -40,22 +43,18 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         final Post post = posts.get(position);
+        myposition = position;
+        Log.i("position" , String.valueOf(position));
         holder.bind(post);
         final ParseFile image = post.getImage();
 
-
-
-
-
-        holder.ivMore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String objectId = post.getObjectId();
-                post.deleteInBackground();
-            }
-        });
-
-
+//        holder.ivMore.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String objectId = post.getObjectId();
+//                post.deleteInBackground();
+//            }
+//        });
 
         // Post Layout as rlPost
 //        holder.rlPost.setOnClickListener(new View.OnClickListener() {
@@ -74,13 +73,14 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         return posts.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+//    class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {
+      class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvHandle;
         private ImageView ivImage;
         private TextView tvDescription;
         public RelativeLayout rlPost;
-        private ImageView ivMore;
+//        private ImageView ivMore;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -88,7 +88,9 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             ivImage = itemView.findViewById(R.id.ivImage);
             tvDescription = itemView.findViewById(R.id.tvDescription);
             rlPost = itemView.findViewById(R.id.rlPost);
-            ivMore = itemView.findViewById(R.id.ivMore);
+//            ivMore = itemView.findViewById(R.id.ivMore);
+
+//            ivMore.setOnCreateContextMenuListener(this);
         }
 
         public void bind(Post post){
@@ -101,7 +103,21 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             tvDescription.setText(post.getDescription());
         }
 
+//        @Override
+//        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+//
+//            menu.add(this.getAdapterPosition(), 121, 0, "Delete this item");
+//            menu.add(this.getAdapterPosition(), 122, 1, "Add to wish list");
+//
+//        }
     }
+
+//    public void removeItem(int i){
+//        Post post = null;
+//        int id = Integer.parseInt(post.getObjectId());
+//        post.deleteInBackground();
+//        notifyDataSetChanged();
+//    }
 }
 
 

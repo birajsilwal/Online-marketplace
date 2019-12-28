@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,7 +15,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mylobo.MenuActivity.MenuActivity;
 import com.example.mylobo.MenuActivity.MenuActivitymyLobos;
 import com.example.mylobo.homeScreen;
 import com.example.mylobo.myLobos.Post;
@@ -23,11 +23,9 @@ import com.example.mylobo.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
-import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class PostsFragment extends Fragment {
 
@@ -38,6 +36,8 @@ public class PostsFragment extends Fragment {
     protected List<Post> mPosts;
     ImageView ivBackPost;
     ImageView ivMenuPost;
+    ImageView bt_press;
+    RelativeLayout rlitemPost;
 
     // onCreateView is the lifecycle method in fragments
     // onCreateView to inflate the view
@@ -48,6 +48,10 @@ public class PostsFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_posts, container, false);
         ivBackPost = view.findViewById(R.id.ivBackPost);
         ivMenuPost = view.findViewById(R.id.ivMenuPost);
+
+//        bt_press = view.findViewById(R.id.ivMore);
+//        rlitemPost = view.findViewById(R.id.rlitemPost);
+
         ivBackPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
