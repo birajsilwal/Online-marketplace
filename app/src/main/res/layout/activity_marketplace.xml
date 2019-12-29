@@ -10,17 +10,17 @@
 
     <ImageView
         android:id="@+id/ivBackMp"
-        android:layout_width="44dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="3dp"
-        android:src="@drawable/ic_back"/>
-
+        android:layout_width="45dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="8dp"
+        android:src="@mipmap/ic_back_foreground"/>
 
     <ImageView
         android:id="@+id/ivMenuMp"
-        android:layout_width="40dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="3dp"
+        android:layout_width="35dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:src="@mipmap/ic_menu_foreground"/>
@@ -29,30 +29,26 @@
         android:id="@+id/rvPostsMp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnTopSeparator"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="5dp" />
+        android:layout_below="@+id/viewLineMarketplace"
+        android:layout_marginTop="0dp"/>
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-1dp"
+        android:layout_marginTop="2dp"
         android:fontFamily="@font/authenia"
         android:text="Marketplace"
         android:textColor="@color/pureBlack"
         android:textSize="33sp" />
 
-    <Button
-        android:id="@+id/btnTopSeparator"
+    <View
+        android:id="@+id/viewLineMarketplace"
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginTop="40dp"
-        android:background="@color/loboSilver"
-        android:clickable="false"
-        android:text="" />
+        android:layout_height="1dp"
+        android:background="@color/black_95_transparent"
+        android:layout_marginTop="45dp"
+        />
 
 </RelativeLayout>

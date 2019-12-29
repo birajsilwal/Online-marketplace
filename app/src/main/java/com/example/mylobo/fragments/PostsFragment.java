@@ -16,8 +16,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.example.mylobo.HomeScreen;
 import com.example.mylobo.MenuActivity.MenuActivitymyLobos;
-import com.example.mylobo.homeScreen;
 import com.example.mylobo.myLobos.Post;
 import com.example.mylobo.myLobos.PostsAdapter;
 import com.example.mylobo.R;
@@ -58,7 +58,7 @@ public class PostsFragment extends Fragment {
         ivBackPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), homeScreen.class);
+                Intent i = new Intent(getActivity(), HomeScreen.class);
                 startActivity(i);
             }
         });

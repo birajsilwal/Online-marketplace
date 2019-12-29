@@ -79,7 +79,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="193dp"
-        app:srcCompat="@mipmap/ic_star_foreground" />
+        app:srcCompat="@mipmap/ic_bookmark_foreground" />
 
     <ImageView
         android:id="@+id/ivReport"
@@ -88,12 +88,12 @@
         android:layout_below="@+id/ivImage"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="15dp"
         app:srcCompat="@mipmap/ic_report_foreground" />
 
     <TextView
-        android:id="@+id/tvDescription"
+        android:id="@+id/tvDescriptionTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
@@ -103,14 +103,19 @@
         android:layout_marginEnd="10dp"
         tools:text="hipster attempt" />
 
-    <Button
-        android:id="@+id/button"
+
+    <View
+        android:id="@+id/viewLineItemPost"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:layout_below="@+id/tvDescription"
-        android:layout_marginTop="2dp"
+        android:layout_height="3dp"
         android:background="@color/loboGray"
-        android:text="" />
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_below="@+id/tvDescriptionTitle"
+
+        />
+
+
 
 
 </RelativeLayout>

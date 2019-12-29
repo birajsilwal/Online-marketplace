@@ -1,108 +1,295 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/ivBackDMp"
+        android:layout_width="45dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="8dp"
+        android:src="@mipmap/ic_back_foreground"/>
 
     <ImageView
         android:id="@+id/ivImageDMp"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_centerHorizontal="true"
         android:scaleType="centerCrop"
         tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/tvTitleMp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:textSize="30sp"
-        android:textColor="@color/black_95_transparent"
-        android:text="TextView" />
-
-
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
+        android:id="@+id/rldetail1"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivImageDMp"
+        android:layout_centerHorizontal="true">
         <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:layout_marginStart="12dp"
-            android:text="$" />
-
-        <EditText
-            android:id="@+id/etPriceMp"
+            android:id="@+id/tvTitleMp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:background="@android:color/transparent"
-            android:text="price" />
-
+            android:textSize="40sp"
+            android:textColor="@color/black_95_transparent"
+            android:text="Guitar"
+            android:textStyle="bold"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitleMp">
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="8dp"
+                android:text="$"
+                android:textColor="@color/black_95_transparent"
+                android:layout_centerVertical="true"
+                android:textSize="28sp"/>
+            <EditText
+                android:id="@+id/etPriceMp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_toRightOf="@id/textView2"
+                android:background="@android:color/transparent"
+                android:layout_centerVertical="true"
+                android:text="price"
+                android:textColor="@color/black_95_transparent"
+                android:textSize="28sp"/>
+        </RelativeLayout>
     </RelativeLayout>
-
-    <TextView
-        android:id="@+id/tvDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:textColor="@color/black_95_transparent"
-        android:layout_marginTop="16dp"
-        android:textSize="25dp"
-        android:text="Description" />
-
-    <TextView
-        android:id="@+id/tvDescriptionDetail"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:text="In great condition" />
-
-    <TextView
-        android:id="@+id/tvSellerInformation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/black_95_transparent"
-        android:textSize="25dp"
-        android:text="Seller Information" />
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:id="@+id/view1detailMarketplace"
+        android:layout_width="385dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rldetail1">
+        <View
+            android:id="@+id/viewLineDetailMarketplace"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/loboGray"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+    </RelativeLayout>
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_image"
-            android:layout_width="46dp"
-            android:layout_height="46dp"
-            android:layout_marginStart="27dp"
-            android:layout_marginTop="6dp"
-            android:src="@drawable/biraj"
-            app:civ_border_color="#63666A"
-            app:civ_border_width="2dp" />
+    <RelativeLayout
+        android:id="@+id/rlwithdescriptiondetailmarketplace"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/view1detailMarketplace">
 
         <TextView
-            android:id="@+id/tvSeller"
+            android:id="@+id/tvDescriptionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="23dp"
+            android:text="Description"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="In great condition"
+            android:layout_below="@id/tvDescriptionTitle"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/view2detailMarketplace"
+        android:layout_width="385dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rlwithdescriptiondetailmarketplace">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/loboGray"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlwithsellerinformation"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/view2detailMarketplace">
+
+        <RelativeLayout
+            android:id="@+id/rlwithpublicprofile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvSellerInformation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/black_95_transparent"
+                android:textSize="23dp"
+                android:textStyle="bold"
+                android:text="Seller Information" />
+
+            <TextView
+                android:id="@+id/tvSeePublicProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="7dp"
+                android:layout_centerVertical="true"
+                android:text="See Public Profile"
+                android:textColor="@color/direct_blue_ring_gradient_colour5"
+                android:textSize="15dp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llwithsellerinformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlwithpublicprofile">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/biraj"
+                app:civ_border_color="#63666A"
+                app:civ_border_width="2dp"/>
+
+            <TextView
+                android:id="@+id/tvSeller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_95_transparent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:textSize="20dp"
+                android:text="Ada Lovalace"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlwithbuttondetailmp"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/rlwithsellerinformation"
+        android:background="@drawable/custom_border"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:id="@+id/rlLobochatDetailMarketplace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="85dp"
-            android:layout_marginTop="9dp"
-            android:textColor="@color/black_95_transparent"
-            android:textSize="20dp"
-            android:text="Seller" />
+            android:layout_centerVertical="true">
+            <ImageView
+                android:id="@+id/ivLobochatDetailMarketplace"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@mipmap/ic_lobochat_foreground"
+                android:layout_centerHorizontal="true"/>
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message"
+                android:textColor="@color/black_95_transparent"
+                android:layout_marginTop="1dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/ivLobochatDetailMarketplace"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlBookmarkDetailMarketplace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/rlLobochatDetailMarketplace"
+            android:layout_marginStart="55dp">
+            <ImageView
+                android:id="@+id/ivBookmarkDetailMarketplace"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@mipmap/ic_bookmark_foreground"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/tvBookmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bookmark"
+                android:textColor="@color/black_95_transparent"
+                android:layout_marginTop="6dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/ivBookmarkDetailMarketplace"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlShareDetailMarketplace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/rlReportDetailMarketplace"
+            android:layout_marginEnd="55dp">
+            <ImageView
+                android:id="@+id/ivShareDetailMarketplace"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@mipmap/ic_share_foreground"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/tvShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share"
+                android:textColor="@color/black_95_transparent"
+                android:layout_marginTop="6dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/ivShareDetailMarketplace"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlReportDetailMarketplace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true">
+
+            <ImageView
+                android:id="@+id/ivReportDetailMarketplace"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="6dp"
+                android:layout_centerHorizontal="true"
+                app:srcCompat="@mipmap/ic_report_foreground"/>
+
+            <TextView
+                android:id="@+id/tvReport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Report"
+                android:textColor="@color/black_95_transparent"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/ivReportDetailMarketplace"/>
+
+        </RelativeLayout>
+
 
     </RelativeLayout>
 
-</LinearLayout>
+
+
+</RelativeLayout>

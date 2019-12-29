@@ -1,18 +1,18 @@
 package com.example.mylobo.Marketplace;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.mylobo.HomeScreen;
 import com.example.mylobo.MenuActivity.MenuActivityMarketplace;
 import com.example.mylobo.R;
-import com.example.mylobo.homeScreen;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -48,7 +48,7 @@ public class Marketplace extends AppCompatActivity {
         ivBackMp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Marketplace.this, homeScreen.class);
+                Intent i = new Intent(Marketplace.this, HomeScreen.class);
                 startActivity(i);
 //                finish();
             }

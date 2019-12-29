@@ -20,6 +20,7 @@ import androidx.core.content.FileProvider;
 
 import com.example.mylobo.Marketplace.Marketplace;
 import com.example.mylobo.Marketplace.PostMarketplace;
+import com.example.mylobo.MenuActivity.MenuActivityMarketplace;
 import com.example.mylobo.R;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -34,11 +35,11 @@ public class ComposeFragmentMarketplace extends AppCompatActivity {
 
     private EditText etTitle;
     private EditText etPrice;
-    private Button btnCaptureImage;
+    private ImageView ivCameraMp;
     private ImageView ivPostImageMp;
     private Button btnSubmitMp;
     ImageView ivBackCompose;
-
+    private EditText etDescriptionMp;
 
 
     public final static int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 1034;
@@ -52,12 +53,13 @@ public class ComposeFragmentMarketplace extends AppCompatActivity {
 
         etTitle = findViewById(R.id.etTitleMp);
         etPrice = findViewById(R.id.etPriceMp);
-        btnCaptureImage = findViewById(R.id.btnCaptureImageMp);
+        ivCameraMp = findViewById(R.id.ivCameraMp);
         ivPostImageMp = findViewById(R.id.ivPostImageMp);
         btnSubmitMp = findViewById(R.id.btnSubmitMp);
         ivBackCompose = findViewById(R.id.ivBackCompose);
+        etDescriptionMp = findViewById(R.id.etDescriptionMp);
 
-        btnCaptureImage.setOnClickListener(new View.OnClickListener() {
+        ivCameraMp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 launchCamera();
@@ -69,6 +71,7 @@ public class ComposeFragmentMarketplace extends AppCompatActivity {
             public void onClick(View v) {
                 String title =  etTitle.getText().toString();
                 String price = etPrice.getText().toString();
+                String description = etDescriptionMp.getText().toString();
                 ParseUser user = ParseUser.getCurrentUser();
                 if (photoFile == null || ivPostImageMp.getDrawable() == null) {
                     // if there is no photo taken, post will no be submit
@@ -76,14 +79,14 @@ public class ComposeFragmentMarketplace extends AppCompatActivity {
                     Toast.makeText(ComposeFragmentMarketplace.this, "There is no photo", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                savePost(title, price,  user, photoFile);
+                savePost(title, price, description, user, photoFile);
             }
         });
 
         ivBackCompose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ComposeFragmentMarketplace.this, Marketplace.class);
+                Intent i = new Intent(ComposeFragmentMarketplace.this, MenuActivityMarketplace.class);
                 startActivity(i);
 //                finish();
             }
@@ -127,7 +130,6 @@ public class ComposeFragmentMarketplace extends AppCompatActivity {
     }
 
 
-
     // Returns the File for a photo stored on disk given the fileName
     public File getPhotoFileUri(String fileName) {
         // Get safe storage directory for photos
@@ -147,10 +149,11 @@ public class ComposeFragmentMarketplace extends AppCompatActivity {
     }
 
 
-    private void savePost(String title, String price, ParseUser parseUser, File photoFile) {
+    private void savePost(String title, String price, String description, ParseUser parseUser, File photoFile) {
         PostMarketplace postMarketplace = new PostMarketplace();
         postMarketplace.setTitle(title);
         postMarketplace.setPrice(price);
+        postMarketplace.setDescription(description);
         postMarketplace.setUser(parseUser);
         postMarketplace.setImage(new ParseFile(photoFile));
         postMarketplace.saveInBackground(new SaveCallback() {

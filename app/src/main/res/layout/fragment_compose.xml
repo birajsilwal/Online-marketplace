@@ -1,34 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/etDescription"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="375dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="none"
-        android:hint="Description..." />
+        android:id="@+id/rlComposeSecondary"
+        android:layout_centerHorizontal="true"
 
-    <Button
-        android:id="@+id/btCaptureImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Take Picture" />
+        >
 
-    <ImageView
-        android:id="@+id/ivPostImage"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        <TextView
+            android:id="@+id/tvCreatePost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="Create Post"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/btSubmit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Submit" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btSubmit"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Post"
+            android:textSize="15sp"
+            app:rippleColor="@color/login"
+            app:strokeColor="@color/black_95_transparent"
+            android:textAllCaps="false"
+            app:strokeWidth="1dp" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnTopSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/loboSilver"
+            android:clickable="false"
+            android:elevation="20dp"
+            android:text="" />
+
+        <RelativeLayout
+            android:id="@+id/rlQWERTY"
+            android:layout_width="380dp"
+            android:layout_height="120dp"
+            android:layout_below="@+id/btnTopSeparator"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="31dp"
+            android:gravity="center_horizontal"
+            android:background="@drawable/custom_border"
+            >
+
+            <EditText
+                android:id="@+id/etDescription"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="What's going on?"
+                android:inputType="none" />
+
+            <ImageView
+                android:id="@+id/ivLive"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_below="@+id/etDescription"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="4dp"
+                app:srcCompat="@mipmap/ic_live_foreground" />
+
+            <ImageView
+                android:id="@+id/ivCamera"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/etDescription"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="35dp"
+                app:srcCompat="@mipmap/ic_camera_foreground" />
+
+            <ImageView
+                android:id="@+id/ivPicture"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/etDescription"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                app:srcCompat="@mipmap/ic_picture_foreground" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:layout_width="375dp"
+        android:layout_height="250dp"
+        android:layout_below="@id/rlComposeSecondary"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_border_mp_edittext"
+        android:layout_marginTop="15dp"
+        >
+
+        <ImageView
+            android:id="@+id/ivPostImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="24dp"
+            android:layout_centerHorizontal="true"
+            tools:srcCompat="@tools:sample/avatars" />
+    </RelativeLayout>
+
+</RelativeLayout>

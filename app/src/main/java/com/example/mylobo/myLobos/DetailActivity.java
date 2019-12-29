@@ -8,9 +8,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.mylobo.R;
-import com.parse.Parse;
 import com.parse.ParseFile;
-import com.parse.ParseObject;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -25,7 +23,7 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         ivImageD = findViewById(R.id.ivImageD);
-        tvDescription = findViewById(R.id.tvDescription);
+        tvDescription = findViewById(R.id.tvDescriptionTitle);
 
         description = getIntent().getStringExtra("description");
 //        image =  getIntent().getIntExtra("image", 0);

@@ -3,9 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/HomeScreenMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".homeScreen">
+    tools:context=".HomeScreen"
+    android:background="@color/grey_1"
+
+    >
 
     <ImageView
         android:id="@+id/ivHomebackground"
@@ -13,88 +17,176 @@
         android:layout_height="match_parent"
         android:scaleType="fitXY"
         android:alpha="0.9"
-/>
+        />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/ivMarketplace"
-        android:layout_width="53dp"
-        android:layout_height="53dp"
-        android:layout_alignParentStart="true"
+    <ImageView
+        android:id="@+id/ivMenuHomescreen"
+        android:layout_width="35dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="161dp"
-        android:src="@drawable/marketplace"
-        app:civ_border_color="#63666A"
-        app:civ_border_width="2dp" />
+        android:layout_alignParentEnd="true"
+        android:src="@mipmap/ic_menu_foreground"/>
 
-    <Button
-        android:id="@+id/btnMarketplace"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="152dp"
-        android:gravity="start|center_vertical"
-        android:paddingStart="120dp"
-        android:text="Marketplace"
-        android:textAllCaps="false"
-        android:textSize="27sp" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/ivmyLobos"
-        android:layout_width="53dp"
-        android:layout_height="53dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="312dp"
-        android:src="@drawable/social"
-        app:civ_border_color="#63666A"
-        app:civ_border_width="2dp" />
-
-    <Button
-        android:id="@+id/btnMyLobos"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:paddingStart="120dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="52dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="303dp"
-        android:gravity="start|center_vertical"
-        android:text="myLobos"
-        android:textAllCaps="false"
-        android:textSize="27sp" />
+        android:gravity="center"
+        android:id="@+id/llwithtempanddate"
+        >
 
-    <Button
-        android:id="@+id/btnMyBooks"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:paddingStart="120dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:textColor="@color/black_95_transparent"
+            android:text="Today's Date" />
+
+        <TextView
+            android:id="@+id/tvTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="N/A°F"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="25dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llwithdescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="461dp"
-        android:gravity="start|center_vertical"
-        android:text="myBooks"
-        android:textAllCaps="false"
-        android:textSize="27sp" />
+        android:orientation="horizontal"
+        android:layout_below="@id/llwithtempanddate"
 
-    <Button
-        android:id="@+id/btnLobochat"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:paddingStart="120dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        >
+        <TextView
+            android:id="@+id/tvWeatherStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Clear Sky"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="14dp" />
+
+        <ImageView
+            android:id="@+id/ivWeatherDescription"
+            android:layout_gravity="center_vertical"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="619dp"
-        android:gravity="start|center_vertical"
-        android:text="Lobochat"
-        android:textAllCaps="false"
-        android:textSize="27sp" />
+        android:layout_below="@+id/llwithdescription"  >
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivMarketplace"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="11dp"
+            android:src="@drawable/marketplace"
+            app:civ_border_color="#63666A"
+            app:civ_border_width="2dp" />
+
+        <Button
+            android:id="@+id/btnMarketplace"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentTop="true"
+            android:gravity="start|center_vertical"
+            android:paddingStart="105dp"
+            android:text="Marketplace"
+            android:textAllCaps="false"
+            android:textSize="27sp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivmyLobos"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/btnMarketplace"
+            android:src="@drawable/social"
+            app:civ_border_color="#63666A"
+            app:civ_border_width="2dp" />
+
+        <Button
+            android:id="@+id/btnMyLobos"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:paddingStart="105dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btnMarketplace"
+            android:gravity="start|center_vertical"
+            android:text="myLobos"
+            android:textAllCaps="false"
+            android:textSize="27sp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivLobochat"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/btnMyLobos"
+            android:src="@mipmap/ic_lobochat_foreground" />
+
+        <Button
+            android:id="@+id/btnLobochat"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:paddingStart="105dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btnMyLobos"
+            android:gravity="start|center_vertical"
+            android:text="Lobochat"
+            android:textAllCaps="false"
+            android:textSize="27sp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivBook"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/btnLobochat"
+            android:src="@mipmap/ic_book_foreground" />
+
+        <Button
+            android:id="@+id/btnMyBooks"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:paddingStart="105dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btnLobochat"
+            android:gravity="start|center_vertical"
+            android:text="myBooks"
+            android:textAllCaps="false"
+            android:textSize="27sp" />
+
+    </RelativeLayout>
 </RelativeLayout>

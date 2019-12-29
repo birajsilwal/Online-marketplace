@@ -11,13 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.parse.FindCallback;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
-import com.parse.ParseQuery;
 import com.parse.ParseUser;
-
-import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -35,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
 
         etUsername = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
-        btnLogin = findViewById(R.id.btnSignup);
+        btnLogin = findViewById(R.id.btnLogin);
         tvSignUp = findViewById(R.id.tvSignUp);
         tvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         // This is for better User Experience as user do not have to log in every time they use app
         // User only have to log in once until they log out manually
         if (ParseUser.getCurrentUser() != null) {
-            // User is directly sent to homeScreen
+            // User is directly sent to HomeScreen
             goHomeScreen();
         }
 
@@ -87,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void goHomeScreen() {
-        Intent i = new Intent(this, homeScreen.class);
+        Intent i = new Intent(this, HomeScreen.class);
         startActivity(i);
         finish();
     }

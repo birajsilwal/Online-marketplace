@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity.MenuActivityHomescreen">
+
+
+    <ImageView
+        android:id="@+id/ivBackMenuMp"
+        android:layout_width="45dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true"
+        android:src="@mipmap/ic_back_foreground" />
+
+    <ImageView
+        android:id="@+id/ivHome"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="100dp"
+        android:src="@mipmap/ic_home_foreground" />
+
+    <Button
+        android:id="@+id/btnHome"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="90dp"
+        android:gravity="start|center_vertical"
+        android:paddingStart="120dp"
+        android:text="Home"
+        android:textAllCaps="false"
+        android:textSize="27sp" />
+
+    <ImageView
+        android:id="@+id/ivPublicProfileML"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnHome"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="17dp"
+        android:src="@mipmap/ic_profile_foreground" />
+
+    <Button
+        android:id="@+id/btnPublicProfile"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/btnHome"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="0dp"
+        android:gravity="start|center_vertical"
+        android:paddingStart="120dp"
+        android:text="Public Profile"
+        android:textAllCaps="false"
+        android:textSize="27sp" />
+
+    <ImageView
+        android:id="@+id/ivBookmark"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnPublicProfile"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="17dp"
+        android:src="@mipmap/ic_bookmark_foreground" />
+
+    <Button
+        android:id="@+id/btnBookmark"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnPublicProfile"
+        android:layout_marginTop="0dp"
+        android:gravity="start|center_vertical"
+        android:paddingStart="120dp"
+        android:text="Bookmarks"
+        android:textAllCaps="false"
+        android:textSize="27sp" />
+
+    <ImageView
+        android:id="@+id/ivSetting"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnBookmark"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="17dp"
+        android:src="@mipmap/ic_setting_foreground" />
+
+    <Button
+        android:id="@+id/btnSetting"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/btnBookmark"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="0dp"
+        android:gravity="start|center_vertical"
+        android:paddingStart="120dp"
+        android:text="Settings &amp; Privacy"
+        android:textAllCaps="false"
+        android:textSize="27sp" />
+
+    <ImageView
+        android:id="@+id/ivLogout"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnSetting"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="17dp"
+        android:src="@mipmap/ic_logout_foreground" />
+
+    <Button
+        android:id="@+id/btnLogOut"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/btnSetting"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="0dp"
+        android:gravity="start|center_vertical"
+        android:paddingStart="120dp"
+        android:text="Log Out"
+        android:textAllCaps="false"
+        android:textSize="27sp" />
+</RelativeLayout>

@@ -10,11 +10,10 @@
     <ImageView
         android:id="@+id/ivBackMenuMp"
         android:layout_width="45dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="3dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
         android:layout_alignParentStart="true"
-        android:src="@drawable/ic_back" />
-
+        android:src="@mipmap/ic_back_foreground" />
 
     <ImageView
         android:id="@+id/ivHome"
@@ -40,7 +39,7 @@
 
 
     <ImageView
-        android:id="@+id/ivPublicProfile"
+        android:id="@+id/ivPublicProfileML"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
@@ -78,8 +77,8 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_below="@+id/btnPublicProfile"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnPublicProfile"
         android:layout_marginTop="0dp"
         android:gravity="start|center_vertical"
         android:paddingStart="120dp"

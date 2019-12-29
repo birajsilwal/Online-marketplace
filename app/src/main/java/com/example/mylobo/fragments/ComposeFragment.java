@@ -21,9 +21,9 @@ import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
+import com.example.mylobo.R;
 import com.example.mylobo.myLobos.MainActivity;
 import com.example.mylobo.myLobos.Post;
-import com.example.mylobo.R;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
@@ -41,6 +41,7 @@ public class ComposeFragment extends Fragment {
     private Button btnCaptureImage;
     private ImageView ivPostImage;
     private Button btnSubmit;
+    private ImageView ivCamera;
 
     public final static int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 1034;
     public String photoFileName = "photo.jpg";
@@ -64,10 +65,12 @@ public class ComposeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         // findViewById only exists on activity so we need to use view.find.....
         etDescription = view.findViewById(R.id.etDescription);
-        btnCaptureImage = view.findViewById(R.id.btCaptureImage);
+//        btnCaptureImage = view.findViewById(R.id.btCaptureImage);
         ivPostImage = view.findViewById(R.id.ivPostImage);
         btnSubmit = view.findViewById(R.id.btSubmit);
-        btnCaptureImage.setOnClickListener(new View.OnClickListener() {
+        ivCamera = view.findViewById(R.id.ivCamera);
+
+        ivCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 launchCamera();

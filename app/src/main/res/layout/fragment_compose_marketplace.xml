@@ -1,51 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <ImageView
-        android:id="@+id/ivBackCompose"
-        android:layout_width="45dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="3dp"
-        android:layout_alignParentStart="true"
-        android:src="@drawable/ic_back" />
-
-    <EditText
-        android:id="@+id/etTitleMp"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="375dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="none"
-        android:hint="product name ..." />
+        android:id="@+id/rlItemsMp"
+        android:layout_centerHorizontal="true"
+        >
 
-    <EditText
-        android:id="@+id/etPriceMp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="price"/>
+        <ImageView
+            android:id="@+id/ivBackCompose"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_back_foreground" />
 
-    <Button
-        android:id="@+id/btnCaptureImageMp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Take Picture" />
+        <TextView
+            android:id="@+id/tvNewListing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/ivBackCompose"
+            android:text="New Listing"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="18sp" />
 
-    <ImageView
-        android:id="@+id/ivPostImageMp"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmitMp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            app:rippleColor="@color/login"
+            app:strokeColor="@color/black_95_transparent"
+            app:strokeWidth="1dp"
+            app:cornerRadius="8dp"
+            />
 
-    <Button
-        android:id="@+id/btnSubmitMp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Submit" />
+        <Button
+            android:id="@+id/btnTopSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/loboSilver"
+            android:clickable="false"
+            android:elevation="20dp"
+            android:text="" />
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/etTitleMp"
+            android:layout_width="375dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/btnTopSeparator"
+            android:background="@drawable/custom_border_mp_edittext"
+            android:ems="10"
+            android:hint="Title"
+            android:inputType="none"
+            android:paddingStart="10dp" />
+
+        <EditText
+            android:id="@+id/etPriceMp"
+            android:layout_width="375dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:paddingStart="10dp"
+            android:background="@drawable/custom_border_mp_edittext"
+            android:layout_below="@id/etTitleMp"
+            android:hint="price" />
+
+        <EditText
+            android:id="@+id/etDescriptionMp"
+            android:layout_width="375dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:paddingStart="10dp"
+            android:background="@drawable/custom_border_mp_edittext"
+            android:layout_below="@id/etPriceMp"
+            android:hint="Description" />
+
+        <ImageView
+            android:id="@+id/ivPicture"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/etDescriptionMp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@mipmap/ic_picture_foreground" />
+
+        <TextView
+            android:id="@+id/tvUploadImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="78dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/ivPicture"
+            android:text="Upload Image"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/ivCameraMp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/etDescriptionMp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@mipmap/ic_camera_foreground" />
+
+        <TextView
+            android:id="@+id/tvCaptureImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="75dp"
+            android:layout_below="@+id/ivCameraMp"
+            android:text="Capture Image"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="375dp"
+        android:layout_height="250dp"
+        android:layout_below="@id/rlItemsMp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_border_mp_edittext"
+        android:layout_marginTop="15dp"
+        >
+
+        <ImageView
+            android:id="@+id/ivPostImageMp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="24dp"
+            android:layout_centerHorizontal="true"
+            tools:srcCompat="@tools:sample/avatars" />
+    </RelativeLayout>
+
+</RelativeLayout>
+
+

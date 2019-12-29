@@ -43,8 +43,8 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final PostMarketplace postMarketplace = postsMarketplace.get(position);
-        holder.tvTitle.setText(postMarketplace.getTitle());
-        holder.etPriceMp.setText(postMarketplace.getPrice());
+//        holder.tvTitle.setText(postMarketplace.getTitle());
+//        holder.etPriceMp.setText(postMarketplace.getPrice());
         holder.bind(postMarketplace);
         final ParseFile image = postMarketplace.getImage();
 
@@ -57,6 +57,7 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
                 i.putExtra("title", postMarketplace.getTitle());
                 i.putExtra("price", postMarketplace.getPrice());
                 i.putExtra("username", postMarketplace.getUser().getUsername());
+                i.putExtra("description", postMarketplace.getDescription());
 
 //                i.putExtra("image", image);
                 newImage.put("image", image);
