@@ -142,10 +142,10 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ivLobochat"
-            android:layout_width="53dp"
-            android:layout_height="53dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="37dp"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/btnMyLobos"
             android:src="@mipmap/ic_lobochat_foreground" />
@@ -165,13 +165,37 @@
             android:textSize="27sp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/ivBook"
+            android:id="@+id/ivLobotask"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
             android:layout_marginStart="40dp"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/btnLobochat"
+            android:src="@mipmap/ic_lobotask_foreground" />
+
+        <Button
+            android:id="@+id/btnLoboTask"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:paddingStart="105dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btnLobochat"
+            android:gravity="start|center_vertical"
+            android:text="Lobotask"
+            android:textAllCaps="false"
+            android:textSize="27sp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivBook"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/btnLoboTask"
             android:src="@mipmap/ic_book_foreground" />
 
         <Button
@@ -182,11 +206,10 @@
             android:paddingStart="105dp"
             android:layout_alignParentStart="true"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/btnLobochat"
+            android:layout_below="@+id/btnLoboTask"
             android:gravity="start|center_vertical"
             android:text="myBooks"
             android:textAllCaps="false"
             android:textSize="27sp" />
-
     </RelativeLayout>
 </RelativeLayout>

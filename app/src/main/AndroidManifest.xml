@@ -17,9 +17,10 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
-        <activity android:name=".MenuActivity.MenuActivityHomescreen"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-
+        <activity android:name=".Lobotask.Lobotask"></activity>
+        <activity
+            android:name=".MenuActivity.MenuActivityHomescreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".PublicProfileActivity" />
         <activity android:name=".MenuActivity.MenuActivitySettingPrivacy" />
         <activity android:name=".myLobos.DetailActivity" /> <!-- make sure within the application tag, otherwise app will crash with XmlResourceParser errors -->
