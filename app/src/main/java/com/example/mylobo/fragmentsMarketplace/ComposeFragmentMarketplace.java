@@ -20,7 +20,7 @@ import androidx.core.content.FileProvider;
 
 import com.example.mylobo.Marketplace.Marketplace;
 import com.example.mylobo.Marketplace.PostMarketplace;
-import com.example.mylobo.MenuActivity.MenuActivityMarketplace;
+import com.example.mylobo.Marketplace.YourListingsActivity;
 import com.example.mylobo.R;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -86,7 +86,7 @@ public class ComposeFragmentMarketplace extends AppCompatActivity {
         ivBackCompose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ComposeFragmentMarketplace.this, MenuActivityMarketplace.class);
+                Intent i = new Intent(ComposeFragmentMarketplace.this, YourListingsActivity.class);
                 startActivity(i);
 //                finish();
             }

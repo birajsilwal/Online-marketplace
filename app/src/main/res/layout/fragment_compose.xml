@@ -11,16 +11,15 @@
         android:layout_width="375dp"
         android:layout_height="wrap_content"
         android:id="@+id/rlComposeSecondary"
-        android:layout_centerHorizontal="true"
-
-        >
+        android:layout_centerHorizontal="true">
 
         <TextView
             android:id="@+id/tvCreatePost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="15dp"
             android:text="Create Post"
+            android:fontFamily="@font/futura"
             android:textColor="@color/black_95_transparent"
             android:textSize="18sp" />
 
@@ -30,8 +29,10 @@
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
             android:text="Post"
-            android:textSize="15sp"
+            android:fontFamily="@font/futura"
+            android:textSize="17sp"
             app:rippleColor="@color/login"
             app:strokeColor="@color/black_95_transparent"
             android:textAllCaps="false"
@@ -41,7 +42,7 @@
             android:id="@+id/btnTopSeparator"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:background="@color/loboSilver"
             android:clickable="false"
             android:elevation="20dp"
@@ -66,6 +67,7 @@
                 android:layout_marginTop="20dp"
                 android:ems="10"
                 android:hint="What's going on?"
+                android:fontFamily="@font/futura"
                 android:inputType="none" />
 
             <ImageView

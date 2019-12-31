@@ -7,7 +7,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mylobo.Lobotask.Lobotask;
+import com.example.mylobo.Lobotask.LobotaskMain;
 import com.example.mylobo.R;
 
 public class MenuActivityLobotask extends AppCompatActivity {
@@ -24,7 +24,7 @@ public class MenuActivityLobotask extends AppCompatActivity {
         ivBackMenuLobotask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MenuActivityLobotask.this, Lobotask.class);
+                Intent intent = new Intent(MenuActivityLobotask.this, LobotaskMain.class);
                 startActivity(intent);
             }
         });

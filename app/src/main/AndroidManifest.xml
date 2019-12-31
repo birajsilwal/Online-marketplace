@@ -17,9 +17,11 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
-        <activity android:name=".Flashcard.FlashcardMain"/>
-        <activity android:name=".Flashcard.AddCardActivity"/>
-
+        <activity android:name=".Lobotask.Todo"></activity>
+        <activity android:name=".BookmarksActivity" />
+        <activity android:name=".Marketplace.YourListingsActivity" />
+        <activity android:name=".Flashcard.FlashcardMain" />
+        <activity android:name=".Flashcard.AddCardActivity" />
         <activity
             android:name=".TestingPurpose"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -27,7 +29,7 @@
             android:name=".MenuActivity.MenuActivityLobotask"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Lobotask.Lobotask"
+            android:name=".Lobotask.LobotaskMain"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".MenuActivity.MenuActivityHomescreen"
@@ -73,6 +75,9 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".Marketplace.DetailPostMarketplace" />
         <activity android:name=".Lobochat.ChatActivity" />
+        <activity android:name=".Marketplace.PostsAdapterMarketplaceYourlistings" />
+        <activity android:name=".Bookmarks" />
+        <activity android:name=".Lobotask.TodoItemAdapter" />
     </application>
 
 </manifest>

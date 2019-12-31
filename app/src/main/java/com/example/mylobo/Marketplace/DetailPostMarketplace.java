@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,7 +19,7 @@ public class DetailPostMarketplace extends AppCompatActivity {
 
     ImageView ivImageDMp, ivBackDMp;
     TextView tvTitleMp, tvDescription;
-    EditText etPriceMp;
+    TextView etPriceMp;
     TextView tvSeller;
 
 

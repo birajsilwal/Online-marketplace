@@ -149,6 +149,7 @@
             android:layout_above="@+id/tvMadeinabq"
             android:layout_centerHorizontal="true"
             android:text="myLobo v1"
+            android:fontFamily="@font/futura"
             android:textColor="@color/black_95_transparent" />
 
         <TextView
@@ -158,6 +159,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:text="Made in Albuquerque"
+            android:fontFamily="@font/futura"
             android:textColor="@color/black_95_transparent" />
 
 
