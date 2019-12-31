@@ -3,6 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="my_red_color">#ee0000</color>
     <color name="white">#ffffff</color>
     <color name="username">#ED8B00</color>
     <color name="login">#ED8B00</color>
@@ -12,6 +13,8 @@
     <color name="loboSilver">#a7a8aa</color>
     <color name="pureBlack">#000000</color>
     <color name="deepBlue">#00bfff</color>
+    <color name="my_gold_color">#FFD700</color>
+
 
 
     <color name="action_bar_semi_transparent_white">#bfffffff</color>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TestingPurpose">
+
+    <Button
+        android:id="@+id/btnNewTask"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_button_lobotask1"
+        android:fontFamily="@font/futura"
+        android:text="New Task"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/btnNewGroupProject"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/btnNewTask"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:text="New Group Project"
+        android:textAllCaps="false"
+        android:textSize="30sp"
+        android:fontFamily="@font/futura"
+        android:textColor="@color/white"
+        android:background="@drawable/custom_button_lobotask2"/>
+
+    <Button
+        android:id="@+id/btnAddToShoppingList"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/btnNewGroupProject"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:text="Add To Shopping List"
+        android:textAllCaps="false"
+        android:textSize="30sp"
+        android:fontFamily="@font/futura"
+        android:textColor="@color/black_95_transparent"
+        android:background="@drawable/custom_button_lobotask3"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/flashcard_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Flashcard.FlashcardMain">
+
+    <RelativeLayout
+        android:id="@+id/rlwithbackandflashcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivBackflashcard"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_back_foreground" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/authenia"
+            android:text=" Flashcard "
+            android:textColor="@color/pureBlack"
+            android:textSize="36sp" />
+
+        <View
+            android:id="@+id/viewLinePost"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="50dp"
+            android:background="@color/black_20_transparent"
+            android:elevation="1dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlwithqsnansinflashcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="80dp">
+
+        <TextView
+            android:id="@+id/flashcard_question"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/custom_flashcard_question"
+            android:gravity="center"
+            android:text="Who is the founder of Computer Science? "
+            android:textSize="38sp"
+            android:elevation="5dp" />
+
+        <TextView
+            android:id="@+id/flashcard_answer"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/flashcard_question"
+            android:gravity="center"
+            android:text="Alan Turing"
+            android:textSize="38sp"
+            android:visibility="invisible"
+            android:elevation="5dp"
+            android:background="@drawable/custom_flashcard_answer"/>
+
+        <TextView
+            android:id="@+id/emptystate"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="No flashcards yet"
+            android:textSize="40sp"
+            android:visibility="invisible"
+            android:textAlignment="center"
+            android:elevation="15dp"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rlwithnextinflashcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlwithqsnansinflashcard"
+        android:layout_above="@id/rlwiththreeiconsinflashcard">
+
+        <ImageView
+            android:id="@+id/next_card"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/ic_next_foreground" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/rlwiththreeiconsinflashcard"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/my_red_color"
+        android:text="5"
+        android:textSize="25sp" />
+
+    <RelativeLayout
+        android:id="@+id/rlwiththreeiconsinflashcard"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp">
+
+        <ImageView
+            android:id="@+id/edit_card"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_edit_flashcard_foreground" />
+
+        <ImageView
+            android:id="@+id/delete_card"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_trash_new_foreground" />
+
+        <ImageView
+            android:id="@+id/add_card"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_add_flashcard_foreground" />
+    </RelativeLayout>
+</RelativeLayout>

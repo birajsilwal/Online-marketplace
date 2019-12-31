@@ -5,10 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:id="@+id/rlwithbackandlobochat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivBackLobochat"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_back_foreground"/>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/authenia"
+            android:text=" Lobochat "
+            android:textColor="@color/pureBlack"
+            android:textSize="36sp" />
+
+        <ImageView
+            android:id="@+id/ivMenuLobochat"
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="9dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/ic_menu_foreground"/>
+
+        <View
+            android:id="@+id/viewLineMarketplace"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black_95_transparent"
+            android:layout_marginTop="45dp"/>
+    </RelativeLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvChat"
         android:transcriptMode="alwaysScroll"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/rlwithbackandlobochat"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_above="@+id/rlSend"
@@ -16,7 +55,6 @@
         android:layout_height="match_parent" />
 
     <!-- Chat messages view will go here -->
-
     <RelativeLayout
         android:id="@+id/rlSend"
         android:layout_alignParentBottom="true"

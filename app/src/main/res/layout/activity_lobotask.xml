@@ -1,9 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Lobotask.Lobotask">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/rlwithbackandlobotask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivBackLobotask"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_back_foreground" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/authenia"
+            android:text="Lobotask"
+            android:textColor="@color/pureBlack"
+            android:textSize="36sp" />
+
+        <View
+            android:id="@+id/viewLinePost"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="50dp"
+            android:background="@color/black_20_transparent"
+            android:elevation="1dp"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rlwithbuttonslobotaks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp">
+        <Button
+            android:id="@+id/btnNewTask"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/custom_button_lobotask1"
+            android:fontFamily="@font/futura"
+            android:text="New Task"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/btnNewGroupProject"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/btnNewTask"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:text="New Project"
+            android:textAllCaps="false"
+            android:textSize="30sp"
+            android:fontFamily="@font/futura"
+            android:textColor="@color/white"
+            android:background="@drawable/custom_button_lobotask2"/>
+
+        <Button
+            android:id="@+id/btnAddToShoppingList"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/btnNewGroupProject"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:text="Add To Shopping List"
+            android:textAllCaps="false"
+            android:textSize="30sp"
+            android:fontFamily="@font/futura"
+            android:textColor="@color/white"
+            android:background="@drawable/custom_button_lobotask3"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

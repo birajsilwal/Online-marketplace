@@ -1,4 +1,4 @@
-package com.example.mylobo.fragments;
+package com.example.mylobo.fragmentsMyLobos;
 
 import android.os.Bundle;
 import android.util.Log;

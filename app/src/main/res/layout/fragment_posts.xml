@@ -7,40 +7,53 @@
     android:layout_height="match_parent"
     android:id="@+id/rlCompostFragment">
 
-    <ImageView
-        android:id="@+id/ivBackPost"
-        android:layout_width="45dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_alignParentStart="true"
-        android:src="@mipmap/ic_back_foreground" />
+    <RelativeLayout
+        android:id="@+id/rlwithbackandmylobos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
-        android:fontFamily="@font/authenia"
-        android:text="myLobos"
-        android:textColor="@color/pureBlack"
-        android:textSize="33sp" />
+        <ImageView
+            android:id="@+id/ivBackPost"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_back_foreground" />
 
-    <ImageView
-        android:id="@+id/ivMenuPost"
-        android:layout_width="35dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="4dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:src="@mipmap/ic_menu_foreground"/>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/authenia"
+            android:text="myLobos"
+            android:textColor="@color/pureBlack"
+            android:textSize="36sp" />
+
+        <ImageView
+            android:id="@+id/ivMenuPost"
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="9dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_menu_foreground"/>
+
+        <View
+            android:id="@+id/viewLinePost"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black_20_transparent"
+            android:layout_marginTop="50dp"
+            android:elevation="5dp"/>
+    </RelativeLayout>
+
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/swipeContainer"
-        android:layout_below="@+id/viewLinePost"
+        android:layout_below="@+id/rlwithbackandmylobos"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -55,13 +68,6 @@
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
-    <View
-        android:id="@+id/viewLinePost"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/black_20_transparent"
-        android:layout_marginTop="45dp"
-        android:elevation="5dp"
-        />
+
 
 </RelativeLayout>

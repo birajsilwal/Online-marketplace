@@ -11,7 +11,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mylobo.Flashcard.FlashcardMain;
 import com.example.mylobo.Lobochat.ChatActivity;
+import com.example.mylobo.Lobotask.Lobotask;
 import com.example.mylobo.Marketplace.Marketplace;
 import com.example.mylobo.MenuActivity.MenuActivityHomescreen;
 import com.example.mylobo.myBooks.myBooks;
@@ -25,7 +27,7 @@ import java.util.Calendar;
 
 public class HomeScreen extends AppCompatActivity {
 
-    Button btnMarketplace, btnMyLobos, btnMybooks, btnLobochat;
+    Button btnMarketplace, btnMyLobos, btnMybooks, btnLobochat, btnLobotask, btnFlashcard;
     ImageView ivMarketplace,ivMenuHomescreen;
 
     // For weather
@@ -47,6 +49,8 @@ public class HomeScreen extends AppCompatActivity {
         ivMarketplace = findViewById(R.id.ivMarketplace);
         btnLobochat = findViewById(R.id.btnLobochat);
         ivMenuHomescreen = findViewById(R.id.ivMenuHomescreen);
+        btnLobotask = findViewById(R.id.btnLobotask);
+        btnFlashcard = findViewById(R.id.btnFlashcard);
 
         // for weather
         tvWeatherStatus = findViewById(R.id.tvWeatherStatus);
@@ -99,19 +103,39 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
+        // takes to Lobochat
+        btnLobochat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, ChatActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        // takes to falshcard
+        btnFlashcard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, FlashcardMain.class);
+                startActivity(intent);
+            }
+        });
+
+        // takes to Lobotask
+        btnLobotask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, Lobotask.class);
+                startActivity(intent);
+            }
+        });
+
         // takes to myBooks
         btnMybooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeScreen.this, myBooks.class);
-                startActivity(intent);
-            }
-        });
-
-        btnLobochat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeScreen.this, ChatActivity.class);
                 startActivity(intent);
             }
         });

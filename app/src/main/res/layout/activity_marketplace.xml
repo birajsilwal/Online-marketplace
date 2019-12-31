@@ -8,47 +8,49 @@
     tools:context=".Marketplace.Marketplace"
     android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/ivBackMp"
-        android:layout_width="45dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:src="@mipmap/ic_back_foreground"/>
+    <RelativeLayout
+        android:id="@+id/rlwithbackandmarketplace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivBackMp"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_back_foreground"/>
 
-    <ImageView
-        android:id="@+id/ivMenuMp"
-        android:layout_width="35dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="4dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:src="@mipmap/ic_menu_foreground"/>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/authenia"
+            android:text="Marketplace"
+            android:textColor="@color/pureBlack"
+            android:textSize="36sp" />
+
+        <ImageView
+            android:id="@+id/ivMenuMp"
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="9dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/ic_menu_foreground"/>
+
+        <View
+            android:id="@+id/viewLineMarketplace"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black_95_transparent"
+            android:layout_marginTop="45dp"/>
+    </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPostsMp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/viewLineMarketplace"
+        android:layout_below="@+id/rlwithbackandmarketplace"
         android:layout_marginTop="0dp"/>
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="2dp"
-        android:fontFamily="@font/authenia"
-        android:text="Marketplace"
-        android:textColor="@color/pureBlack"
-        android:textSize="33sp" />
-
-    <View
-        android:id="@+id/viewLineMarketplace"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/black_95_transparent"
-        android:layout_marginTop="45dp"
-        />
-
 </RelativeLayout>

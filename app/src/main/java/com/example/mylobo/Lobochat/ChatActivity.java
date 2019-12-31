@@ -1,29 +1,30 @@
 package com.example.mylobo.Lobochat;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.mylobo.HomeScreen;
 import com.example.mylobo.R;
 import com.parse.FindCallback;
 import com.parse.LogInCallback;
 import com.parse.ParseAnonymousUtils;
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
-import android.os.Handler;
 
 public class ChatActivity extends AppCompatActivity {
 
@@ -35,6 +36,7 @@ public class ChatActivity extends AppCompatActivity {
     EditText etMessage;
     Button btSend;
     ChatAdapter mAdapter;
+    ImageView ivBackLobochat;
     RecyclerView rvChat;
     ArrayList<Message> mMessages;
     // Keep track of initial load to scroll to the bottom of the ListView
@@ -55,6 +57,16 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+
+        ivBackLobochat = findViewById(R.id.ivBackLobochat);
+        ivBackLobochat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChatActivity.this, HomeScreen.class);
+                startActivity(intent);
+            }
+        });
+
         // User login
         if (ParseUser.getCurrentUser() != null) { // start with existing user
             startWithCurrentUser();

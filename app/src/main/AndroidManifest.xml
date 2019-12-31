@@ -17,7 +17,18 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
-        <activity android:name=".Lobotask.Lobotask"></activity>
+        <activity android:name=".Flashcard.FlashcardMain"/>
+        <activity android:name=".Flashcard.AddCardActivity"/>
+
+        <activity
+            android:name=".TestingPurpose"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".MenuActivity.MenuActivityLobotask"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Lobotask.Lobotask"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".MenuActivity.MenuActivityHomescreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
