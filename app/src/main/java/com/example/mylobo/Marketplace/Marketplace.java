@@ -7,8 +7,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.mylobo.HomeScreen;
 import com.example.mylobo.MenuActivity.MenuActivityMarketplace;
@@ -22,6 +23,7 @@ import java.util.List;
 
 public class Marketplace extends AppCompatActivity {
 
+    private SwipeRefreshLayout swipeContainer;
     private RecyclerView rvPostsMarkerplace;
     private PostsAdapterMarketplace adapterMarketplace;
     private List<PostMarketplace> mPostsMarketplace;
@@ -63,13 +65,35 @@ public class Marketplace extends AppCompatActivity {
         adapterMarketplace = new PostsAdapterMarketplace(this, mPostsMarketplace);
         // 4. set the adapter on the recycler view. This adapter tells the recycler view how to show the content onto the screen
         rvPostsMarkerplace.setAdapter(adapterMarketplace);
-        // 1. created this after adding recycler view in the layout
+
+
+        // set the layout manager on the recycler view
+        StaggeredGridLayoutManager gridLayoutManager =
+                new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+
         // 5. set the layout manager on the recycler view
+        rvPostsMarkerplace.setLayoutManager(gridLayoutManager);
+
+        // 1. created this after adding recycler view in the layout
         // TODO:look at the linerlayout manager here
-        rvPostsMarkerplace.setLayoutManager(new LinearLayoutManager(this));
+//        rvPostsMarkerplace.setLayoutManager(new LinearLayoutManager(this));
+
+
+        swipeContainer = findViewById(R.id.swipeContainer);
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                queryPostMarketplace();
+
+            }
+        });
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+
         queryPostMarketplace();
     }
-
 
     private void queryPostMarketplace() {
         // querying objects
@@ -88,6 +112,13 @@ public class Marketplace extends AppCompatActivity {
                 }
                 mPostsMarketplace.addAll(postsMarketplace);
                 adapterMarketplace.notifyDataSetChanged();
+
+                // Remember to CLEAR OUT old items before appending in the new ones
+                adapterMarketplace.clear();
+                // ...the data has come back, add new items to your adapter...
+                adapterMarketplace.addAll(postsMarketplace);
+                // Now we call setRefreshing(false) to signal refresh has finished
+                swipeContainer.setRefreshing(false);
 
                 for (int i = 0; i < postsMarketplace.size(); i++ ){
                     PostMarketplace postMarketplace = postsMarketplace.get(i);

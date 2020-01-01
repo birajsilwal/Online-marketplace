@@ -1,6 +1,7 @@
 package com.example.mylobo.myLobos;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,10 +42,19 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         final Post post = posts.get(position);
-        myposition = position;
-        Log.i("position" , String.valueOf(position));
         holder.bind(post);
         final ParseFile image = post.getImage();
+
+        holder.rlPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, DetailActivity.class);
+                i.putExtra("image", image);
+                i.putExtra("description", post.getDescription());
+                context.startActivity(i);
+            }
+        });
+
 
 //        holder.ivMore.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -54,16 +64,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
 //            }
 //        });
 
-        // Post Layout as rlPost
-//        holder.rlPost.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent i = new Intent(context, DetailActivity.class);
-//                i.putExtra("image", image);
-//                i.putExtra("description", post.getDescription());
-//                context.startActivity(i);
-//            }
-//        });
+
 
         // Username of each posts
         String isMe = post.getUser().getUsername();
@@ -109,25 +110,20 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
                 Glide.with(context).load(image.getUrl()).into(ivImage);
             }
             tvDescription.setText(post.getDescription());
-
-
         }
     }
 
     /* Within the RecyclerView.Adapter class */
-
     // Clean all elements of the recycler
     public void clear() {
         posts.clear();
         notifyDataSetChanged();
     }
-
     // Add a list of items -- change to type used
     public void addAll(List<Post> list) {
         posts.addAll(list);
         notifyDataSetChanged();
     }
-
 }
 
 

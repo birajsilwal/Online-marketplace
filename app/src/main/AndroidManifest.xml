@@ -17,7 +17,7 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
-        <activity android:name=".Lobotask.Todo"></activity>
+        <activity android:name=".Lobotask.Todo.Todo"></activity>
         <activity android:name=".BookmarksActivity" />
         <activity android:name=".Marketplace.YourListingsActivity" />
         <activity android:name=".Flashcard.FlashcardMain" />
@@ -77,7 +77,8 @@
         <activity android:name=".Lobochat.ChatActivity" />
         <activity android:name=".Marketplace.PostsAdapterMarketplaceYourlistings" />
         <activity android:name=".Bookmarks" />
-        <activity android:name=".Lobotask.TodoItemAdapter" />
+        <activity android:name=".Lobotask.Todo.TodoItemAdapter" />
+        <activity android:name=".Lobotask.Todo.TodoItem" />
     </application>
 
 </manifest>

@@ -13,6 +13,7 @@
         android:layout_marginTop="8dp"
         android:src="@mipmap/ic_back_foreground"/>
 
+
     <ImageView
         android:id="@+id/ivImageDMp"
         android:layout_width="200dp"
@@ -290,6 +291,17 @@
 
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/tvObjectId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="177dp"
+        android:layout_marginBottom="83dp"
+        android:textSize="20sp"
+        android:text="TextView" />
 
 
 </RelativeLayout>

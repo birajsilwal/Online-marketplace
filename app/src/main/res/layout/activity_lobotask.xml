@@ -40,53 +40,49 @@
             android:elevation="1dp"/>
     </RelativeLayout>
 
-
     <RelativeLayout
         android:id="@+id/rlwithbuttonslobotaks"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp">
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="100dp">
         <Button
             android:id="@+id/btnNewTask"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:layout_centerHorizontal="true"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
             android:background="@drawable/custom_button_lobotask1"
             android:fontFamily="@font/futura"
-            android:text="New Task"
+            android:text="To Do"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="35sp" />
 
         <Button
             android:id="@+id/btnNewGroupProject"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:layout_below="@id/btnNewTask"
-            android:layout_marginTop="30dp"
-            android:layout_centerHorizontal="true"
-            android:text="New Project"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:text="Project"
             android:textAllCaps="false"
-            android:textSize="30sp"
+            android:textSize="35sp"
             android:fontFamily="@font/futura"
             android:textColor="@color/white"
+            android:layout_alignParentEnd="true"
             android:background="@drawable/custom_button_lobotask2"/>
 
         <Button
-            android:id="@+id/btnAddToShoppingList"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
+            android:id="@+id/btnAddCustomList"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
             android:layout_below="@id/btnNewGroupProject"
             android:layout_marginTop="30dp"
-            android:layout_centerHorizontal="true"
-            android:text="Add To Shopping List"
+            android:text="Add Custom List"
             android:textAllCaps="false"
             android:textSize="30sp"
             android:fontFamily="@font/futura"
             android:textColor="@color/white"
-            android:background="@drawable/custom_button_lobotask3"
-            />
+            android:background="@drawable/custom_button_lobotask3"/>
 
     </RelativeLayout>
 

@@ -1,16 +1,19 @@
-package com.example.mylobo.Lobotask;
+package com.example.mylobo.Lobotask.Todo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mylobo.Lobotask.LobotaskMain;
 import com.example.mylobo.R;
 
 import org.apache.commons.io.FileUtils;
@@ -25,6 +28,7 @@ public class Todo extends AppCompatActivity {
 
     List<String> items;
 
+    ImageView ivBackTodo;
     Button btnAdd;
     EditText etItem;
     RecyclerView rvItems;
@@ -33,14 +37,13 @@ public class Todo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_todo);
 
         btnAdd = findViewById(R.id.btnAdd);
         etItem = findViewById(R.id.etItem);
         rvItems = findViewById(R.id.rvItems);
-
+        ivBackTodo = findViewById(R.id.ivBackTodo);
         loadItems();
-
 
         TodoItemAdapter.OnLongClickListner onLongClickListener = new TodoItemAdapter.OnLongClickListner(){
 
@@ -52,13 +55,20 @@ public class Todo extends AppCompatActivity {
                 todoitemsAdapter.notifyItemRemoved(position);
                 Toast.makeText(getApplicationContext(), "Item was removed", Toast.LENGTH_SHORT).show();
                 saveItems();
-
             }
         };
 
         todoitemsAdapter = new TodoItemAdapter(items, onLongClickListener);
         rvItems.setAdapter(todoitemsAdapter);
         rvItems.setLayoutManager(new LinearLayoutManager(this));
+
+        ivBackTodo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Todo.this, LobotaskMain.class);
+                startActivity(intent);
+            }
+        });
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,8 +80,7 @@ public class Todo extends AppCompatActivity {
                 todoitemsAdapter.notifyItemInserted(items.size() -1 );
                 etItem.setText("");
                 Toast.makeText(getApplicationContext(), "Item was added", Toast.LENGTH_SHORT).show();
-                saveItems();
-
+//                saveItems();
             }
         });
     }

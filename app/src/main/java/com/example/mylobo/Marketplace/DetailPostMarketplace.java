@@ -11,28 +11,38 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.example.mylobo.PublicProfileActivity;
 import com.example.mylobo.R;
+import com.parse.GetCallback;
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseQuery;
 
 public class DetailPostMarketplace extends AppCompatActivity {
 
     private static String TAG = "DetailPostMarketplace";
 
-    ImageView ivImageDMp, ivBackDMp;
-    TextView tvTitleMp, tvDescription;
+//    ParseImageView ivImageDMp ;
+    ImageView ivBackDMp;
+    ImageView ivImageDMp;
+    TextView tvTitleMp, tvDescription, tvSeePublicProfile;
     TextView etPriceMp;
-    TextView tvSeller;
-
+    TextView tvSeller,tvObjectId;
 
     String title, username, description;
     String price;
-    int image;
+    ParseFile image;
+    String objectId;
+    int img;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_marketplace);
 
-//        PostMarketplace postMarketplace = new PostMarketplace();
+        PostMarketplace postMarketplace = new PostMarketplace();
+
 
         ivImageDMp = findViewById(R.id.ivImageDMp);
         tvTitleMp = findViewById(R.id.tvTitleMp);
@@ -40,6 +50,49 @@ public class DetailPostMarketplace extends AppCompatActivity {
         tvSeller = findViewById(R.id.tvSeller);
         tvDescription = findViewById(R.id.tvDescription);
         ivBackDMp = findViewById(R.id.ivBackDMp);
+        tvSeePublicProfile = findViewById(R.id.tvSeePublicProfile);
+        tvObjectId = findViewById(R.id.tvObjectId);
+
+        title = getIntent().getStringExtra("title");
+        price = getIntent().getStringExtra("price");
+        username = getIntent().getStringExtra("username");
+        description = getIntent().getStringExtra("description");
+        objectId = getIntent().getStringExtra("objectId");
+
+        tvSeller.setText(username);
+        tvTitleMp.setText(title);
+        etPriceMp.setText(price);
+        tvDescription.setText(description);
+        tvObjectId.setText(objectId);
+
+        String todoId = getIntent().getStringExtra("todo_id");
+        ParseQuery<PostMarketplace> query = ParseQuery.getQuery(PostMarketplace.class);
+        query.setCachePolicy(ParseQuery.CachePolicy.CACHE_ELSE_NETWORK); // or CACHE_ONLY
+        query.getInBackground(objectId, new GetCallback<PostMarketplace>() {
+                    public void done(PostMarketplace item, ParseException e) {
+                        if (e == null) {
+                            Log.i(TAG, "Item Found");
+                            image = item.getImage();
+                            Glide.with(DetailPostMarketplace.this).load(image.getUrl()).into(ivImageDMp);
+//                            ivImageDMp.setImageResource(Integer.parseInt(image.getUrl()));
+
+                        }
+                        else{
+                            Log.i(TAG, "Item not Found");
+                        }
+                    }
+                });
+
+
+
+
+
+
+
+
+
+
+
 
         ivBackDMp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,21 +102,13 @@ public class DetailPostMarketplace extends AppCompatActivity {
             }
         });
 
-        title = getIntent().getStringExtra("title");
-        price = getIntent().getStringExtra("price");
-        username = getIntent().getStringExtra("username");
-        description = getIntent().getStringExtra("description");
-        Log.e(TAG, "Error in Detail Marketplace");
-
-        image = getIntent().getIntExtra("image", 0);
-//        image = getIntent().getData(Uri);
-
-        tvSeller.setText(username);
-        tvTitleMp.setText(title);
-        etPriceMp.setText(price);
-        tvDescription.setText(description);
-
-//        ivImageDMp.setImageResource(image);
-        Glide.with(this).load(image).into(ivImageDMp);
+        tvSeePublicProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailPostMarketplace.this, PublicProfileActivity.class);
+                intent.putExtra("profileName", username);
+                startActivity(intent);
+            }
+        });
     }
 }

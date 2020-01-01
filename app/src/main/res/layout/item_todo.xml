@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/rlItemTodo"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
+    android:background="@drawable/custom_border_todo_item">
+
+    <RelativeLayout
+        android:id="@+id/rlwithItemandCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+
+        >
+        <TextView
+            android:id="@+id/tvItemTodo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Milk"
+            android:textSize="23sp"
+            android:fontFamily="@font/futura"
+            android:layout_marginStart="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/ivWhiteCircleTodo"
+            android:textColor="@color/black_95_transparent"
+            />
+
+        <ImageView
+            android:id="@+id/ivWhiteCircleTodo"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:layout_centerVertical="true"
+            app:srcCompat="@mipmap/ic_white_circle_foreground" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
