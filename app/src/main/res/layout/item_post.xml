@@ -51,14 +51,14 @@
 
     </RelativeLayout>
 
-    <ImageView
+    <com.zolad.zoominimageview.ZoomInImageView
         android:id="@+id/ivImage"
         android:layout_width="match_parent"
         android:layout_height="450dp"
         android:layout_below="@id/rlitemPost"
         android:layout_marginTop="10dp"
         android:scaleType="centerCrop"
-        tools:srcCompat="@tools:sample/backgrounds/scenic[0]" />
+        tools:srcCompat="@drawable/biraj" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -109,8 +109,8 @@
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:background="@color/loboGrey"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_below="@+id/tvDescriptionTitle"
 
         />

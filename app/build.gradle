@@ -72,4 +72,7 @@ dependencies {
     //noinspection GradleDependency
     implementation 'commons-io:commons-io:2.6'
 
+    //for zooming image
+    implementation 'com.zolad:zoominimageview:1.0.0'
+
 }

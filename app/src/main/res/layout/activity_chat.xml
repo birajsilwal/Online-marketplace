@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -72,21 +73,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="top"
-            android:hint="@string/message_hint"
+            android:paddingStart="10dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="3dp"
+            android:hint="Type your message here..."
             android:inputType="textShortMessage"
             android:imeOptions="actionSend"
             />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btSend"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingRight="10dp"
-            android:layout_alignParentRight="true"
-            android:text="@string/send"
-            android:textSize="18sp" >
-        </Button>
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="7dp"
+            android:text="Send"
+            android:fontFamily="@font/futura"
+            android:textSize="17sp"
+            app:rippleColor="@color/login"
+            app:strokeColor="@color/black_95_transparent"
+            android:textAllCaps="false"
+            app:strokeWidth="1dp" />
 
     </RelativeLayout>
 

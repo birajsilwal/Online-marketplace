@@ -36,7 +36,7 @@ public class DetailPostMarketplace extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.detail_marketplace);
+        setContentView(R.layout.activity_detail_marketplace);
 //        PostMarketplace postMarketplace = new PostMarketplace();
         ivImageDMp = findViewById(R.id.ivImageDMp);
         tvTitleMp = findViewById(R.id.tvTitleMp);
