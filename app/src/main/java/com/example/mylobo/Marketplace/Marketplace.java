@@ -23,6 +23,10 @@ import java.util.List;
 
 public class Marketplace extends AppCompatActivity {
 
+    int spanCount = 1; // 1 columns
+    int spacing = 20; // 50px
+    boolean includeEdge = false;
+
     private SwipeRefreshLayout swipeContainer;
     private RecyclerView rvPostsMarkerplace;
     private PostsAdapterMarketplace adapterMarketplace;
@@ -68,11 +72,11 @@ public class Marketplace extends AppCompatActivity {
 
 
         // set the layout manager on the recycler view
-        StaggeredGridLayoutManager gridLayoutManager =
-                new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-
+        StaggeredGridLayoutManager gridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         // 5. set the layout manager on the recycler view
         rvPostsMarkerplace.setLayoutManager(gridLayoutManager);
+//        rvPostsMarkerplace.addItemDecoration(new GridSpacing(spanCount, spacing, includeEdge));
+
 
         // 1. created this after adding recycler view in the layout
         // TODO:look at the linerlayout manager here

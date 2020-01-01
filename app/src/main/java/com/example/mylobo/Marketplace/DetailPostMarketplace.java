@@ -22,28 +22,22 @@ public class DetailPostMarketplace extends AppCompatActivity {
 
     private static String TAG = "DetailPostMarketplace";
 
-//    ParseImageView ivImageDMp ;
     ImageView ivBackDMp;
     ImageView ivImageDMp;
     TextView tvTitleMp, tvDescription, tvSeePublicProfile;
     TextView etPriceMp;
-    TextView tvSeller,tvObjectId;
+    TextView tvSeller;
 
     String title, username, description;
     String price;
     ParseFile image;
     String objectId;
-    int img;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_marketplace);
-
-        PostMarketplace postMarketplace = new PostMarketplace();
-
-
+//        PostMarketplace postMarketplace = new PostMarketplace();
         ivImageDMp = findViewById(R.id.ivImageDMp);
         tvTitleMp = findViewById(R.id.tvTitleMp);
         etPriceMp = findViewById(R.id.etPriceMp);
@@ -51,7 +45,6 @@ public class DetailPostMarketplace extends AppCompatActivity {
         tvDescription = findViewById(R.id.tvDescription);
         ivBackDMp = findViewById(R.id.ivBackDMp);
         tvSeePublicProfile = findViewById(R.id.tvSeePublicProfile);
-        tvObjectId = findViewById(R.id.tvObjectId);
 
         title = getIntent().getStringExtra("title");
         price = getIntent().getStringExtra("price");
@@ -63,7 +56,6 @@ public class DetailPostMarketplace extends AppCompatActivity {
         tvTitleMp.setText(title);
         etPriceMp.setText(price);
         tvDescription.setText(description);
-        tvObjectId.setText(objectId);
 
         String todoId = getIntent().getStringExtra("todo_id");
         ParseQuery<PostMarketplace> query = ParseQuery.getQuery(PostMarketplace.class);
@@ -74,25 +66,12 @@ public class DetailPostMarketplace extends AppCompatActivity {
                             Log.i(TAG, "Item Found");
                             image = item.getImage();
                             Glide.with(DetailPostMarketplace.this).load(image.getUrl()).into(ivImageDMp);
-//                            ivImageDMp.setImageResource(Integer.parseInt(image.getUrl()));
-
                         }
                         else{
                             Log.i(TAG, "Item not Found");
                         }
                     }
                 });
-
-
-
-
-
-
-
-
-
-
-
 
         ivBackDMp.setOnClickListener(new View.OnClickListener() {
             @Override

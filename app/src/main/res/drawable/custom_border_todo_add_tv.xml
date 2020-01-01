@@ -10,7 +10,7 @@
         android:color="@color/black_95_transparent">
     </stroke>
 
-    <solid android:color="#f9dcd0"/>
+    <solid android:color="#d0e5f7"/>
 
     <corners
         android:radius="4dp">

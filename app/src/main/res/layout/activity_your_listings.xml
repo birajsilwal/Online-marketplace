@@ -29,7 +29,7 @@
             android:fontFamily="@font/futura"
             android:text="Your listings"
             android:textColor="@color/pureBlack"
-            android:textSize="18sp" />
+            android:textSize="19sp" />
 
         <View
             android:id="@+id/viewLineMarketplace"

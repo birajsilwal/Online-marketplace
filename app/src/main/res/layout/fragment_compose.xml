@@ -21,7 +21,7 @@
             android:text="Create Post"
             android:fontFamily="@font/futura"
             android:textColor="@color/black_95_transparent"
-            android:textSize="18sp" />
+            android:textSize="19sp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btSubmit"
@@ -51,7 +51,7 @@
         <RelativeLayout
             android:id="@+id/rlQWERTY"
             android:layout_width="380dp"
-            android:layout_height="120dp"
+            android:layout_height="130dp"
             android:layout_below="@+id/btnTopSeparator"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="31dp"
@@ -76,9 +76,21 @@
                 android:layout_height="35dp"
                 android:layout_below="@+id/etDescription"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="35dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="0dp"
                 app:srcCompat="@mipmap/ic_live_foreground" />
+
+            <TextView
+                android:id="@+id/tvLiveml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="-3dp"
+                android:layout_below="@+id/ivLive"
+                android:text="Upload Image"
+                android:fontFamily="@font/futura"
+                android:textColor="@color/black_95_transparent"
+                android:textSize="13sp" />
 
             <ImageView
                 android:id="@+id/ivCamera"
@@ -87,8 +99,21 @@
                 android:layout_below="@+id/etDescription"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="4dp"
-                android:layout_marginEnd="35dp"
+                android:layout_marginEnd="45dp"
                 app:srcCompat="@mipmap/ic_camera_foreground" />
+
+            <TextView
+                android:id="@+id/tvCaptureImageml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/ivCamera"
+                android:text="Capture Image"
+                android:fontFamily="@font/futura"
+                android:textColor="@color/black_95_transparent"
+                android:textSize="13sp" />
 
             <ImageView
                 android:id="@+id/ivPicture"
@@ -99,11 +124,21 @@
                 android:layout_marginTop="4dp"
                 app:srcCompat="@mipmap/ic_picture_foreground" />
 
+            <TextView
+                android:id="@+id/tvUploadImageml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:layout_below="@+id/ivPicture"
+                android:text="Upload Image"
+                android:fontFamily="@font/futura"
+                android:textColor="@color/black_95_transparent"
+                android:textSize="13sp" />
+
         </RelativeLayout>
 
     </RelativeLayout>
-
-
 
 
     <RelativeLayout
@@ -112,16 +147,34 @@
         android:layout_below="@id/rlComposeSecondary"
         android:layout_centerHorizontal="true"
         android:background="@drawable/custom_border_mp_edittext"
-        android:layout_marginTop="15dp"
-        >
+        android:layout_marginTop="15dp">
 
         <ImageView
-            android:id="@+id/ivPostImage"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="24dp"
-            android:layout_centerHorizontal="true"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:id="@+id/ivImag_will_appear_ml"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="100dp"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_image_will_appear_foreground"/>
+
+        <TextView
+            android:id="@+id/image_will_ml"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="image will appear here"
+            android:fontFamily="@font/futura"
+            android:layout_toRightOf="@+id/ivImag_will_appear_ml"
+            android:layout_centerVertical="true"/>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/ivPostImage"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="200dp"-->
+<!--            android:layout_marginTop="24dp"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            tools:srcCompat="@tools:sample/avatars" />-->
     </RelativeLayout>
 
 </RelativeLayout>

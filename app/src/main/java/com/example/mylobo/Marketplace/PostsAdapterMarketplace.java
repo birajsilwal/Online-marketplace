@@ -94,7 +94,7 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
         // responsible for taking a post and binding it to the view that we have here
         public void bind(PostMarketplace postMarketplace){
 //            tvTitle.setText(postMarketplace.getTitle());
-            etPriceMp.setText(postMarketplace.getPrice());
+//            etPriceMp.setText(postMarketplace.getPrice());
             ParseFile image = postMarketplace.getImage();
             if (image != null) {
                 Glide.with(contextMarketplace).load(image.getUrl()).into(ivImageMp);

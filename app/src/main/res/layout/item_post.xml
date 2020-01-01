@@ -108,7 +108,7 @@
         android:id="@+id/viewLineItemPost"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:background="@color/loboGray"
+        android:background="@color/loboGrey"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="2dp"
         android:layout_below="@+id/tvDescriptionTitle"

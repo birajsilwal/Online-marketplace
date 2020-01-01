@@ -11,6 +11,8 @@
 
     <solid android:color="@color/white_5_transparent"/>
 
+
+
     <corners
         android:radius="8dp">
     </corners>
