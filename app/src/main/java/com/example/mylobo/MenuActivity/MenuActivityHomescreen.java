@@ -28,14 +28,14 @@ public class MenuActivityHomescreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_homescreen);
 
-        ImageView ivBackMenuMp = findViewById(R.id.ivBackMenuMp);
+        ImageView ivBackMenuHomescreen = findViewById(R.id.ivBackMenuHomescreen);
         Button btnHome = findViewById(R.id.btnHome);
         Button btnPublicProfile = findViewById(R.id.btnPublicProfile);
         Button btnBookmark = findViewById(R.id.btnBookmark);
         Button btnSetting = findViewById(R.id.btnSetting);
         Button btnLogOut = findViewById(R.id.btnLogOut);
 
-        ivBackMenuMp.setOnClickListener(new View.OnClickListener() {
+        ivBackMenuHomescreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivityHomescreen.this, HomeScreen.class);

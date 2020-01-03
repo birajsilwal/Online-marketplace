@@ -9,12 +9,10 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mylobo.HomeScreen;
-import com.example.mylobo.LoginActivity;
 import com.example.mylobo.Marketplace.Marketplace;
 import com.example.mylobo.Marketplace.YourListingsActivity;
 import com.example.mylobo.PublicProfile.PublicProfileEditorActivity;
 import com.example.mylobo.R;
-import com.parse.ParseUser;
 
 
 public class MenuActivityMarketplace extends AppCompatActivity {
@@ -22,7 +20,7 @@ public class MenuActivityMarketplace extends AppCompatActivity {
     public static final String TAG = "MenuActivityMarketplace";
     Button btnYourlistings, btnHome;
     ImageView ivBackMenuMp;
-    Button btnLogOut, btnPublicProfile;
+    Button btnPublicProfile;
 
 
     @Override
@@ -34,7 +32,6 @@ public class MenuActivityMarketplace extends AppCompatActivity {
         btnYourlistings = findViewById(R.id.btnYourlistings);
         ivBackMenuMp = findViewById(R.id.ivBackMenuMp);
         btnHome = findViewById(R.id.btnHome);
-        btnLogOut = findViewById(R.id.btnLogOut);
         btnPublicProfile = findViewById(R.id.btnPublicProfile);
 
 
@@ -67,17 +64,6 @@ public class MenuActivityMarketplace extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MenuActivityMarketplace.this, PublicProfileEditorActivity.class);
-                startActivity(i);
-            }
-        });
-
-
-        btnLogOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ParseUser.logOut();
-                ParseUser currentUser = ParseUser.getCurrentUser();
-                Intent i = new Intent(MenuActivityMarketplace.this, LoginActivity.class);
                 startActivity(i);
             }
         });

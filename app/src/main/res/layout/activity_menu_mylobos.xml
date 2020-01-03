@@ -6,132 +6,111 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MenuActivity.MenuActivitymyLobos">
-
-    <ImageView
-        android:id="@+id/ivBackMenuMp"
-        android:layout_width="45dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_alignParentStart="true"
-        android:src="@mipmap/ic_back_foreground" />
-
-    <ImageView
-        android:id="@+id/ivHome"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="100dp"
-        android:src="@mipmap/ic_home_foreground" />
-
-    <Button
-        android:id="@+id/btnHome"
-        style="?android:attr/borderlessButtonStyle"
+    <RelativeLayout
+        android:id="@+id/rlwithbackandmenumylobos"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="90dp"
-        android:gravity="start|center_vertical"
-        android:paddingStart="120dp"
-        android:text="Home"
-        android:textAllCaps="false"
-        android:textSize="27sp" />
-
-
-    <ImageView
-        android:id="@+id/ivPublicProfileML"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnHome"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="17dp"
-        android:src="@mipmap/ic_profile_foreground" />
-
-    <Button
-        android:id="@+id/btnPublicProfile"
-        style="?android:attr/borderlessButtonStyle"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivBackMenumylobo"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_back_foreground" />
+        <TextView
+            android:id="@+id/tvMarketplacemenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/ivBackMenumylobo"
+            android:text="Menu myLobos"
+            android:fontFamily="@font/futura"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="19sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlwithyourHome"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_below="@+id/btnHome"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="0dp"
-        android:gravity="start|center_vertical"
-        android:paddingStart="120dp"
-        android:text="Public Profile"
-        android:textAllCaps="false"
-        android:textSize="27sp" />
-
-    <ImageView
-        android:id="@+id/ivBookmark"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnPublicProfile"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="17dp"
-        android:src="@mipmap/ic_bookmark_foreground" />
-
-    <Button
-        android:id="@+id/btnBookmark"
-        style="?android:attr/borderlessButtonStyle"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/rlwithbackandmenumylobos">
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="2dp"
+            android:src="@mipmap/ic_home_foreground" />
+        <Button
+            android:id="@+id/btnHome"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:gravity="start"
+            android:paddingStart="85dp"
+            android:text="Home"
+            android:textAllCaps="false"
+            android:fontFamily="@font/futura_medium"
+            android:textSize="27sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlwithPublicProfilemylobos"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnPublicProfile"
-        android:layout_marginTop="0dp"
-        android:gravity="start|center_vertical"
-        android:paddingStart="120dp"
-        android:text="Bookmarks"
-        android:textAllCaps="false"
-        android:textSize="27sp" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlwithyourHome">
+        <ImageView
+            android:id="@+id/ivPublicProfileML"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="8dp"
+            android:src="@mipmap/ic_profile_foreground" />
 
-    <ImageView
-        android:id="@+id/ivSetting"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnBookmark"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="17dp"
-        android:src="@mipmap/ic_setting_foreground" />
-
-    <Button
-        android:id="@+id/btnSetting"
-        style="?android:attr/borderlessButtonStyle"
+        <Button
+            android:id="@+id/btnPublicProfile"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:gravity="start"
+            android:paddingStart="85dp"
+            android:text="Public profile"
+            android:textAllCaps="false"
+            android:fontFamily="@font/futura_medium"
+            android:textSize="27sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlwithBookmarksinmenumylobos"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_below="@+id/btnBookmark"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="0dp"
-        android:gravity="start|center_vertical"
-        android:paddingStart="120dp"
-        android:text="Settings &amp; Privacy"
-        android:textAllCaps="false"
-        android:textSize="27sp" />
-
-    <ImageView
-        android:id="@+id/ivLogout"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnSetting"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="17dp"
-        android:src="@mipmap/ic_logout_foreground" />
-
-    <Button
-        android:id="@+id/btnLogOut"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_below="@+id/btnSetting"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="0dp"
-        android:gravity="start|center_vertical"
-        android:paddingStart="120dp"
-        android:text="Log Out"
-        android:textAllCaps="false"
-        android:textSize="27sp" />
-
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlwithPublicProfilemylobos">
+        <ImageView
+            android:id="@+id/ivBookmark"
+            android:layout_width="33dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="17dp"
+            android:src="@mipmap/ic_bookmark_foreground" />
+        <Button
+            android:id="@+id/btnBookmarkinmylobos"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="0dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="85dp"
+            android:text="Bookmarks"
+            android:textAllCaps="false"
+            android:fontFamily="@font/futura_medium"
+            android:textSize="27sp" />
+    </RelativeLayout>
 </RelativeLayout>

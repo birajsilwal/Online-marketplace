@@ -6,99 +6,122 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MenuActivity.MenuActivitySettingPrivacy">
+    <RelativeLayout
+        android:id="@+id/rlwithbackandmenumarketplace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivBackSettingandPrivacy"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_back_foreground" />
 
-    <ImageView
-        android:id="@+id/ivBackSettingandPrivacy"
-        android:layout_width="30dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="15dp"
-        android:layout_alignParentStart="true"
-        android:src="@mipmap/ic_back_foreground" />
+        <TextView
+            android:id="@+id/tvSettingsandPrivacy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/ivBackSettingandPrivacy"
+            android:text="Settings &amp; Privacy"
+            android:fontFamily="@font/futura"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="19sp" />
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/tvSettingsandPrivacy"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/rlwithnotification"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="13dp"
-        android:layout_toEndOf="@+id/ivBackSettingandPrivacy"
-        android:text="Settings &amp; Privacy"
-        android:fontFamily="@font/futura"
-        android:textColor="@color/black_95_transparent"
-        android:textSize="19sp" />
-
-
-    <ImageView
-        android:id="@+id/ivComposeMp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="64dp"
-        android:layout_marginStart="28dp"
-        android:src="@mipmap/ic_notification_foreground" />
-
-    <Button
-        android:id="@+id/btnNotificationSound"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentStart="true"
         android:layout_marginTop="50dp"
-        android:gravity="start|center_vertical"
-        android:paddingStart="85dp"
-        android:text="Notification"
-        android:textAllCaps="false"
-        android:fontFamily="@font/futura_medium"
-        android:textSize="27sp" />
+        android:layout_below="@+id/rlwithbackandmenumarketplace">
+        <ImageView
+            android:id="@+id/ivComposeMp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="2dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_notification_foreground" />
+        <Button
+            android:id="@+id/btnNotificationSound"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:gravity="start"
+            android:paddingStart="85dp"
+            android:text="Notification"
+            android:textAllCaps="false"
+            android:fontFamily="@font/futura_medium"
+            android:textSize="27sp" />
 
-    <ImageView
-        android:id="@+id/ivPrivacy"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnNotificationSound"
-        android:layout_marginTop="11dp"
-        android:layout_marginStart="28dp"
-        android:src="@mipmap/ic_privacy_foreground" />
-
-    <Button
-        android:id="@+id/btnPrivacy"
-        style="?android:attr/borderlessButtonStyle"
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlwithPrivacy"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@+id/btnNotificationSound"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="0dp"
-        android:gravity="start|center_vertical"
-        android:paddingStart="85dp"
-        android:text="Privacy"
-        android:textAllCaps="false"
-        android:fontFamily="@font/futura_medium"
-        android:textSize="27sp" />
-
-    <ImageView
-        android:id="@+id/ivLanguage"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnPrivacy"
-        android:layout_marginTop="11dp"
-        android:layout_marginStart="28dp"
-        android:src="@mipmap/ic_language_foreground" />
-
-    <Button
-        android:id="@+id/btnLanguage"
-        style="?android:attr/borderlessButtonStyle"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlwithnotification">
+        <ImageView
+            android:id="@+id/ivPrivacy"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="6dp"
+            android:src="@mipmap/ic_privacy_foreground" />
+        <Button
+            android:id="@+id/btnPrivacy"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:gravity="start"
+            android:paddingStart="85dp"
+            android:text="Privacy"
+            android:textAllCaps="false"
+            android:fontFamily="@font/futura_medium"
+            android:textSize="27sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlwithLanguage"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@+id/btnPrivacy"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="0dp"
-        android:gravity="start|center_vertical"
-        android:paddingStart="85dp"
-        android:text="Language"
-        android:textAllCaps="false"
-        android:fontFamily="@font/futura_medium"
-        android:textSize="27sp" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlwithPrivacy">
+        <ImageView
+            android:id="@+id/ivLanguage"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="8dp"
+            android:src="@mipmap/ic_language_foreground" />
+        <Button
+            android:id="@+id/btnLanguage"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:gravity="start"
+            android:paddingStart="85dp"
+            android:text="Language"
+            android:textAllCaps="false"
+            android:fontFamily="@font/futura_medium"
+            android:textSize="27sp" />
+    </RelativeLayout>
+
+
+
+
+
+
+
 
 </RelativeLayout>
