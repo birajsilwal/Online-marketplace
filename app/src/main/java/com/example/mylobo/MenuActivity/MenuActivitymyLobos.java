@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 import com.example.mylobo.HomeScreen;
 import com.example.mylobo.LoginActivity;
-import com.example.mylobo.PublicProfileActivity;
+import com.example.mylobo.PublicProfile.PublicProfileEditorActivity;
 import com.example.mylobo.R;
 import com.example.mylobo.myLobos.MainActivity;
 import com.parse.ParseUser;
@@ -52,7 +52,7 @@ public class MenuActivitymyLobos extends AppCompatActivity {
         btnPublicProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MenuActivitymyLobos.this, PublicProfileActivity.class);
+                Intent i = new Intent(MenuActivitymyLobos.this, PublicProfileEditorActivity.class);
                 startActivity(i);
             }
         });

@@ -1,13 +1,11 @@
 package com.example.mylobo.myLobos;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -45,15 +43,15 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         holder.bind(post);
         final ParseFile image = post.getImage();
 
-        holder.rlPost.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(context, DetailActivity.class);
-                i.putExtra("image", image);
-                i.putExtra("description", post.getDescription());
-                context.startActivity(i);
-            }
-        });
+//        holder.rlPost.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(context, DetailActivity.class);
+//                i.putExtra("image", image);
+//                i.putExtra("description", post.getDescription());
+//                context.startActivity(i);
+//            }
+//        });
 
 
 //        holder.ivMore.setOnClickListener(new View.OnClickListener() {
@@ -90,7 +88,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         private TextView tvHandle;
         private ImageView ivImage;
         private TextView tvDescription;
-        public RelativeLayout rlPost;
+//        public RelativeLayout rlPost;
         private ImageView ivDelete;
 
         public ViewHolder(View itemView) {
@@ -98,7 +96,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             tvHandle = itemView.findViewById(R.id.tvHandle);
             ivImage = itemView.findViewById(R.id.ivImage);
             tvDescription = itemView.findViewById(R.id.tvDescriptionTitle);
-            rlPost = itemView.findViewById(R.id.rlPost);
+//            rlPost = itemView.findViewById(R.id.rlPost);
             ivDelete = itemView.findViewById(R.id.ivDelete);
         }
 

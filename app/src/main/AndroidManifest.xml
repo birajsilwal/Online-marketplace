@@ -17,7 +17,10 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
-        <activity android:name=".Lobotask.Todo.Todo"></activity>
+        <activity android:name=".Lobotask.Project.ProjectSnake"></activity>
+        <activity android:name=".Lobotask.Project.Project" />
+        <activity android:name=".PublicProfile.PublicProfileViewerActivity" />
+        <activity android:name=".Lobotask.Todo.Todo" />
         <activity android:name=".BookmarksActivity" />
         <activity android:name=".Marketplace.YourListingsActivity" />
         <activity android:name=".Flashcard.FlashcardMain" />
@@ -34,7 +37,7 @@
         <activity
             android:name=".MenuActivity.MenuActivityHomescreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".PublicProfileActivity" />
+        <activity android:name=".PublicProfile.PublicProfileEditorActivity" />
         <activity android:name=".MenuActivity.MenuActivitySettingPrivacy" />
         <activity android:name=".myLobos.DetailActivity" /> <!-- make sure within the application tag, otherwise app will crash with XmlResourceParser errors -->
         <provider
@@ -80,6 +83,8 @@
         <activity android:name=".Lobotask.Todo.TodoItemAdapter" />
         <activity android:name=".Lobotask.Todo.TodoItem" />
         <activity android:name=".Marketplace.GridSpacing" />
+        <activity android:name=".Lobotask.Project.ProjectItem" />
+        <activity android:name=".Lobotask.Project.ProjectItemsAdapter" />
     </application>
 
 </manifest>

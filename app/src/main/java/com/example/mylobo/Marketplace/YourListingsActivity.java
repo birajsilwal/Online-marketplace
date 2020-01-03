@@ -30,6 +30,7 @@ public class YourListingsActivity extends AppCompatActivity {
     private PostsAdapterMarketplaceYourlistings adapterMarketplaceYourlistings;
     private List<PostMarketplace> mPostsMarketplace;
 
+
     public static final String TAG = "Yourlistings";
 
     @Override
@@ -56,6 +57,13 @@ public class YourListingsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+//        if (postsMarketplace.size() == 0){
+////                tvEmptystateItemMP.setVisibility(View.VISIBLE);
+//            tvEmptystateItemMP.setText("Ready to sell?");
+//            Log.i("emptystate", String.valueOf(postsMarketplace.size()));
+//            return;
+//        }
 
 
         rvYourlistings = findViewById(R.id.rvYourlistings);

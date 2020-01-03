@@ -85,7 +85,5 @@
             android:textSize="20sp"
             android:background="@drawable/custom_border_todo_add_tv"/>
 
-
-
     </RelativeLayout>
 </RelativeLayout>

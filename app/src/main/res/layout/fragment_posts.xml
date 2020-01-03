@@ -43,8 +43,8 @@
         <View
             android:id="@+id/viewLinePost"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/black_20_transparent"
+            android:layout_height="0.5dp"
+            android:background="@color/loboSilver"
             android:layout_marginTop="50dp"
             android:elevation="5dp"/>
     </RelativeLayout>

@@ -3,6 +3,7 @@ package com.example.mylobo;
 import android.app.Application;
 
 import com.example.mylobo.Lobochat.Message;
+import com.example.mylobo.Lobotask.Project.ProjectItem;
 import com.example.mylobo.Lobotask.Todo.TodoItem;
 import com.example.mylobo.Marketplace.PostMarketplace;
 import com.example.mylobo.myLobos.Post;
@@ -18,6 +19,7 @@ public class ParseApplication extends Application {
         ParseObject.registerSubclass(PostMarketplace.class);
         ParseObject.registerSubclass(Message.class);
         ParseObject.registerSubclass(TodoItem.class);
+        ParseObject.registerSubclass(ProjectItem.class);
 
 
         // set applicationId, and server server based on the values in the Heroku settings.

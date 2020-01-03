@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Lobotask.Project.Project">
+    <RelativeLayout
+        android:id="@+id/rlwithbackandproject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivBackProject"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_back_foreground"/>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/authenia"
+            android:text=" Project "
+            android:textColor="@color/pureBlack"
+            android:textSize="37sp" />
+        <ImageView
+            android:id="@+id/ivMenuProject"
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="9dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/ic_menu_foreground"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlwithbackandproject"
+        android:layout_margin="15dp">
+
+        <TextView
+            android:id="@+id/tvCS351_Snake"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="25dp"
+            android:fontFamily="@font/futura"
+            android:textColor="@color/black_95_transparent"
+            android:background="@drawable/custom_border_image_yourlistings"
+            android:text="CS-351_Snake_Game" />
+
+        <ImageView
+            android:id="@+id/ivMoreYourlistings"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@mipmap/ic_more_foreground" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="30dp">
+        <ImageView
+            android:id="@+id/ivAddProject"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_above="@id/tvAddProject"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/ic_add_flashcard_foreground" />
+        <TextView
+            android:id="@+id/tvAddProject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Project"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="15sp"/>
+    </RelativeLayout>
+</RelativeLayout>

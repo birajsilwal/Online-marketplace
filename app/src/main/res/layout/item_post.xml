@@ -103,11 +103,10 @@
         android:layout_marginEnd="10dp"
         tools:text="hipster attempt" />
 
-
     <View
         android:id="@+id/viewLineItemPost"
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="4dp"
         android:background="@color/loboGrey"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"

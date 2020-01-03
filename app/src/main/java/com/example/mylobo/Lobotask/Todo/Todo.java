@@ -69,6 +69,7 @@ public class Todo extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //TODO: add menu item in todo
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -19,11 +19,7 @@ import com.parse.ParseFile;
 import java.util.List;
 
 public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMarketplace.ViewHolder>{
-
-    ImageView ivImageDMp;
-
     // constructors of the adapter taking two variables, context and data source which is the list of the posts
-
     private Context contextMarketplace;
     private List<PostMarketplace> postsMarketplace;
 
@@ -45,12 +41,7 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         final PostMarketplace postMarketplace = postsMarketplace.get(position);
         holder.bind(postMarketplace);
-
         final ParseFile image = postMarketplace.getImage();
-//        final ParseObject newImage = new ParseObject("NewImage");
-
-
-
         holder.rlMarketplace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,9 +50,9 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
                 i.putExtra("price", postMarketplace.getPrice());
                 i.putExtra("username", postMarketplace.getUser().getUsername());
                 i.putExtra("description", postMarketplace.getDescription());
-                i.putExtra("objectId", postMarketplace.getObjectId());
-//                i.putExtra("image", image.getUrl());
+//                i.putExtra("objectId", postMarketplace.getObjectId());
 
+                i.putExtra("image", image.getUrl());
                 contextMarketplace.startActivity(i);
             }
         });
@@ -94,20 +85,18 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
         // responsible for taking a post and binding it to the view that we have here
         public void bind(PostMarketplace postMarketplace){
 //            tvTitle.setText(postMarketplace.getTitle());
-//            etPriceMp.setText(postMarketplace.getPrice());
+            etPriceMp.setText(postMarketplace.getPrice());
             ParseFile image = postMarketplace.getImage();
             if (image != null) {
                 Glide.with(contextMarketplace).load(image.getUrl()).into(ivImageMp);
             }
         }
     }
-
     // Clean all elements of the recycler
     public void clear() {
         postsMarketplace.clear();
         notifyDataSetChanged();
     }
-
     // Add a list of items -- change to type used
     public void addAll(List<PostMarketplace> list) {
         postsMarketplace.addAll(list);

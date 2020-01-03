@@ -1,6 +1,7 @@
 package com.example.mylobo.Marketplace;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,7 @@ public class PostsAdapterMarketplaceYourlistings extends RecyclerView.Adapter<Po
         private TextView tvTitleMpYourlistings;
         private ImageView ivImageMpYourlistings;
         private TextView etPriceMpYourlistings;
+        private TextView tvEmptystateItemMP;
 
         // pull out a reference to each of the items in our item posts mp
         public ViewHolder(View itemView) {
@@ -57,16 +59,27 @@ public class PostsAdapterMarketplaceYourlistings extends RecyclerView.Adapter<Po
             tvTitleMpYourlistings = itemView.findViewById(R.id.tvTitleMpYourlistings);
             ivImageMpYourlistings = itemView.findViewById(R.id.ivImageMpYourlistings);
             etPriceMpYourlistings = itemView.findViewById(R.id.etPriceMpYourlistings);
+//            tvEmptystateItemMP = itemView.findViewById(R.id.tvEmptystateItemMP);
         }
 
         // responsible for taking a post and binding it to the view that we have here
         public void bind(PostMarketplace postMarketplace){
-            tvTitleMpYourlistings.setText(postMarketplace.getTitle());
-            etPriceMpYourlistings.setText(postMarketplace.getPrice());
-            ParseFile image = postMarketplace.getImage();
-            if (image != null) {
-                Glide.with(contextMarketplaceYourlistings).load(image.getUrl()).into(ivImageMpYourlistings);
-            }
+//            if (postsMarketplace.size() == 0){
+////                tvEmptystateItemMP.setVisibility(View.VISIBLE);
+//                tvEmptystateItemMP.setText("Ready to sell?");
+//                return;
+//            }else {
+
+                Log.i("emptystate", String.valueOf(postsMarketplace.size()));
+//                tvEmptystateItemMP.setText("Ready to sell?");
+
+                tvTitleMpYourlistings.setText(postMarketplace.getTitle());
+                etPriceMpYourlistings.setText(postMarketplace.getPrice());
+                ParseFile image = postMarketplace.getImage();
+                if (image != null) {
+                    Glide.with(contextMarketplaceYourlistings).load(image.getUrl()).into(ivImageMpYourlistings);
+                }
+//            }
         }
     }
 }

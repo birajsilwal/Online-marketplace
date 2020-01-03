@@ -12,7 +12,7 @@ import com.example.mylobo.HomeScreen;
 import com.example.mylobo.LoginActivity;
 import com.example.mylobo.Marketplace.Marketplace;
 import com.example.mylobo.Marketplace.YourListingsActivity;
-import com.example.mylobo.PublicProfileActivity;
+import com.example.mylobo.PublicProfile.PublicProfileEditorActivity;
 import com.example.mylobo.R;
 import com.parse.ParseUser;
 
@@ -67,7 +67,7 @@ public class MenuActivityMarketplace extends AppCompatActivity {
         btnPublicProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MenuActivityMarketplace.this, PublicProfileActivity.class);
+                Intent i = new Intent(MenuActivityMarketplace.this, PublicProfileEditorActivity.class);
                 startActivity(i);
             }
         });

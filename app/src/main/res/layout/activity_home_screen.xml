@@ -66,12 +66,16 @@
             android:text="Clear Sky"
             android:textColor="@color/black_95_transparent"
             android:fontFamily="@font/futura"
-            android:textSize="16dp" />
+            android:textSize="17dp" />
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
         <ImageView
             android:id="@+id/ivWeatherDescription"
             android:layout_gravity="center_vertical"
-            android:layout_width="30dp"
-            android:layout_height="25dp" />
+            android:layout_width="18dp"
+            android:layout_height="18dp" />
     </LinearLayout>
 
     <RelativeLayout

@@ -172,29 +172,45 @@ public class HomeScreen extends AppCompatActivity {
                 tvTemperature.setText(new_temp);
 
                 switch (icon) {
-                    case "01n":
-                        ivWeatherDescription.setBackgroundResource(R.drawable.clear_sky_night);
+                    case "01d":
+                        ivWeatherDescription.setBackgroundResource(R.drawable.day_clear_sky);
                         break;
-                    case "02n":
-                        ivWeatherDescription.setBackgroundResource(R.drawable.few_clouds_night);
+                    case "02d":
+                        ivWeatherDescription.setBackgroundResource(R.drawable.day_few_clouds);
                         break;
-                    case "03n":
-                        ivWeatherDescription.setBackgroundResource(R.drawable.scattered_clouds_night);
+                    case "03d":
+                    case "04d":
+                        ivWeatherDescription.setBackgroundResource(R.drawable.day_scattered_cloud);
                         break;
-                    case "04n":
-                        ivWeatherDescription.setBackgroundResource(R.drawable.broken_cloud_night);
+                    case "09d":
+                        ivWeatherDescription.setBackgroundResource(R.drawable.day_shower_rain);
                         break;
-                    case "09n":
-                        ivWeatherDescription.setBackgroundResource(R.drawable.shower_rain_night);
+                    case "10d":
+                        ivWeatherDescription.setBackgroundResource(R.drawable.day_rain);
                         break;
-                    case "10n":
-                        ivWeatherDescription.setBackgroundResource(R.drawable.rain_night);
-                        break;
+                    case "11d":
                     case "11n":
                         ivWeatherDescription.setBackgroundResource(R.drawable.thunderstorm_night);
                         break;
+                    case "13d":
                     case "13n":
-                        ivWeatherDescription.setBackgroundResource(R.drawable.snow_night);
+                        ivWeatherDescription.setBackgroundResource(R.drawable.snow);
+                        break;
+                    case "01n":
+                        ivWeatherDescription.setBackgroundResource(R.drawable.night_clear_sky);
+                        break;
+                    case "02n":
+                        ivWeatherDescription.setBackgroundResource(R.drawable.night_few_clouds);
+                        break;
+                    case "03n":
+                    case "04n":
+                        ivWeatherDescription.setBackgroundResource(R.drawable.night_scattered_cloud);
+                        break;
+                    case "09n":
+                        ivWeatherDescription.setBackgroundResource(R.drawable.night_shower_rain);
+                        break;
+                    case "10n":
+                        ivWeatherDescription.setBackgroundResource(R.drawable.night_rain);
                         break;
                 }
 

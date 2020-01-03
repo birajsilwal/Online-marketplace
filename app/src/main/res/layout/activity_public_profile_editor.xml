@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PublicProfile.PublicProfileEditorActivity">
+
+    <RelativeLayout
+        android:id="@+id/rvwithtoptooldinEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/ivBackMenuPPEditor"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_cross_foreground"
+            android:onClick="previous"/>
+        <TextView
+            android:id="@+id/tvEditProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/ivBackMenuPPEditor"
+            android:text="Edit Profile"
+            android:fontFamily="@font/futura"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="19sp" />
+        <ImageView
+            android:id="@+id/ivTickPPEditor"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/ic_tick_foreground"
+            android:onClick="previous"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlwithprofilepictureandname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rvwithtoptooldinEditProfile">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ivProfileImageinPublicprofile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="30dp">
+            <ImageView
+                android:id="@+id/ivProfileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/biraj" />
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/tvChangePP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Change Profile Picture"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/ivProfileImageinPublicprofile"
+            android:textColor="@color/split_line"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/tvetnamePP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/rlwithprofilepictureandname"  >
+        <TextView
+            android:id="@+id/tvNamePP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNamePP"
+            android:hint="Biraj Silwal"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/black_95_transparent"
+            android:background="@android:color/transparent"   />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:elevation="5dp"
+            android:background="@color/loboSilver"
+            android:layout_marginTop="50dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/tvetusernamePP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_below="@+id/tvetnamePP"  >
+        <TextView
+            android:id="@+id/tvUserNamePP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvUserNamePP"
+            android:hint="bsilwal"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/black_95_transparent"
+            android:background="@android:color/transparent"   />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:elevation="5dp"
+            android:background="@color/loboSilver"
+            android:layout_marginTop="50dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/tvetEmailPP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_below="@+id/tvetusernamePP"  >
+        <TextView
+            android:id="@+id/tvEmailPP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="E-mail Address"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvEmailPP"
+            android:hint="bsilwal@unm.edu"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/black_95_transparent"
+            android:background="@android:color/transparent"   />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:elevation="5dp"
+            android:background="@color/loboSilver"
+            android:layout_marginTop="50dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/tvetMajorPP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_below="@+id/tvetEmailPP"  >
+        <TextView
+            android:id="@+id/tvMajorPP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Major"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvMajorPP"
+            android:hint="Computer Science"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/black_95_transparent"
+            android:background="@android:color/transparent"   />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:elevation="5dp"
+            android:background="@color/loboSilver"
+            android:layout_marginTop="50dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/tvetBioPP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_below="@+id/tvetMajorPP"  >
+        <TextView
+            android:id="@+id/tvBioPP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bio"/>
+        <EditText
+            android:id="@+id/etBioPP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvBioPP"
+            android:hint="Junior year student who loves developing mobile apps. I am highly interested in Robotics, Augmented Reality, and Machine Learning."
+            android:layout_marginTop="3dp"
+            android:textColor="@color/black_95_transparent"
+            android:background="@android:color/transparent"   />
+        <View
+            android:layout_below="@+id/etBioPP"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:elevation="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/loboSilver"/>
+    </RelativeLayout>
+</RelativeLayout>

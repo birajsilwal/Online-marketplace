@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.mylobo.BookmarksActivity;
 import com.example.mylobo.HomeScreen;
 import com.example.mylobo.LoginActivity;
-import com.example.mylobo.PublicProfileActivity;
+import com.example.mylobo.PublicProfile.PublicProfileEditorActivity;
 import com.example.mylobo.R;
 import com.parse.ParseUser;
 
@@ -54,7 +54,7 @@ public class MenuActivityHomescreen extends AppCompatActivity {
         btnPublicProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MenuActivityHomescreen.this, PublicProfileActivity.class);
+                Intent intent = new Intent(MenuActivityHomescreen.this, PublicProfileEditorActivity.class);
                 startActivity(intent);
             }
         });

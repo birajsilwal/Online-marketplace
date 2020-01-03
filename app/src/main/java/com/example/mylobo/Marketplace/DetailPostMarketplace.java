@@ -2,7 +2,6 @@ package com.example.mylobo.Marketplace;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,12 +10,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.example.mylobo.PublicProfileActivity;
+import com.example.mylobo.PublicProfile.PublicProfileViewerActivity;
 import com.example.mylobo.R;
-import com.parse.GetCallback;
-import com.parse.ParseException;
 import com.parse.ParseFile;
-import com.parse.ParseQuery;
 
 public class DetailPostMarketplace extends AppCompatActivity {
 
@@ -56,22 +52,25 @@ public class DetailPostMarketplace extends AppCompatActivity {
         tvTitleMp.setText(title);
         etPriceMp.setText(price);
         tvDescription.setText(description);
+//
+//        String todoId = getIntent().getStringExtra("todo_id");
+//        ParseQuery<PostMarketplace> query = ParseQuery.getQuery(PostMarketplace.class);
+//        query.setCachePolicy(ParseQuery.CachePolicy.CACHE_ELSE_NETWORK); // or CACHE_ONLY
+//        query.getInBackground(objectId, new GetCallback<PostMarketplace>() {
+//                    public void done(PostMarketplace item, ParseException e) {
+//                        if (e == null) {
+//                            Log.i(TAG, "Item Found");
+//                            image = item.getImage();
+//                            Glide.with(DetailPostMarketplace.this).load(image.getUrl()).into(ivImageDMp);
+//                        }
+//                        else{
+//                            Log.i(TAG, "Item not Found");
+//                        }
+//                    }
+//                });
 
-        String todoId = getIntent().getStringExtra("todo_id");
-        ParseQuery<PostMarketplace> query = ParseQuery.getQuery(PostMarketplace.class);
-        query.setCachePolicy(ParseQuery.CachePolicy.CACHE_ELSE_NETWORK); // or CACHE_ONLY
-        query.getInBackground(objectId, new GetCallback<PostMarketplace>() {
-                    public void done(PostMarketplace item, ParseException e) {
-                        if (e == null) {
-                            Log.i(TAG, "Item Found");
-                            image = item.getImage();
-                            Glide.with(DetailPostMarketplace.this).load(image.getUrl()).into(ivImageDMp);
-                        }
-                        else{
-                            Log.i(TAG, "Item not Found");
-                        }
-                    }
-                });
+        String imageUrl = getIntent().getStringExtra("image");
+        Glide.with(this).load(imageUrl).into(ivImageDMp);
 
         ivBackDMp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +83,7 @@ public class DetailPostMarketplace extends AppCompatActivity {
         tvSeePublicProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DetailPostMarketplace.this, PublicProfileActivity.class);
+                Intent intent = new Intent(DetailPostMarketplace.this, PublicProfileViewerActivity.class);
                 intent.putExtra("profileName", username);
                 startActivity(intent);
             }
