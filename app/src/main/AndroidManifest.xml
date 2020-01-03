@@ -17,7 +17,7 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
-        <activity android:name=".Lobotask.Project.ProjectSnake"></activity>
+        <activity android:name=".Lobotask.Project.ProjectSnake"/>
         <activity android:name=".Lobotask.Project.Project" />
         <activity android:name=".PublicProfile.PublicProfileViewerActivity" />
         <activity android:name=".Lobotask.Todo.Todo" />
@@ -38,7 +38,8 @@
             android:name=".MenuActivity.MenuActivityHomescreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".PublicProfile.PublicProfileEditorActivity" />
-        <activity android:name=".MenuActivity.MenuActivitySettingPrivacy" />
+        <activity android:name=".MenuActivity.MenuActivitySettingPrivacy"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".myLobos.DetailActivity" /> <!-- make sure within the application tag, otherwise app will crash with XmlResourceParser errors -->
         <provider
             android:name="androidx.core.content.FileProvider"

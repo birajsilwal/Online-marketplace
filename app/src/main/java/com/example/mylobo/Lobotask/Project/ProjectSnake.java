@@ -57,6 +57,7 @@ public class ProjectSnake extends AppCompatActivity {
         rvProjectItem.setLayoutManager(new LinearLayoutManager(this));
         queryProjectItem();
 
+
         btnAddProjectItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

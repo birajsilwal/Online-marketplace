@@ -22,7 +22,7 @@ public class MenuActivityMarketplace extends AppCompatActivity {
     public static final String TAG = "MenuActivityMarketplace";
     Button btnYourlistings, btnHome;
     ImageView ivBackMenuMp;
-    Button btnLogOut, btnSetting, btnPublicProfile;
+    Button btnLogOut, btnPublicProfile;
 
 
     @Override
@@ -35,7 +35,6 @@ public class MenuActivityMarketplace extends AppCompatActivity {
         ivBackMenuMp = findViewById(R.id.ivBackMenuMp);
         btnHome = findViewById(R.id.btnHome);
         btnLogOut = findViewById(R.id.btnLogOut);
-        btnSetting = findViewById(R.id.btnSetting);
         btnPublicProfile = findViewById(R.id.btnPublicProfile);
 
 
@@ -72,13 +71,6 @@ public class MenuActivityMarketplace extends AppCompatActivity {
             }
         });
 
-        btnSetting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MenuActivityMarketplace.this, MenuActivitySettingPrivacy.class);
-                startActivity(i);
-            }
-        });
 
         btnLogOut.setOnClickListener(new View.OnClickListener() {
             @Override

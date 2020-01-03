@@ -34,7 +34,6 @@ public class ProjectItemsAdapter extends RecyclerView.Adapter<ProjectItemsAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ProjectItem projectItem = projectItems.get(position);
         holder.bind(projectItem);
-
     }
 
     @Override

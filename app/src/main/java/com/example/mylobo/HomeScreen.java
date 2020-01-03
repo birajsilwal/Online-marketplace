@@ -28,7 +28,7 @@ import java.util.Calendar;
 public class HomeScreen extends AppCompatActivity {
 
     Button btnMarketplace, btnMyLobos, btnMybooks, btnLobochat, btnLobotask, btnFlashcard;
-    ImageView ivMarketplace,ivMenuHomescreen;
+    ImageView ivMarketplace, ivMenuHomescreen, ivBackMenuHomescreen;
 
     // For weather
     String CITY = "albuquerque,us";
@@ -51,6 +51,7 @@ public class HomeScreen extends AppCompatActivity {
         ivMenuHomescreen = findViewById(R.id.ivMenuHomescreen);
         btnLobotask = findViewById(R.id.btnLobotask);
         btnFlashcard = findViewById(R.id.btnFlashcard);
+        ivBackMenuHomescreen = findViewById(R.id.ivBackMenuHomescreen);
 
         // for weather
         tvWeatherStatus = findViewById(R.id.tvWeatherStatus);
@@ -66,8 +67,16 @@ public class HomeScreen extends AppCompatActivity {
 
         new weather().execute();
 
-        // takes to menu
+        // takes to homescreen
         //TODO:complete this one
+        ivBackMenuHomescreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, HomeScreen.class);
+                startActivity(intent);
+            }
+        });
+
         ivMenuHomescreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
