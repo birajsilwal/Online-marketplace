@@ -84,7 +84,5 @@ public class MenuActivityHomescreen extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-
     }
 }

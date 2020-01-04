@@ -23,10 +23,6 @@ import java.util.List;
 
 public class Marketplace extends AppCompatActivity {
 
-    int spanCount = 1; // 1 columns
-    int spacing = 20; // 50px
-    boolean includeEdge = false;
-
     private SwipeRefreshLayout swipeContainer;
     private RecyclerView rvPostsMarkerplace;
     private PostsAdapterMarketplace adapterMarketplace;
@@ -60,7 +56,6 @@ public class Marketplace extends AppCompatActivity {
             }
         });
 
-
         rvPostsMarkerplace = findViewById(R.id.rvPostsMp);
 
         // 2. create the data source. This will be a list of different post objects. gets from PostMarketplace
@@ -76,7 +71,6 @@ public class Marketplace extends AppCompatActivity {
         // 5. set the layout manager on the recycler view
         rvPostsMarkerplace.setLayoutManager(gridLayoutManager);
 //        rvPostsMarkerplace.addItemDecoration(new GridSpacing(spanCount, spacing, includeEdge));
-
 
         // 1. created this after adding recycler view in the layout
         // TODO:look at the linerlayout manager here
@@ -116,18 +110,16 @@ public class Marketplace extends AppCompatActivity {
                 }
                 mPostsMarketplace.addAll(postsMarketplace);
                 adapterMarketplace.notifyDataSetChanged();
-
                 // Remember to CLEAR OUT old items before appending in the new ones
                 adapterMarketplace.clear();
                 // ...the data has come back, add new items to your adapter...
                 adapterMarketplace.addAll(postsMarketplace);
                 // Now we call setRefreshing(false) to signal refresh has finished
                 swipeContainer.setRefreshing(false);
-
-                for (int i = 0; i < postsMarketplace.size(); i++ ){
-                    PostMarketplace postMarketplace = postsMarketplace.get(i);
-                    Log.d(TAG, "PostMarketplace: " + postMarketplace.getTitle() + ", username: " + postMarketplace.getUser().getUsername());
-                }
+//                for (int i = 0; i < postsMarketplace.size(); i++ ){
+//                    PostMarketplace postMarketplace = postsMarketplace.get(i);
+//                    Log.d(TAG, "PostMarketplace: " + postMarketplace.getTitle() + ", username: " + postMarketplace.getUser().getUsername());
+//                }
             }
         });
     }

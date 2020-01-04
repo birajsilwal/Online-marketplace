@@ -162,6 +162,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
+                    android:layout_centerVertical="true"
                     android:textColor="@color/black_95_transparent"
                     android:textSize="23dp"
                     android:textStyle="bold"
@@ -172,7 +173,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginBottom="7dp"
                     android:layout_centerVertical="true"
                     android:text="See Public Profile"
                     android:textColor="@color/split_line"
@@ -223,7 +223,7 @@
             android:paddingBottom="10dp"
             >
             <RelativeLayout
-                android:id="@+id/rlLobochatDetailMarketplace"
+                android:id="@+id/rlLobochatinDetailMarketplace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <ImageView
@@ -247,7 +247,7 @@
                 android:id="@+id/rlBookmarkDetailMarketplace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/rlLobochatDetailMarketplace"
+                android:layout_toRightOf="@id/rlLobochatinDetailMarketplace"
                 android:layout_marginStart="55dp">
                 <ImageView
                     android:id="@+id/ivBookmarkDetailMarketplace"

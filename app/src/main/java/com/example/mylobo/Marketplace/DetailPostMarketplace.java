@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -23,6 +24,7 @@ public class DetailPostMarketplace extends AppCompatActivity {
     TextView tvTitleMp, tvDescription, tvSeePublicProfile;
     TextView etPriceMp;
     TextView tvSeller;
+    RelativeLayout rlLobochatinDetailMarketplace;
 
     String title, username, description;
     String price;
@@ -41,6 +43,7 @@ public class DetailPostMarketplace extends AppCompatActivity {
         tvDescription = findViewById(R.id.tvDescription);
         ivBackDMp = findViewById(R.id.ivBackDMp);
         tvSeePublicProfile = findViewById(R.id.tvSeePublicProfile);
+        rlLobochatinDetailMarketplace = findViewById(R.id.rlLobochatinDetailMarketplace);
 
         title = getIntent().getStringExtra("title");
         price = getIntent().getStringExtra("price");
@@ -52,7 +55,7 @@ public class DetailPostMarketplace extends AppCompatActivity {
         tvTitleMp.setText(title);
         etPriceMp.setText(price);
         tvDescription.setText(description);
-//
+
 //        String todoId = getIntent().getStringExtra("todo_id");
 //        ParseQuery<PostMarketplace> query = ParseQuery.getQuery(PostMarketplace.class);
 //        query.setCachePolicy(ParseQuery.CachePolicy.CACHE_ELSE_NETWORK); // or CACHE_ONLY
@@ -88,5 +91,7 @@ public class DetailPostMarketplace extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 }

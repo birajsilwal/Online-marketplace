@@ -15,7 +15,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginStart="5dp"
         android:contentDescription="@string/profile_other"
-        android:src="@drawable/ironman"/>
+        android:src="@drawable/adam"/>
 
     <TextView
         android:id="@+id/tvBody"
