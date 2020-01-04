@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Lobochat.ChatListActivity">
+    <RelativeLayout
+        android:id="@+id/rlwithbackandldsafadsfadsasddfsdfasdfdsfasd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivBackLobochatlist"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_back_foreground" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/authenia"
+            android:text=" Lobochat "
+            android:textColor="@color/pureBlack"
+            android:textSize="36sp" />
+        <ImageView
+            android:id="@+id/ivMenuLobochatadfsadsfsadfds"
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="9dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/ic_menu_foreground"/>
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black_95_transparent"
+            android:layout_marginTop="45dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/llwithfriendnameinchatlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/rlwithbackandldsafadsfadsasddfsdfasdfdsfasd">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="46dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/adam"
+            app:civ_border_color="#63666A"
+            app:civ_border_width="2dp"/>
+        <RelativeLayout
+            android:id="@+id/rlwithmessageseenornot"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/profile_image"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvSeller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_95_transparent"
+                android:textSize="20dp"
+                android:text="Adam McKeag" />
+            <TextView
+                android:id="@+id/receivedandseen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvSeller"
+                android:layout_marginTop="-3dp"
+                android:textSize="11dp"
+                android:text="Received and Seen"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

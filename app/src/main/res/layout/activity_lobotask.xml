@@ -6,20 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Lobotask.LobotaskMain">
-
     <RelativeLayout
         android:id="@+id/rlwithbackandlobotask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <ImageView
             android:id="@+id/ivBackLobotask"
-            android:layout_width="45dp"
+            android:layout_width="30dp"
             android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
             android:src="@mipmap/ic_back_foreground" />
-
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
@@ -30,7 +29,6 @@
             android:text="Lobotask"
             android:textColor="@color/pureBlack"
             android:textSize="36sp" />
-
         <View
             android:id="@+id/viewLinePost"
             android:layout_width="match_parent"
@@ -39,19 +37,17 @@
             android:background="@color/black_20_transparent"
             android:elevation="1dp"/>
     </RelativeLayout>
-
     <GridLayout
         android:id="@+id/rlwithbuttonslobotaks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="1"
-        android:layout_marginTop="100dp">
-
+        android:layout_below="@+id/rlwithbackandlobotask"
+        android:layout_marginTop="20dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -70,7 +66,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
-
             <Button
                 android:id="@+id/btnNewGroupProject"
                 android:layout_width="175dp"
@@ -81,7 +76,6 @@
                 android:fontFamily="@font/futura"
                 android:textColor="@color/white"
                 android:background="@drawable/custom_button_lobotask2"/>
-
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -110,10 +104,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="9" />
-
         </LinearLayout>
-
-
     </GridLayout>
-
 </RelativeLayout>

@@ -13,7 +13,7 @@
         <com.zolad.zoominimageview.ZoomInImageView
             android:id="@+id/ivImageDMp"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="500dp"
             android:layout_centerHorizontal="true"
             android:scaleType="centerCrop"
             tools:srcCompat="@drawable/biraj"
@@ -202,7 +202,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="10dp"
                     android:textSize="20dp"
-                    android:text="Ada Lovalace"/>
+                    android:text="Ada Lovelace"/>
             </LinearLayout>
         </RelativeLayout>
 

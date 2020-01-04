@@ -16,10 +16,10 @@
             android:layout_width="30dp"
             android:layout_height="25dp"
             android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
             android:src="@mipmap/ic_back_foreground" />
-
         <TextView
             android:id="@+id/tvMarketplacemenu"
             android:layout_width="wrap_content"
@@ -32,12 +32,11 @@
             android:textColor="@color/black_95_transparent"
             android:textSize="19sp" />
     </RelativeLayout>
-
     <RelativeLayout
         android:id="@+id/rlwithyourlistings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/rlwithbackandmenumarketplace">
         <ImageView
             android:id="@+id/ivComposeMp"
@@ -87,40 +86,11 @@
             android:fontFamily="@font/futura_medium"
             android:textSize="27sp" />
     </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rlwithPublicprofileinmenump"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/rlwithHomeinMenumarketplace">
-        <ImageView
-            android:id="@+id/ivPublicProfileML"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="31dp"
-            android:layout_marginTop="8dp"
-            android:src="@mipmap/ic_profile_foreground" />
-
-        <Button
-            android:id="@+id/btnPublicProfile"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:gravity="start"
-            android:paddingStart="85dp"
-            android:text="Public profile"
-            android:textAllCaps="false"
-            android:fontFamily="@font/futura_medium"
-            android:textSize="27sp" />
-    </RelativeLayout>
     <RelativeLayout
         android:id="@+id/rlwithBookmarksinmenump"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rlwithPublicprofileinmenump">
+        android:layout_below="@+id/rlwithHomeinMenumarketplace">
         <ImageView
             android:id="@+id/ivBookmark"
             android:layout_width="33dp"
@@ -142,6 +112,5 @@
             android:textAllCaps="false"
             android:fontFamily="@font/futura_medium"
             android:textSize="27sp" />
-
     </RelativeLayout>
 </RelativeLayout>

@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mylobo.HomeScreen;
 import com.example.mylobo.R;
 import com.parse.FindCallback;
 import com.parse.LogInCallback;
@@ -62,7 +61,7 @@ public class ChatActivity extends AppCompatActivity {
         ivBackLobochat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChatActivity.this, HomeScreen.class);
+                Intent intent = new Intent(ChatActivity.this, ChatListActivity.class);
                 startActivity(intent);
             }
         });

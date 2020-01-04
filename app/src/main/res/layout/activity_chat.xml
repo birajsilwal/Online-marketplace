@@ -1,42 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <RelativeLayout
         android:id="@+id/rlwithbackandlobochat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/ivBackLobochat"
-            android:layout_width="45dp"
+            android:layout_width="30dp"
             android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
             android:layout_centerVertical="true"
-            android:src="@mipmap/ic_back_foreground"/>
-
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_back_foreground" />
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tvMarketplacemenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+            android:layout_marginStart="25dp"
             android:layout_centerVertical="true"
-            android:fontFamily="@font/authenia"
-            android:text=" Lobochat "
-            android:textColor="@color/pureBlack"
-            android:textSize="36sp" />
-
+            android:layout_toEndOf="@+id/ivBackLobochat"
+            android:text="Adam McKeag"
+            android:fontFamily="@font/futura"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="19sp" />
         <ImageView
             android:id="@+id/ivMenuLobochat"
             android:layout_width="35dp"
             android:layout_height="25dp"
-            android:layout_marginEnd="9dp"
+            android:layout_marginEnd="4dp"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
-            android:src="@mipmap/ic_menu_foreground"/>
-
+            android:src="@mipmap/ic_vertical_menu_foreground"/>
         <View
             android:id="@+id/viewLineMarketplace"
             android:layout_width="match_parent"
@@ -44,7 +43,6 @@
             android:background="@color/black_95_transparent"
             android:layout_marginTop="45dp"/>
     </RelativeLayout>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvChat"
         android:transcriptMode="alwaysScroll"
@@ -54,7 +52,6 @@
         android:layout_above="@+id/rlSend"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" />
-
     <!-- Chat messages view will go here -->
     <RelativeLayout
         android:id="@+id/rlSend"
@@ -65,7 +62,6 @@
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:layout_height="wrap_content" >
-
         <EditText
             android:id="@+id/etMessage"
             android:layout_toLeftOf="@+id/btSend"
@@ -78,9 +74,7 @@
             android:layout_marginStart="3dp"
             android:hint="Type your message here..."
             android:inputType="textShortMessage"
-            android:imeOptions="actionSend"
-            />
-
+            android:imeOptions="actionSend"/>
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btSend"
             style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -96,7 +90,5 @@
             app:strokeColor="@color/black_95_transparent"
             android:textAllCaps="false"
             app:strokeWidth="1dp" />
-
     </RelativeLayout>
-
 </RelativeLayout>

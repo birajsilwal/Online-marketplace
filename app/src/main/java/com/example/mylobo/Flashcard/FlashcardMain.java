@@ -27,7 +27,7 @@ public class FlashcardMain extends AppCompatActivity {
 
     static int ADD_CARD_REQUEST_CODE = 0;
     static int EDIT_CARD_REQUEST_CODE = 1;
-    int currentCardDisplayedIndex = 0;
+    int currentCardDisplayedIndex;
 
     FlashcardDatabase flashcardDatabase;
     List<Flashcard> allFlashcards;
@@ -51,7 +51,8 @@ public class FlashcardMain extends AppCompatActivity {
 
         flashcardDatabase = new FlashcardDatabase(getApplicationContext());
         allFlashcards = flashcardDatabase.getAllCards();
-        //startTimer();
+        currentCardDisplayedIndex = getRandomCardIndex();
+        displayCard();
 
         //check if the database is empty or not
         if (allFlashcards != null && allFlashcards.size() > 0) {
@@ -132,34 +133,38 @@ public class FlashcardMain extends AppCompatActivity {
         next_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                currentCardDisplayedIndex++;
-                final Animation rightInAnim = AnimationUtils.loadAnimation(v.getContext(), R.anim.right_in);
-                final Animation leftOutAnim = AnimationUtils.loadAnimation(v.getContext(), R.anim.left_out);
+                if (allFlashcards.size() == 1) {
+                    Toast.makeText(FlashcardMain.this, "No more card. Press plus button to create more.", Toast.LENGTH_SHORT).show();
+                } else {
+                    currentCardDisplayedIndex = getRandomCardIndex();
 
-                // make sure we don't get an IndexOutOfBoundsError if we are viewing the last indexed card in our list
+                    final Animation rightInAnim = AnimationUtils.loadAnimation(v.getContext(), R.anim.right_in);
+                    final Animation leftOutAnim = AnimationUtils.loadAnimation(v.getContext(), R.anim.left_out);
+                    // make sure we don't get an IndexOutOfBoundsError if we are viewing the last indexed card in our list
                 if (currentCardDisplayedIndex > allFlashcards.size() - 1) {
                     currentCardDisplayedIndex = 0;
                 }
 
-                // set the question and answer TextViews with data from the database
-                ((TextView) findViewById(R.id.flashcard_question)).setText(allFlashcards.get(currentCardDisplayedIndex).getQuestion());
-                ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.get(currentCardDisplayedIndex).getAnswer());
-                startTimer();
+                    ((TextView) findViewById(R.id.flashcard_question)).setText(allFlashcards.get(currentCardDisplayedIndex).getQuestion());
+                    ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.get(currentCardDisplayedIndex).getAnswer());
 
-                leftOutAnim.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-                    }
+                    leftOutAnim.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+                        }
 
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        findViewById(R.id.flashcard_question).startAnimation(rightInAnim);
-                    }
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+                            displayCard();
+                            findViewById(R.id.flashcard_question).startAnimation(rightInAnim);
+                            findViewById(R.id.correct_answer).startAnimation(rightInAnim);
+                        }
 
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-                    }
-                });
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+                        }
+                    });
+                }
             }
         });
 
@@ -168,7 +173,8 @@ public class FlashcardMain extends AppCompatActivity {
             public void onClick(View v) {
                 flashcardDatabase.deleteCard(((TextView) findViewById(R.id.flashcard_question)).getText().toString());
                 allFlashcards = flashcardDatabase.getAllCards();
-                currentCardDisplayedIndex--;
+                currentCardDisplayedIndex = getRandomCardIndex();
+                displayCard();
             }
         });
 
@@ -185,19 +191,60 @@ public class FlashcardMain extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            String question = data.getExtras().getString("question");
-            String correct_answer = data.getExtras().getString("correct_answer");
-            if (requestCode == ADD_CARD_REQUEST_CODE) {
-                flashcardDatabase.insertCard(new Flashcard(question, correct_answer));
-                allFlashcards = flashcardDatabase.getAllCards();
-                Snackbar.make(findViewById(R.id.flashcard_main), "Card successfully created", Snackbar.LENGTH_SHORT).show();
+        if (requestCode == ADD_CARD_REQUEST_CODE || requestCode == EDIT_CARD_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                String question = data.getExtras().getString("question");
+                String correct_answer = data.getExtras().getString("correct_answer");
+                if (requestCode == ADD_CARD_REQUEST_CODE) {
+                    flashcardDatabase.insertCard(new Flashcard(question, correct_answer));
+                    allFlashcards = flashcardDatabase.getAllCards();
+                    currentCardDisplayedIndex = allFlashcards.size() - 1;
+                    Snackbar.make(findViewById(R.id.flashcard_main), "Card successfully created", Snackbar.LENGTH_SHORT).show();
+                }
+                else if (requestCode == EDIT_CARD_REQUEST_CODE) {
+                    flashcard_question.setText(question);
+                    flashcard_answer.setText(correct_answer);
+                    Snackbar.make(findViewById(R.id.flashcard_main), "Card successfully edited", Snackbar.LENGTH_SHORT).show();
+                }
             }
-            if (requestCode == EDIT_CARD_REQUEST_CODE) {
-                flashcard_question.setText(question);
-                flashcard_answer.setText(correct_answer);
-                Snackbar.make(findViewById(R.id.flashcard_main), "Card successfully edited", Snackbar.LENGTH_SHORT).show();
-            }
+            displayCard();
+        }
+    }
+
+    //TODO: please review this code here
+    private int getRandomCardIndex() {
+        if (allFlashcards == null || allFlashcards.isEmpty())
+            return -1;
+        if (allFlashcards.size() == 1)
+            return currentCardDisplayedIndex;
+        while (true) {
+            int x = (int) (Math.random() * allFlashcards.size());
+            if (x != currentCardDisplayedIndex)
+                return x;
+        }
+    }
+
+    private void displayCard() {
+        if (currentCardDisplayedIndex == -1) {
+            findViewById(R.id.flashcard_question).setVisibility(View.INVISIBLE);
+            findViewById(R.id.flashcard_answer).setVisibility(View.INVISIBLE);
+            findViewById(R.id.emptystate).setVisibility(View.VISIBLE);
+            findViewById(R.id.next_card).setVisibility(View.INVISIBLE);
+            findViewById(R.id.edit_card).setVisibility(View.INVISIBLE);
+            findViewById(R.id.delete_card).setVisibility(View.INVISIBLE);
+        }
+        else {
+            ((TextView) findViewById(R.id.flashcard_question)).setText(allFlashcards.get(currentCardDisplayedIndex).getQuestion());
+            ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.get(currentCardDisplayedIndex).getAnswer());
+
+            findViewById(R.id.flashcard_question).setVisibility(View.VISIBLE);
+            findViewById(R.id.flashcard_answer).setVisibility(View.INVISIBLE);
+            findViewById(R.id.emptystate).setVisibility(View.INVISIBLE);
+            findViewById(R.id.next_card).setVisibility(View.VISIBLE);
+            findViewById(R.id.edit_card).setVisibility(View.VISIBLE);
+            findViewById(R.id.delete_card).setVisibility(View.VISIBLE);
+
+//            startTimer();
         }
     }
 

@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mylobo.Flashcard.FlashcardMain;
-import com.example.mylobo.Lobochat.ChatActivity;
+import com.example.mylobo.Lobochat.ChatListActivity;
 import com.example.mylobo.Lobotask.LobotaskMain;
 import com.example.mylobo.Marketplace.Marketplace;
 import com.example.mylobo.MenuActivity.MenuActivityHomescreen;
@@ -106,7 +106,7 @@ public class HomeScreen extends AppCompatActivity {
         btnLobochat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeScreen.this, ChatActivity.class);
+                Intent intent = new Intent(HomeScreen.this, ChatListActivity.class);
                 startActivity(intent);
             }
         });

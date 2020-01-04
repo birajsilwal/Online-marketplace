@@ -56,7 +56,8 @@
             android:background="@android:color/transparent"
             android:layout_toRightOf="@id/tvDollarSign"
             android:layout_centerVertical="true"
-            android:text="115" />
+            android:text="115"
+            android:textColor="@color/black_95_transparent"/>
 
         <TextView
             android:id="@+id/tvDollarSign"
@@ -72,10 +73,10 @@
         android:id="@+id/ivMoreYourlistings"
         android:layout_width="18dp"
         android:layout_height="18dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="8dp"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        app:srcCompat="@mipmap/ic_more_foreground" />
+        app:srcCompat="@mipmap/ic_vertical_menu_foreground" />
 
 <!--    <TextView-->
 <!--        android:id="@+id/tvEmptystateItemMP"-->
