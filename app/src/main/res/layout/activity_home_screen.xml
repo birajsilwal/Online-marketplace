@@ -88,178 +88,243 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true">
+
             <RelativeLayout
                 android:id="@+id/rl_btnMarketplace"
                 android:layout_width="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/ivMarketplace"
-                    android:layout_width="35dp"
-                    android:layout_height="40dp"
-                    android:layout_toLeftOf="@+id/tvMarketplaceHome"
-                    android:layout_marginEnd="10dp"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/ic_marketplace_foreground"/>
-                <TextView
-                    android:id="@+id/tvMarketplaceHome"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Marketplace"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/futura"
-                    android:textSize="30sp"
-                    android:textColor="@color/black_95_transparent"/>
                 <Button
                     android:id="@+id/btnMarketplace"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
+                    android:layout_height="65dp"
                     android:text="" />
+                <LinearLayout
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/ivMarketplace"
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_gravity="start|center_vertical"
+                        android:src="@mipmap/ic_marketplace_foreground"/>
+
+                    <TextView
+                        android:id="@+id/tvMarketplaceHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Marketplace"
+                        android:fontFamily="@font/futura"
+                        android:textSize="30sp"
+                        android:textColor="@color/black_95_transparent"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="10dp"/>
+                </LinearLayout>
             </RelativeLayout>
+
+
             <RelativeLayout
                 android:id="@+id/rl_btnmyLobos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rl_btnMarketplace">
-                <ImageView
-                    android:id="@+id/ivmyLobos"
-                    android:layout_width="45dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="95dp"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/ic_social_foreground" />
-                <TextView
-                    android:id="@+id/tvmyLobosHome"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="myLobos"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/futura"
-                    android:textSize="30sp"
-                    android:textColor="@color/black_95_transparent"/>
                 <Button
                     android:id="@+id/btnMyLobos"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
+                    android:layout_height="65dp"
                     android:text="" />
+                <LinearLayout
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true">
+                    <ImageView
+                        android:id="@+id/ivmyLobos"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_gravity="start|center_vertical"
+                        android:src="@mipmap/ic_social_foreground" />
+                    <TextView
+                        android:id="@+id/tvmyLobosHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="myLobos"
+                        android:fontFamily="@font/futura"
+                        android:textSize="30sp"
+                        android:textColor="@color/black_95_transparent"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="10dp"/>
+                </LinearLayout>
             </RelativeLayout>
+
+
             <RelativeLayout
                 android:id="@+id/rl_btnLobotask"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rl_btnmyLobos">
-                <ImageView
-                    android:id="@+id/ivLobotask"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="102dp"
-                    android:src="@mipmap/ic_lobotask_foreground" />
                 <Button
                     android:id="@+id/btnLobotask"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerHorizontal="true"
-                    android:gravity="start|center_vertical"
-                    android:paddingStart="160dp"
-                    android:text="Lobotask"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/futura"
-                    android:textSize="30sp" />
+                    android:layout_height="65dp"
+                    android:text="" />
+                <LinearLayout
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/ivLobotask"
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_gravity="start|center_vertical"
+                        android:src="@mipmap/ic_lobotask_foreground" />
+
+                    <TextView
+                        android:id="@+id/tvLobotaskHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lobotask"
+                        android:fontFamily="@font/futura"
+                        android:textSize="30sp"
+                        android:textColor="@color/black_95_transparent"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="10dp"/>
+                </LinearLayout>
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/rl_btnLobochat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rl_btnLobotask">
-                <ImageView
-                    android:id="@+id/ivLobochat"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="97dp"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/ic_lobochat_foreground" />
                 <Button
                     android:id="@+id/btnLobochat"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerHorizontal="true"
-                    android:gravity="start|center_vertical"
-                    android:paddingStart="160dp"
-                    android:text="Lobochat"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/futura"
-                    android:textSize="30sp"/>
+                    android:layout_height="65dp"
+                    android:text="" />
+                <LinearLayout
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/ivLobochat"
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_gravity="start|center_vertical"
+                        android:src="@mipmap/ic_lobochat_foreground" />
+
+                    <TextView
+                        android:id="@+id/tvLobochatHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lobochat"
+                        android:fontFamily="@font/futura"
+                        android:textSize="30sp"
+                        android:textColor="@color/black_95_transparent"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="10dp"/>
+                </LinearLayout>
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/rl_btnFlashcard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rl_btnLobochat">
-                <ImageView
-                    android:id="@+id/ivFlashcard"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="100dp"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/ic_flashcard_foreground" />
-
                 <Button
                     android:id="@+id/btnFlashcard"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerHorizontal="true"
-                    android:gravity="start|center_vertical"
-                    android:paddingStart="160dp"
-                    android:text="Flashcard"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/futura"
-                    android:textSize="30sp"/>
+                    android:layout_height="65dp"
+                    android:text="" />
+                <LinearLayout
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/ivFlashcard"
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_gravity="start|center_vertical"
+                        android:src="@mipmap/ic_flashcard_foreground" />
+
+                    <TextView
+                        android:id="@+id/tvFlashcardHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Flashcard"
+                        android:fontFamily="@font/futura"
+                        android:textSize="30sp"
+                        android:textColor="@color/black_95_transparent"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="10dp"/>
+                </LinearLayout>
             </RelativeLayout>
+
 
             <RelativeLayout
                 android:id="@+id/rl_btnmybooks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rl_btnFlashcard">
-                <ImageView
-                    android:id="@+id/ivBook"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="100dp"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/ic_book_foreground" />
-
                 <Button
                     android:id="@+id/btnMyBooks"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerHorizontal="true"
-                    android:gravity="start|center_vertical"
-                    android:paddingStart="160dp"
-                    android:text="myBooks"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/futura"
-                    android:textSize="30sp" />
+                    android:layout_height="65dp"
+                    android:text="" />
+                <LinearLayout
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/ivBook"
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_gravity="start|center_vertical"
+                        android:src="@mipmap/ic_book_foreground" />
+                    <TextView
+                        android:id="@+id/tvmyBooksHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="myBooks"
+                        android:fontFamily="@font/futura"
+                        android:textSize="30sp"
+                        android:textColor="@color/black_95_transparent"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="10dp"/>
+                </LinearLayout>
             </RelativeLayout>
 
+
         </RelativeLayout>
+
     </RelativeLayout>
 </RelativeLayout>

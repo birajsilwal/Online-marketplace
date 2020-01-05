@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +31,8 @@ public class HomeScreen extends AppCompatActivity {
     Button btnMarketplace, btnMyLobos, btnMybooks, btnLobochat, btnLobotask, btnFlashcard;
     ImageView ivMarketplace, ivMenuHomescreen;
 
+    RelativeLayout rl_btnMarketplace, rl_btnmyLobos, rl_btnLobotask, rl_btnLobochat, rl_btnFlashcard, rl_btnmybooks;
+
     // For weather
     String CITY = "albuquerque,us";
     String API = "3fd75b530def3b2dd94a77f7aed0d0e3";
@@ -46,11 +49,20 @@ public class HomeScreen extends AppCompatActivity {
         btnMarketplace = findViewById(R.id.btnMarketplace);
         btnMybooks = findViewById(R.id.btnMyBooks);
         btnMyLobos = findViewById(R.id.btnMyLobos);
-        ivMarketplace = findViewById(R.id.ivMarketplace);
         btnLobochat = findViewById(R.id.btnLobochat);
-        ivMenuHomescreen = findViewById(R.id.ivMenuHomescreen);
         btnLobotask = findViewById(R.id.btnLobotask);
         btnFlashcard = findViewById(R.id.btnFlashcard);
+
+        ivMarketplace = findViewById(R.id.ivMarketplace);
+        ivMenuHomescreen = findViewById(R.id.ivMenuHomescreen);
+
+        rl_btnMarketplace = findViewById(R.id.rl_btnMarketplace);
+        rl_btnmyLobos = findViewById(R.id.rl_btnmyLobos);
+        rl_btnLobotask = findViewById(R.id.rl_btnLobotask);
+        rl_btnLobochat = findViewById(R.id.rl_btnLobochat);
+        rl_btnFlashcard = findViewById(R.id.rl_btnFlashcard);
+        rl_btnmybooks = findViewById(R.id.rl_btnmybooks);
+
 
         // for weather
         tvWeatherStatus = findViewById(R.id.tvWeatherStatus);
@@ -63,10 +75,67 @@ public class HomeScreen extends AppCompatActivity {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE, MMM d");
         String date = simpleDateFormat.format(calendar.getTime());
         tvDate.setText(date);
-
         new weather().execute();
 
-        //TODO:complete this one
+
+
+
+        // Relative layout clicks
+        // takes to Marketplace
+        rl_btnMarketplace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, Marketplace.class);
+                startActivity(intent);
+            }
+        });
+
+        // takes to mylobos
+        rl_btnmyLobos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // takes to LobotaskMain
+        rl_btnLobotask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, LobotaskMain.class);
+                startActivity(intent);
+            }
+        });
+
+        // takes to Lobochat
+        rl_btnLobochat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, ChatListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // takes to falshcard
+        rl_btnFlashcard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, FlashcardMain.class);
+                startActivity(intent);
+            }
+        });
+
+        // takes to myBooks
+        rl_btnmybooks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, myBooks.class);
+                startActivity(intent);
+            }
+        });
+
+
         ivMenuHomescreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,16 +144,7 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
-        // takes to mylobos
-        btnMyLobos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeScreen.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        // takes to Marketplace
+//         takes to Marketplace
         ivMarketplace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,6 +158,15 @@ public class HomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeScreen.this, Marketplace.class);
+                startActivity(intent);
+            }
+        });
+
+        // takes to mylobos
+        btnMyLobos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreen.this, MainActivity.class);
                 startActivity(intent);
             }
         });
