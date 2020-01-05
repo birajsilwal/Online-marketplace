@@ -10,65 +10,74 @@
     android:orientation="vertical"
     android:layout_margin="10dp">
 
-    <TextView
-        android:id="@+id/tvmyLobo"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/rl_mainLogin"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/authenia"
-        android:text="myLobo"
-        android:textColor="@color/black"
-        android:textFontWeight="400"
-        android:textSize="90sp"
-        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/tvStudySmart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="78dp"
-        android:fontFamily="@font/garamond"
-        android:text="Study Smart"
-        android:textColor="@color/black"
-        android:textFontWeight="500"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.650"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvmyLobo" />
+        <RelativeLayout
+            android:id="@+id/rl_myLoboLogin"
+            android:layout_width="213dp"
+            android:layout_height="154dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+            <TextView
+                android:id="@+id/tvmyLobo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/authenia"
+                android:text="myLobo"
+                android:textColor="@color/black"
+                android:textFontWeight="400"
+                android:textSize="90sp" />
+            <TextView
+                android:id="@+id/tvStudySmart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvmyLobo"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="-40dp"
+                android:fontFamily="@font/garamond"
+                android:text="Study Smart"
+                android:textColor="@color/black"
+                android:textFontWeight="500"
+                android:textSize="30sp" />
+        </RelativeLayout>
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:ems="10"
-        android:hint="user name (abc@unm.edu)"
-        android:inputType="text"
-        android:paddingLeft="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvStudySmart" />
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:ems="10"
+            android:hint="Username"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:layout_below="@+id/rl_myLoboLogin"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/etPassword"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:hint="password"
+        android:layout_marginTop="25dp"
+        android:hint="Password"
         android:inputType="textPassword"
-        android:paddingLeft="20dp"
+        android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/rl_mainLogin" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="50dp"
         android:text="Login"
         android:gravity="center"
         android:background="@color/login"
@@ -76,7 +85,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
-
 
     <Button
         android:id="@+id/buttonleft"
@@ -152,13 +160,12 @@
         android:id="@+id/ivLobo"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_marginTop="5dp"
         android:layout_marginBottom="40dp"
         android:src="@drawable/lobo"
         android:alpha="0.1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNoAccount" />
+        app:layout_constraintTop_toBottomOf="@+id/tvOR" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,73 +37,53 @@
             android:background="@color/black_20_transparent"
             android:elevation="1dp"/>
     </RelativeLayout>
-    <GridLayout
+    <LinearLayout
         android:id="@+id/rlwithbuttonslobotaks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:columnCount="1"
+        android:orientation="vertical"
         android:layout_below="@+id/rlwithbackandlobotask"
-        android:layout_marginTop="20dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp">
+
             <Button
                 android:id="@+id/btnNewTask"
-                android:layout_width="175dp"
-                android:layout_height="175dp"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_gravity="center_horizontal"
                 android:background="@drawable/custom_button_lobotask1"
                 android:fontFamily="@font/futura"
                 android:text="To Do"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="35sp" />
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:textSize="40sp" />
+
             <Button
                 android:id="@+id/btnNewGroupProject"
-                android:layout_width="175dp"
-                android:layout_height="175dp"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
                 android:text="Project"
                 android:textAllCaps="false"
-                android:textSize="35sp"
+                android:textSize="40sp"
                 android:fontFamily="@font/futura"
                 android:textColor="@color/white"
                 android:background="@drawable/custom_button_lobotask2"/>
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/btnAddCustomList"
-                android:layout_width="175dp"
-                android:layout_height="175dp"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
                 android:text="Add Custom List"
                 android:textAllCaps="false"
-                android:textSize="30sp"
+                android:textSize="40sp"
                 android:fontFamily="@font/futura"
                 android:textColor="@color/white"
                 android:background="@drawable/custom_button_lobotask3"/>
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="9" />
-        </LinearLayout>
-    </GridLayout>
+
+    </LinearLayout>
 </RelativeLayout>
