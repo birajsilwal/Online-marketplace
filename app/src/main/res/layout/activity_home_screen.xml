@@ -7,8 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeScreen"
-    android:background="@color/white"
-    >
+    android:background="@color/white">
     <ImageView
         android:id="@+id/ivHomebackground"
         android:layout_width="match_parent"
@@ -92,26 +91,32 @@
             <RelativeLayout
                 android:id="@+id/rl_btnMarketplace"
                 android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:id="@+id/ivMarketplace"
                     android:layout_width="35dp"
                     android:layout_height="40dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="100dp"
+                    android:layout_toLeftOf="@+id/tvMarketplaceHome"
+                    android:layout_marginEnd="10dp"
                     android:layout_centerVertical="true"
                     android:src="@mipmap/ic_marketplace_foreground"/>
+                <TextView
+                    android:id="@+id/tvMarketplaceHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Marketplace"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/futura"
+                    android:textSize="30sp"
+                    android:textColor="@color/black_95_transparent"/>
                 <Button
                     android:id="@+id/btnMarketplace"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:gravity="start|center_vertical"
-                    android:paddingStart="159dp"
-                    android:text="Marketplace"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/futura"
-                    android:textSize="30sp" />
+                    android:text="" />
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/rl_btnmyLobos"
@@ -126,17 +131,22 @@
                     android:layout_marginStart="95dp"
                     android:layout_centerVertical="true"
                     android:src="@mipmap/ic_social_foreground" />
+                <TextView
+                    android:id="@+id/tvmyLobosHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="myLobos"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/futura"
+                    android:textSize="30sp"
+                    android:textColor="@color/black_95_transparent"/>
                 <Button
                     android:id="@+id/btnMyLobos"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:gravity="start|center_vertical"
-                    android:paddingStart="160dp"
-                    android:text="myLobos"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/futura"
-                    android:textSize="30sp"/>
+                    android:text="" />
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/rl_btnLobotask"

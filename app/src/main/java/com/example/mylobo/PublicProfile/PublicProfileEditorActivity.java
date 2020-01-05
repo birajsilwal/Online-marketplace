@@ -17,29 +17,19 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mylobo.HomeScreen;
 import com.example.mylobo.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
-import com.parse.ParseFile;
 import com.parse.ParseQuery;
-import com.parse.ParseUser;
-import com.parse.SaveCallback;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PublicProfileEditorActivity extends AppCompatActivity {
 
     public static final String TAG = "PubilcProfileEditor";
-
-    private RecyclerView rvItemPublicProfileEditor;
-    private ItemsAdapterPublicProfileEditor itemsAdapterPublicProfileEditor;
-    private List<ItemPublicProfileEditor> itemPublicProfileEditorList;
 
     private EditText etNameEditor;
     private EditText etUsernameEditor;
@@ -49,6 +39,8 @@ public class PublicProfileEditorActivity extends AppCompatActivity {
     private ImageView ivTickPPEditor;
     private ImageView ivProfileImage;
     private TextView tvChangePP;
+
+    String name, username;
 
     public final static int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 1034;
     public String photoFileName = "photo.jpg";
@@ -67,10 +59,6 @@ public class PublicProfileEditorActivity extends AppCompatActivity {
         ivTickPPEditor = findViewById(R.id.ivTickPPEditor);
         ivProfileImage = findViewById(R.id.ivProfileImage);
         tvChangePP = findViewById(R.id.tvChangePP);
-        rvItemPublicProfileEditor = findViewById(R.id.rvItemPublicProfileEditor);
-
-
-
 
 //        tvChangePP.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -87,25 +75,18 @@ public class PublicProfileEditorActivity extends AppCompatActivity {
                 String emailEditor =  etEmailEditor.getText().toString();
                 String majorEditor =  etMajorEditor.getText().toString();
                 String bioEditor =  etBioEditor.getText().toString();
-                ParseUser user = ParseUser.getCurrentUser();
-                if (photoFile == null || ivProfileImage.getDrawable() == null) {
-                    // if there is no photo taken, post will no be submit
-                    Log.e(TAG, "No photo to submit");
-                    Toast.makeText(PublicProfileEditorActivity.this, "There is no photo", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                savePost(nameEditor, userNameEditor, emailEditor, majorEditor, bioEditor, user, photoFile);
+
+
+//                if (photoFile == null || ivProfileImage.getDrawable() == null) {
+//                    // if there is no photo taken, post will no be submit
+//                    Log.e(TAG, "No photo to submit");
+//                    Toast.makeText(PublicProfileEditorActivity.this, "There is no photo", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//                savePost(nameEditor, userNameEditor, emailEditor, majorEditor, bioEditor, user, photoFile);
             }
         });
-
-        itemPublicProfileEditorList = new ArrayList<>();
-        itemsAdapterPublicProfileEditor = new ItemsAdapterPublicProfileEditor(this, itemPublicProfileEditorList);
-        rvItemPublicProfileEditor.setAdapter(itemsAdapterPublicProfileEditor);
-        rvItemPublicProfileEditor.setLayoutManager(new LinearLayoutManager(this));
-        rvItemPublicProfileEditor.setNestedScrollingEnabled(false);
-
         queryItemPublicProfileEditer();
-
     }
 
     private void queryItemPublicProfileEditer() {
@@ -122,8 +103,6 @@ public class PublicProfileEditorActivity extends AppCompatActivity {
                     e.printStackTrace();
                     return;
                 }
-                itemPublicProfileEditorList.addAll(itemPublicProfileEditors);
-                itemsAdapterPublicProfileEditor.notifyDataSetChanged();
             }
         });
 
@@ -155,8 +134,8 @@ public class PublicProfileEditorActivity extends AppCompatActivity {
             Log.d(TAG, "failed to create directory");
         }
         File file = new File(mediaStorageDir.getPath() + File.separator + photoFileName);
-
-        return file;    }
+        return file;
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -174,29 +153,35 @@ public class PublicProfileEditorActivity extends AppCompatActivity {
         }
     }
 
-    private void savePost(String nameEditor, String userNameEditor, String emailEditor, String majorEditor, String bioEditor, ParseUser parseUser, File photoFile) {
-        ItemPublicProfileEditor itemPublicProfileEditor = new ItemPublicProfileEditor();
-        itemPublicProfileEditor.setNameEditor(nameEditor);
-        itemPublicProfileEditor.setUsernameEditor(userNameEditor);
-        itemPublicProfileEditor.setEmailEditor(emailEditor);
-        itemPublicProfileEditor.setMajorEditor(majorEditor);
-        itemPublicProfileEditor.setBioEditor(bioEditor);
-        itemPublicProfileEditor.setUser(parseUser);
-        itemPublicProfileEditor.setImageEditor(new ParseFile(photoFile));
-        itemPublicProfileEditor.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                if (e != null){
-                    Log.d(TAG, "Error while saving");
-                    e.printStackTrace();
-                    return;
-                }
-                Log.d(TAG, "Success");
-//                Intent i = new Intent(PublicProfileEditorActivity.this, HomeScreen.class);
-//                startActivity(i);
-            }
-        });
-    }
+//    private void savePost(String nameEditor, String userNameEditor, String emailEditor, String majorEditor, String bioEditor, ParseUser parseUser, File photoFile) {
+////        ItemPublicProfileEditor itemPublicProfileEditor = new ItemPublicProfileEditor();
+//
+////        itemPublicProfileEditor.setNameEditor(nameEditor);
+////        itemPublicProfileEditor.setUsernameEditor(userNameEditor);
+////        itemPublicProfileEditor.setEmailEditor(emailEditor);
+////        itemPublicProfileEditor.setMajorEditor(majorEditor);
+////        itemPublicProfileEditor.setBioEditor(bioEditor);
+////        itemPublicProfileEditor.setUser(parseUser);
+////        itemPublicProfileEditor.setImageEditor(new ParseFile(photoFile));
+////
+////        itemPublicProfileEditor.saveInBackground(new SaveCallback() {
+//
+//
+//
+//        user.saveInBackground(new SaveCallback() {
+//            @Override
+//            public void done(ParseException e) {
+//                if (e != null){
+//                    Log.d(TAG, "Error while saving");
+//                    e.printStackTrace();
+//                    return;
+//                }
+//                Log.d(TAG, "Success");
+////                Intent i = new Intent(PublicProfileEditorActivity.this, HomeScreen.class);
+////                startActivity(i);
+//            }
+//        });
+//    }
 
     public void previous(View view){
         Intent i = new Intent(PublicProfileEditorActivity.this, HomeScreen.class);

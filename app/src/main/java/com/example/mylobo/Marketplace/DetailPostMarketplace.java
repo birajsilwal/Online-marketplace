@@ -11,9 +11,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.example.mylobo.Lobochat.ChatActivity;
 import com.example.mylobo.PublicProfile.PublicProfileViewerActivity;
 import com.example.mylobo.R;
-import com.parse.ParseFile;
 
 public class DetailPostMarketplace extends AppCompatActivity {
 
@@ -28,14 +28,13 @@ public class DetailPostMarketplace extends AppCompatActivity {
 
     String title, username, description;
     String price;
-    ParseFile image;
     String objectId;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_marketplace);
-//        PostMarketplace postMarketplace = new PostMarketplace();
+
         ivImageDMp = findViewById(R.id.ivImageDMp);
         tvTitleMp = findViewById(R.id.tvTitleMp);
         etPriceMp = findViewById(R.id.etPriceMp);
@@ -82,6 +81,15 @@ public class DetailPostMarketplace extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        rlLobochatinDetailMarketplace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailPostMarketplace.this, ChatActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         tvSeePublicProfile.setOnClickListener(new View.OnClickListener() {
             @Override

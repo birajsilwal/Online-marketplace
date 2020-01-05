@@ -51,7 +51,6 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
                 i.putExtra("username", postMarketplace.getUser().getUsername());
                 i.putExtra("description", postMarketplace.getDescription());
 //                i.putExtra("objectId", postMarketplace.getObjectId());
-
                 i.putExtra("image", image.getUrl());
                 contextMarketplace.startActivity(i);
             }
