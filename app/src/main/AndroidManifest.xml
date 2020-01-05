@@ -89,7 +89,7 @@
         <activity android:name=".Lobotask.Project.ProjectItem" />
         <activity android:name=".Lobotask.Project.ProjectItemsAdapter" />
         <activity android:name=".PublicProfile.ItemPublicProfileEditor" />
-        <activity android:name=".PublicProfile.ItemsAdapterPublicProfile" />
+        <activity android:name=".PublicProfile.ItemsAdapterPublicProfileEditor" />
     </application>
 
 </manifest>

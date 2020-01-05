@@ -17,19 +17,29 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mylobo.HomeScreen;
 import com.example.mylobo.R;
+import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PublicProfileEditorActivity extends AppCompatActivity {
 
     public static final String TAG = "PubilcProfileEditor";
+
+    private RecyclerView rvItemPublicProfileEditor;
+    private ItemsAdapterPublicProfileEditor itemsAdapterPublicProfileEditor;
+    private List<ItemPublicProfileEditor> itemPublicProfileEditorList;
 
     private EditText etNameEditor;
     private EditText etUsernameEditor;
@@ -57,13 +67,17 @@ public class PublicProfileEditorActivity extends AppCompatActivity {
         ivTickPPEditor = findViewById(R.id.ivTickPPEditor);
         ivProfileImage = findViewById(R.id.ivProfileImage);
         tvChangePP = findViewById(R.id.tvChangePP);
+        rvItemPublicProfileEditor = findViewById(R.id.rvItemPublicProfileEditor);
 
-        tvChangePP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchCamera();
-            }
-        });
+
+
+
+//        tvChangePP.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                launchCamera();
+//            }
+//        });
 
         ivTickPPEditor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +95,35 @@ public class PublicProfileEditorActivity extends AppCompatActivity {
                     return;
                 }
                 savePost(nameEditor, userNameEditor, emailEditor, majorEditor, bioEditor, user, photoFile);
+            }
+        });
+
+        itemPublicProfileEditorList = new ArrayList<>();
+        itemsAdapterPublicProfileEditor = new ItemsAdapterPublicProfileEditor(this, itemPublicProfileEditorList);
+        rvItemPublicProfileEditor.setAdapter(itemsAdapterPublicProfileEditor);
+        rvItemPublicProfileEditor.setLayoutManager(new LinearLayoutManager(this));
+        rvItemPublicProfileEditor.setNestedScrollingEnabled(false);
+
+        queryItemPublicProfileEditer();
+
+    }
+
+    private void queryItemPublicProfileEditer() {
+        //querying objects
+        ParseQuery<ItemPublicProfileEditor> itemPublicProfileEditorParseQuery = new ParseQuery<>(ItemPublicProfileEditor.class);
+        itemPublicProfileEditorParseQuery.include(ItemPublicProfileEditor.KEY_USER);
+        //setting limit to 20 items, maybe its unnecessary
+        itemPublicProfileEditorParseQuery.setLimit(20);
+        itemPublicProfileEditorParseQuery.findInBackground(new FindCallback<ItemPublicProfileEditor>() {
+            @Override
+            public void done(List<ItemPublicProfileEditor> itemPublicProfileEditors, ParseException e) {
+                if (e != null) {
+                    Log.e(TAG, "Error with query");
+                    e.printStackTrace();
+                    return;
+                }
+                itemPublicProfileEditorList.addAll(itemPublicProfileEditors);
+                itemsAdapterPublicProfileEditor.notifyDataSetChanged();
             }
         });
 
