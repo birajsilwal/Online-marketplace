@@ -2,9 +2,9 @@
 # Application title: myLobo
 
 # Contact information:
-Biraj Silwal
-bsilwal@cs.unm.edu
-(505)-271-8079
+- Biraj Silwal
+- bsilwal@cs.unm.edu
+- (505)-271-8079
 
 # Description of the app
 
