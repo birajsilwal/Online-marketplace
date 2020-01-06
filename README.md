@@ -1,4 +1,3 @@
-[![Contributors][contributors-shield]][contributors-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 # Application title: myLobo
@@ -26,6 +25,7 @@ Hi! I am Biraj Silwal, developer of myLobo app. I'm a junior studying computer s
 
 ## Open-source libraries used
 
+- [Parse Server ](https://github.com/parse-community/parse-server) - Parse Server is an open source Backend-as-a-Service(BaaS) framework.
 - [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
 - [Glide](https://github.com/bumptech/glide) - Image loading and caching library for Android
 - [Picasso](https://github.com/square/picasso) - A powerful image downloading and caching library for Android
@@ -44,7 +44,16 @@ Hi! I am Biraj Silwal, developer of myLobo app. I'm a junior studying computer s
 - [image-zoom-view](https://github.com/hsmnzaydn/image-zoom-view) - Imageview zoom library for android. It's simple show image library.
 
 ## API used
+- [Heroku](https://www.heroku.com/) - Heroku is a container-based cloud Platform as a Service (PaaS). Used Heroku to deploy, manage, scale my app.
+- [OpenWeather](https://openweathermap.org/) - Used OpenWeather API to access current weather data. Used free version. This API uses **open data**
 
+### Built With
+- [JAVA](https://www.java.com/en/)
+- [XML](https://en.wikipedia.org/wiki/XML)
+- [JSON](https://www.json.org/json-en.html)
+
+
+## Security Awareness
 
 ## Acknowledgements
 * [Codepath.org](https://codepath.org/)
@@ -71,7 +80,6 @@ Hi! I am Biraj Silwal, developer of myLobo app. I'm a junior studying computer s
 
 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/birajsilwal
 
