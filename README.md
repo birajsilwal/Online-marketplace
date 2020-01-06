@@ -2,26 +2,29 @@
 
 # Application title: myLobo
 
-# Contact information:
+## App motto: Study Smart
+
+## Contact information:
 - Biraj Silwal
 - bsilwal@cs.unm.edu
+- [Personal website](https://birajsilwal.com/)
+- [Twitter](https://twitter.com/home)
+- [Github](https://github.com/birajsilwal)
 - (505)-271-8079
 
-# Description of the app
+## Description of the app
 
-# Test accounts
+## Test accounts
 You can either *sign up* to create new account for testing, or use below *login* information
 - username: **guest** 
 - password: **guest** 
 
-# Bio
+## Developer Bio
 Hi! I am Biraj Silwal, developer of myLobo app. I'm a junior studying computer science and mathematics at UNM. In my free time I enjoy competitive programming, creating mobile apps, and attending online hackathones. I am passionate about techology and also interested in Augmented Reality, Machine Learning, and Robotics. 
 
-# Other supporting information
+## Other supporting information
 1. For the best experinece please use latest version of android operating system. **API level more than 25** is highly recommended. 
 2. After you login for the first time, it might take little bit longer to load contents in Marketplace and myLobos. So, you might have to wait ~10 seconds. Sorry, for an inconvinience. 
-
-
 
 ## Open-source libraries used
 
@@ -47,11 +50,10 @@ Hi! I am Biraj Silwal, developer of myLobo app. I'm a junior studying computer s
 - [Heroku](https://www.heroku.com/) - Heroku is a container-based cloud Platform as a Service (PaaS). Used Heroku to deploy, manage, scale my app.
 - [OpenWeather](https://openweathermap.org/) - Used OpenWeather API to access current weather data. Used free version. This API uses **open data**
 
-### Built With
+## Built With
 - [JAVA](https://www.java.com/en/)
 - [XML](https://en.wikipedia.org/wiki/XML)
 - [JSON](https://www.json.org/json-en.html)
-
 
 ## Security Awareness
 
@@ -59,7 +61,6 @@ Hi! I am Biraj Silwal, developer of myLobo app. I'm a junior studying computer s
 * [Codepath.org](https://codepath.org/)
 * [Font Awesome](https://fontawesome.com)
 * [Img Shields](https://shields.io)
-
 
 ## License
 
@@ -78,40 +79,7 @@ Hi! I am Biraj Silwal, developer of myLobo app. I'm a junior studying computer s
     limitations under the License.
 
 
-
+<!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/birajsilwal
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
