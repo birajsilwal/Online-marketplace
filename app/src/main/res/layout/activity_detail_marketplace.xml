@@ -9,16 +9,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <com.zolad.zoominimageview.ZoomInImageView
             android:id="@+id/ivImageDMp"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="520dp"
             android:layout_centerHorizontal="true"
             android:scaleType="centerCrop"
-            tools:srcCompat="@drawable/biraj"
-            />
-
+            tools:srcCompat="@drawable/biraj"/>
         <ImageView
             android:id="@+id/ivBackDMp"
             android:layout_width="30dp"
@@ -28,14 +25,6 @@
             android:layout_marginTop="8dp"
             android:scaleType="fitXY"
             android:src="@mipmap/ic_white_arrow_foreground" />
-
-<!--        <ImageView-->
-<!--            android:id="@+id/ivImageDMp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="400dp"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:scaleType="centerCrop"-->
-<!--            tools:srcCompat="@tools:sample/avatars" />-->
 
         <RelativeLayout
             android:id="@+id/rldetail1"
@@ -221,103 +210,110 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            >
-            <RelativeLayout
-                android:id="@+id/rlLobochatinDetailMarketplace"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/ivLobochatDetailMarketplace"
-                    android:layout_width="35dp"
-                    android:layout_height="25dp"
-                    app:srcCompat="@mipmap/ic_lobochat_foreground"
-                    android:layout_centerHorizontal="true"/>
-                <TextView
-                    android:id="@+id/tvMessage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Message"
-                    android:textColor="@color/black_95_transparent"
-                    android:layout_marginTop="-6dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@id/ivLobochatDetailMarketplace"/>
-            </RelativeLayout>
+            android:paddingBottom="10dp">
 
-            <RelativeLayout
-                android:id="@+id/rlBookmarkDetailMarketplace"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/rlLobochatinDetailMarketplace"
-                android:layout_marginStart="55dp">
-                <ImageView
-                    android:id="@+id/ivBookmarkDetailMarketplace"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    app:srcCompat="@mipmap/ic_bookmark_foreground"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="0dp"/>
-                <TextView
-                    android:id="@+id/tvBookmark"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:id="@+id/rlLobochatinDetailMarketplace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/ivLobochatDetailMarketplace"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        app:srcCompat="@mipmap/ic_lobochat_foreground"
+                        android:layout_centerHorizontal="true"/>
+                    <TextView
+                        android:id="@+id/tvMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Message"
+                        android:textColor="@color/black_95_transparent"
+                        android:layout_marginTop="-6dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/ivLobochatDetailMarketplace"/>
+                </RelativeLayout>
+                <Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bookmark"
-                    android:textColor="@color/black_95_transparent"
-                    android:layout_marginTop="0dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@id/ivBookmarkDetailMarketplace"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rlShareDetailMarketplace"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toLeftOf="@+id/rlReportDetailMarketplace"
-                android:layout_marginEnd="55dp">
-                <ImageView
-                    android:id="@+id/ivShareDetailMarketplace"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    app:srcCompat="@mipmap/ic_share_foreground"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="0dp"/>
-                <TextView
-                    android:id="@+id/tvShare"
+                    android:layout_weight="1"/>
+                <RelativeLayout
+                    android:id="@+id/rlBookmarkDetailMarketplace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/ivBookmarkDetailMarketplace"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:srcCompat="@mipmap/ic_bookmark_foreground"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="0dp"/>
+                    <TextView
+                        android:id="@+id/tvBookmark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bookmark"
+                        android:textColor="@color/black_95_transparent"
+                        android:layout_marginTop="0dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/ivBookmarkDetailMarketplace"/>
+                </RelativeLayout>
+                <Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Share"
-                    android:textColor="@color/black_95_transparent"
-                    android:layout_marginTop="0dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@id/ivShareDetailMarketplace"/>
-            </RelativeLayout>
-
-
-            <RelativeLayout
-                android:id="@+id/rlReportDetailMarketplace"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true">
-
-                <ImageView
-                    android:id="@+id/ivReportDetailMarketplace"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_centerHorizontal="true"
-                    app:srcCompat="@mipmap/ic_report_foreground"/>
-
-                <TextView
-                    android:id="@+id/tvReport"
+                    android:layout_weight="1"/>
+                <RelativeLayout
+                    android:id="@+id/rlShareDetailMarketplace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/ivShareDetailMarketplace"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:srcCompat="@mipmap/ic_share_foreground"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="0dp"/>
+                    <TextView
+                        android:id="@+id/tvShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Share"
+                        android:textColor="@color/black_95_transparent"
+                        android:layout_marginTop="0dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/ivShareDetailMarketplace"/>
+                </RelativeLayout>
+                <Space
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Report"
-                    android:textColor="@color/black_95_transparent"
-                    android:layout_marginTop="0dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@id/ivReportDetailMarketplace"/>
+                    android:layout_weight="1"/>
+                <RelativeLayout
+                    android:id="@+id/rlReportDetailMarketplace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/ivReportDetailMarketplace"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_centerHorizontal="true"
+                        app:srcCompat="@mipmap/ic_report_foreground"/>
+                    <TextView
+                        android:id="@+id/tvReport"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Report"
+                        android:textColor="@color/black_95_transparent"
+                        android:layout_marginTop="0dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/ivReportDetailMarketplace"/>
+                </RelativeLayout>
+            </LinearLayout>
 
-            </RelativeLayout>
+
         </RelativeLayout>
     </RelativeLayout>
 

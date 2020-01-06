@@ -17,7 +17,11 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
-        <activity android:name=".Lobochat.ChatListActivity"></activity>
+        <activity android:name=".DeleteAccountMessageActivity"></activity>
+        <activity
+            android:name=".DeleteAccountActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Lobochat.ChatListActivity" />
         <activity android:name=".Lobotask.Project.ProjectSnake" />
         <activity android:name=".Lobotask.Project.Project" />
         <activity android:name=".PublicProfile.PublicProfileViewerActivity" />
@@ -82,15 +86,12 @@
         <activity android:name=".Marketplace.DetailPostMarketplace" />
         <activity android:name=".Lobochat.ChatActivity" />
         <activity android:name=".Marketplace.PostsAdapterMarketplaceYourlistings" />
-        <activity android:name=".Bookmarks" />
         <activity android:name=".Lobotask.Todo.TodoItemAdapter" />
         <activity android:name=".Lobotask.Todo.TodoItem" />
         <activity android:name=".Marketplace.GridSpacing" />
         <activity android:name=".Lobotask.Project.ProjectItem" />
         <activity android:name=".Lobotask.Project.ProjectItemsAdapter" />
         <activity android:name=".PublicProfile.ItemPublicProfileEditor" />
-        <activity android:name=".PublicProfile.ItemsAdapterPublicProfileEditor" />
-        <activity android:name=".User" />
     </application>
 
 </manifest>

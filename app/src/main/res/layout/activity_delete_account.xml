@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DeleteAccountActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/custom_border_delete_account">
+
+        <TextView
+            android:id="@+id/tvUninstallFinal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:text="Delete My Account"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="25sp" />
+        <View
+            android:id="@+id/viewLineMarketplace"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:elevation="5dp"
+            android:background="@color/loboSilver"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tvUninstallFinal"/>
+        <TextView
+            android:id="@+id/tvFinalThankYou"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvUninstallFinal"
+            android:layout_marginTop="10dp"
+            android:text="Thank you for using myLobo. Please help us improve our service by telling us why you chose to leave myLobo community."
+            android:textColor="@color/black_95_transparent"
+            android:fontFamily="@font/futura"
+            android:textSize="15dp" />
+
+        <RadioGroup
+            android:id="@+id/rg_deleteaccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tvFinalThankYou">
+
+            <RadioButton
+                android:id="@+id/rb_finduseful"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I dont't find myLobo useful." />
+            <RadioButton
+                android:id="@+id/rb_Feelsafe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I dont't feel safe on myLobo." />
+            <RadioButton
+                android:id="@+id/rb_AccountHacked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My account was hacked." />
+            <RadioButton
+                android:id="@+id/rb_dontUnderstand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I don't understand how to use myLobo." />
+            <RadioButton
+                android:id="@+id/rb_PrivacyConcern"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I have a privacy concern." />
+            <RadioButton
+                android:id="@+id/rb_Other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other, please explain further:" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/et_otherindeleteaccount"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/rg_deleteaccount"
+            android:gravity="top"
+            android:background="@drawable/custom_border_other_final"/>
+        <Button
+            android:id="@+id/btnSubmitDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_otherindeleteaccount"
+            android:layout_marginTop="15dp"
+            android:text="Delete My Account"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:background="@color/login"/>
+
+        <Button
+            android:id="@+id/btnCancelDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_otherindeleteaccount"
+            android:layout_marginTop="15dp"
+            android:text="Cancel"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/black_95_transparent"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:background="@color/loboSilver"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/btnSubmitDelete"/>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>

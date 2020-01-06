@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DeleteAccountMessageActivity">
+
+    <TextView
+        android:id="@+id/tv_finalnotice"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Your account has been deactivated and will be permanently deleted within 3 days. If you log into your account within the next 3 days, you will have option to cancel your request."
+        android:textColor="@color/black_95_transparent"
+        android:textSize="17sp"
+        android:fontFamily="@font/futura"
+        android:gravity="start"/>
+
+    <TextView
+        android:id="@+id/tvGotoLoginpage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_finalnotice"
+        android:text="Go To Login Page"
+        android:textSize="20sp"
+        android:textColor="@color/black_95_transparent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+</RelativeLayout>

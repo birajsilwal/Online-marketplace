@@ -116,11 +116,24 @@
             android:textSize="27sp" />
     </RelativeLayout>
 
+    <View
+        android:id="@+id/viewLineSettingPrivacy"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/loboSilver"
+        android:layout_below="@+id/rlwithLanguage"
+        android:layout_marginTop="10dp"/>
 
-
-
-
-
-
+    <TextView
+        android:id="@+id/tvDeleteAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Want to delete your account PERMANENTLY? Click here to proceed."
+        android:layout_below="@+id/viewLineSettingPrivacy"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textColor="@color/split_line"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

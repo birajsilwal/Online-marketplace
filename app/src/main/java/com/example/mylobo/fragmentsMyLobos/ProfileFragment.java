@@ -63,8 +63,6 @@ public class ProfileFragment extends Fragment {
 
         // only gets the current user posts into profile fragment
         postQuery.whereEqualTo(Post.KEY_USER, ParseUser.getCurrentUser());
-
-        postQuery.addDescendingOrder(Post.KEY_CREATED_AT);
         postQuery.findInBackground(new FindCallback<Post>() {
             @Override
             public void done(List<Post> posts, ParseException e) {
