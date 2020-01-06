@@ -1,3 +1,7 @@
+[![Contributors][contributors-shield]][contributors-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
 
 # Application title: myLobo
 
@@ -9,16 +13,16 @@
 # Description of the app
 
 # Test accounts
-You can either sign up to create new account for testing, or use below login information
-- username: guest 
-- password: guest 
+You can either *sign up* to create new account for testing, or use below *login* information
+- username: **guest** 
+- password: **guest** 
 
 # Bio
 Hi! I am Biraj Silwal, developer of myLobo app. I'm a junior studying computer science and mathematics at UNM. In my free time I enjoy competitive programming, creating mobile apps, and attending online hackathones. I am passionate about techology and also interested in Augmented Reality, Machine Learning, and Robotics. 
 
 # Other supporting information
-1. For the best experinece please use latest version of android operating system. API level more than 25 is highly recommended. 
-2. After you login for the first time, it might take little bit longer to load contents in Marketplace and myLobos. So, you might have to wait ~10 seconds. Sorry, for inconvinience. 
+1. For the best experinece please use latest version of android operating system. **API level more than 25** is highly recommended. 
+2. After you login for the first time, it might take little bit longer to load contents in Marketplace and myLobos. So, you might have to wait ~10 seconds. Sorry, for an inconvinience. 
 
 
 
@@ -41,6 +45,14 @@ Hi! I am Biraj Silwal, developer of myLobo app. I'm a junior studying computer s
 - [Apache Commons IO](https://github.com/apache/commons-io) - The Apache Commons IO library contains utility classes, stream implementations, file filters, file comparators, endian transformation classes, and much more.
 - [image-zoom-view](https://github.com/hsmnzaydn/image-zoom-view) - Imageview zoom library for android. It's simple show image library.
 
+## API used
+
+
+## Acknowledgements
+* [Codepath.org](https://codepath.org/)
+* [Font Awesome](https://fontawesome.com)
+* [Img Shields](https://shields.io)
+
 
 ## License
 
@@ -57,3 +69,43 @@ Hi! I am Biraj Silwal, developer of myLobo app. I'm a junior studying computer s
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+
+
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/birajsilwal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
