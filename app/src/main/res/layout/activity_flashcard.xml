@@ -54,7 +54,8 @@
             android:background="@drawable/custom_flashcard_question"
             android:gravity="center"
             android:text="Who is the founder of Computer Science? "
-            android:textSize="38sp"
+            android:textSize="35sp"
+            android:fontFamily="@font/futura"
             android:elevation="5dp" />
         <TextView
             android:id="@+id/flashcard_answer"
@@ -65,8 +66,9 @@
             android:layout_below="@+id/flashcard_question"
             android:gravity="center"
             android:text="Alan Turing"
-            android:textSize="38sp"
+            android:textSize="35sp"
             android:visibility="invisible"
+            android:fontFamily="@font/futura"
             android:elevation="5dp"
             android:background="@drawable/custom_flashcard_answer"/>
         <TextView
@@ -78,7 +80,8 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="No flashcards yet"
-            android:textSize="40sp"
+            android:textSize="35sp"
+            android:fontFamily="@font/futura"
             android:visibility="invisible"
             android:textAlignment="center"
             android:elevation="15dp"/>

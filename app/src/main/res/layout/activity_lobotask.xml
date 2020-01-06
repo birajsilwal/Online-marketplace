@@ -44,30 +44,30 @@
         android:orientation="vertical"
         android:layout_below="@+id/rlwithbackandlobotask"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp">
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp">
 
             <Button
                 android:id="@+id/btnNewTask"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="130dp"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/custom_button_lobotask1"
                 android:fontFamily="@font/futura"
                 android:text="To Do"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="40sp" />
+                android:textSize="35sp" />
 
             <Button
                 android:id="@+id/btnNewGroupProject"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="130dp"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center_horizontal"
                 android:text="Project"
                 android:textAllCaps="false"
-                android:textSize="40sp"
+                android:textSize="35sp"
                 android:fontFamily="@font/futura"
                 android:textColor="@color/white"
                 android:background="@drawable/custom_button_lobotask2"/>
@@ -75,12 +75,12 @@
             <Button
                 android:id="@+id/btnAddCustomList"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="130dp"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center_horizontal"
                 android:text="Add Custom List"
                 android:textAllCaps="false"
-                android:textSize="40sp"
+                android:textSize="35sp"
                 android:fontFamily="@font/futura"
                 android:textColor="@color/white"
                 android:background="@drawable/custom_button_lobotask3"/>

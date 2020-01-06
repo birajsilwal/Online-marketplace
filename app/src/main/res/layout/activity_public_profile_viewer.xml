@@ -46,7 +46,8 @@
             android:id="@+id/tvNamePP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"/>
+            android:text="Name"
+            android:textColor="@color/Turquoise"/>
         <TextView
             android:id="@+id/tvNameViewer"
             android:layout_width="match_parent"
@@ -75,7 +76,8 @@
             android:id="@+id/tvUserNamePP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Username"/>
+            android:text="Username"
+            android:textColor="@color/Turquoise"/>
         <TextView
             android:id="@+id/tvUsenameViewer"
             android:layout_width="match_parent"
@@ -105,7 +107,8 @@
             android:id="@+id/tvMajorPP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Major"/>
+            android:text="Major"
+            android:textColor="@color/Turquoise"/>
         <TextView
             android:id="@+id/tvMajorViewer"
             android:layout_width="match_parent"
@@ -134,7 +137,8 @@
             android:id="@+id/tvBioPP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bio"/>
+            android:text="Bio"
+            android:textColor="@color/Turquoise"/>
         <TextView
             android:id="@+id/tvBioViewer"
             android:layout_width="match_parent"

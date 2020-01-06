@@ -49,9 +49,10 @@
                 android:id="@+id/tvTitleMp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="35sp"
+                android:textSize="32sp"
                 android:textColor="@color/black_95_transparent"
                 android:text="Guitar"
+                android:fontFamily="sans-serif-light"
                 android:textStyle="bold"/>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -175,7 +176,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:text="See Public Profile"
-                    android:textColor="@color/split_line"
+                    android:textColor="@color/Turquoise"
                     android:textSize="15dp" />
             </RelativeLayout>
 

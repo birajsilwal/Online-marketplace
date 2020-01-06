@@ -58,7 +58,7 @@
         android:id="@+id/etEmail"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="14dp"
         android:ems="10"
         android:hint="Email"
@@ -154,7 +154,5 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/tvInfo"/>
     </RelativeLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

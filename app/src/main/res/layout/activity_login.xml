@@ -21,8 +21,7 @@
         <RelativeLayout
             android:id="@+id/rl_myLoboLogin"
             android:layout_width="213dp"
-            android:layout_height="154dp"
-            android:layout_marginTop="30dp"
+            android:layout_height="150dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true">
             <TextView
@@ -52,7 +51,7 @@
             android:id="@+id/etEmail"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="25dp"
             android:ems="10"
             android:hint="Username"
             android:inputType="text"
@@ -72,7 +71,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rl_mainLogin" />
-
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="300dp"
@@ -86,76 +84,64 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
-    <Button
-        android:id="@+id/buttonleft"
-        android:layout_width="135dp"
-        android:layout_height="2dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="237dp"
-        android:layout_marginBottom="25dp"
-        android:background="@color/black"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/tvNoAccount"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
-
-    <Button
-        android:id="@+id/buttonright"
-        android:layout_width="135dp"
-        android:layout_height="2dp"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="25dp"
-        android:background="@color/black"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/tvSignUp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
-
-    <TextView
-        android:id="@+id/tvOR"
+    <LinearLayout
+        android:id="@+id/ll_OR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OR"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonright"
-        app:layout_constraintStart_toEndOf="@+id/buttonleft"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
-        app:layout_constraintVertical_bias="0.062" />
-
-    <TextView
-        android:id="@+id/tvNoAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-
-        android:text="Don't have an account?"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvOR" />
-
-    <TextView
-        android:id="@+id/tvSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center_horizontal"
-        android:text="Sign Up."
-        android:textColor="@color/black"
-        android:textStyle="bold"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tvNoAccount"
-        app:layout_constraintTop_toBottomOf="@+id/tvOR" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin">
+        <Button
+            android:id="@+id/buttonleft"
+            android:layout_width="135dp"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            android:layout_gravity="center_vertical"
+            android:text="" />
+        <TextView
+            android:id="@+id/tvOR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OR"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+        <Button
+            android:id="@+id/buttonright"
+            android:layout_width="135dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/black"
+            android:text="" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/ll_noaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_OR">
+        <TextView
+            android:id="@+id/tvNoAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account?" />
+        <TextView
+            android:id="@+id/tvSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="5dp"
+            android:text="Sign Up."
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
     <ImageView
         android:id="@+id/ivLobo"
         android:layout_width="180dp"
@@ -166,6 +152,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvOR" />
-
+        app:layout_constraintTop_toBottomOf="@+id/ll_noaccount" />
 </androidx.constraintlayout.widget.ConstraintLayout>
