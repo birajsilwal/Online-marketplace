@@ -13,6 +13,7 @@
 - (505)-271-8079
 
 ## Description of the app
+myLobo is a simple yet powerful way to study smart. 
 
 ## Test accounts
 You can either *sign up* to create new account for testing, or use below *login* information
@@ -23,8 +24,8 @@ You can either *sign up* to create new account for testing, or use below *login*
 Hi! I am Biraj Silwal, developer of myLobo app. I'm a junior studying computer science and mathematics at UNM. In my free time I enjoy competitive programming, creating mobile apps, and attending online hackathones. I am passionate about techology and also interested in Augmented Reality, Machine Learning, and Robotics. 
 
 ## Other supporting information
-1. For the best experinece please use latest version of android operating system. **API level more than 25** is highly recommended. 
-2. After you login for the first time, it might take little bit longer to load contents in Marketplace and myLobos. So, you might have to wait ~10 seconds. Sorry, for an inconvinience. 
+- For the best experinece please use latest version of android operating system. **API level more than 25** is highly recommended. 
+- After you login for the first time, it might take little bit longer to load contents in Marketplace and myLobos. So, you might have to wait ~10 seconds. Sorry, for an inconvinience. 
 
 ## Open-source libraries used
 
@@ -56,6 +57,20 @@ Hi! I am Biraj Silwal, developer of myLobo app. I'm a junior studying computer s
 - [JSON](https://www.json.org/json-en.html)
 
 ## Security Awareness
+What makes this app more secure and reliable then another platform is that because the user can only use their UNM netid as their username to signup, the user also have an option to display their preferred name (it might not be unique for all users). Currently, user's username is displayed publicly because it is publicly accessible through UNM directory. 
+
+One of the quickest way to log into app is to connect via your Facebook or Google or another social media platform. Such action leaves these accounts potentially vulnerable to breach or compromise. By not using such a feature, it makes myLobo more secure. 
+
+While using this app, the user does not have to worry about tracking their device because the user does not have to enable their location service (for weather feature, location of Albuquerque is used by default.) 
+
+This app is built to make the UNM community more strong and robust, any kind of Cyberbullying, Cyber-Mob Attacks, Cyberstalking, Hateful speech, Online threats, Message Bombing (via Lobochat), Revenge porn, Online Sexual Harassment, Online Impersonation, Trolling, Swatting are not tolerable. Upon violation, the user will be immediately removed from the app and will get punishment from the University. 
+
+Our high priority in this app is to secure user privacy and information. User information will not trade with other parties by any means. Upon the request of the user, the admin will permanently delete the user account and all information related to that user from the server. 
+
+All of the user posts are stored temporarily on the server. For instance, in the Marketplace, once the item is sold, it will automatically immediately deleted from the server. In myLobos, all the posts are automatically deleted every 5 business days after the post has been uploaded. In Lobochat, all the unsaved messages will be automatically deleted from the server at the end of every semester. The user can manually download, or save their message if the user want.
+
+There is no built-in payment service at the moment. For buying and selling purposes, the user can use cash or other publicly available online payment services, for instance, Venmo, Paypal, Zelle, etc. 
+
 
 ## Acknowledgements
 * [Codepath.org](https://codepath.org/)
