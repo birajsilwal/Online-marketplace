@@ -17,7 +17,6 @@ import com.example.mylobo.Lobochat.ChatListActivity;
 import com.example.mylobo.Lobotask.LobotaskMain;
 import com.example.mylobo.Marketplace.Marketplace;
 import com.example.mylobo.MenuActivity.MenuActivityHomescreen;
-import com.example.mylobo.myBooks.myBooks;
 import com.example.mylobo.myLobos.MainActivity;
 
 import org.json.JSONException;
@@ -28,7 +27,7 @@ import java.util.Calendar;
 
 public class HomeScreen extends AppCompatActivity {
 
-    Button btnMarketplace, btnMyLobos, btnMybooks, btnLobochat, btnLobotask, btnFlashcard;
+    Button btnMarketplace, btnMyLobos, btnLobochat, btnLobotask, btnFlashcard;
     ImageView ivMarketplace, ivMenuHomescreen;
 
     RelativeLayout rl_btnMarketplace, rl_btnmyLobos, rl_btnLobotask, rl_btnLobochat, rl_btnFlashcard, rl_btnmybooks;
@@ -47,7 +46,6 @@ public class HomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
 
         btnMarketplace = findViewById(R.id.btnMarketplace);
-        btnMybooks = findViewById(R.id.btnMyBooks);
         btnMyLobos = findViewById(R.id.btnMyLobos);
         btnLobochat = findViewById(R.id.btnLobochat);
         btnLobotask = findViewById(R.id.btnLobotask);
@@ -61,8 +59,6 @@ public class HomeScreen extends AppCompatActivity {
         rl_btnLobotask = findViewById(R.id.rl_btnLobotask);
         rl_btnLobochat = findViewById(R.id.rl_btnLobochat);
         rl_btnFlashcard = findViewById(R.id.rl_btnFlashcard);
-        rl_btnmybooks = findViewById(R.id.rl_btnmybooks);
-
 
         // for weather
         tvWeatherStatus = findViewById(R.id.tvWeatherStatus);
@@ -76,8 +72,6 @@ public class HomeScreen extends AppCompatActivity {
         String date = simpleDateFormat.format(calendar.getTime());
         tvDate.setText(date);
         new weather().execute();
-
-
 
 
         // Relative layout clicks
@@ -122,15 +116,6 @@ public class HomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeScreen.this, FlashcardMain.class);
-                startActivity(intent);
-            }
-        });
-
-        // takes to myBooks
-        rl_btnmybooks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeScreen.this, myBooks.class);
                 startActivity(intent);
             }
         });
@@ -180,7 +165,6 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
-
         // takes to falshcard
         btnFlashcard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -195,15 +179,6 @@ public class HomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeScreen.this, LobotaskMain.class);
-                startActivity(intent);
-            }
-        });
-
-        // takes to myBooks
-        btnMybooks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeScreen.this, myBooks.class);
                 startActivity(intent);
             }
         });

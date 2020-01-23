@@ -97,7 +97,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             ivImage = itemView.findViewById(R.id.ivImage);
             tvDescription = itemView.findViewById(R.id.tvDescriptionTitle);
 //            rlPost = itemView.findViewById(R.id.rlPost);
-            ivDelete = itemView.findViewById(R.id.ivDelete);
+//            ivDelete = itemView.findViewById(R.id.ivDelete);
         }
 
         public void bind(Post post){

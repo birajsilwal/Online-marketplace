@@ -50,6 +50,7 @@ public class PostMarketplace extends ParseObject {
     public String getPrice() { return getString(KEY_PRICE);}
 
     public void setPrice(String price) { put(KEY_PRICE, price);}
+
 }
 
 // register this class with parse before we call Parse.initialize

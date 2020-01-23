@@ -32,38 +32,10 @@
             android:textSize="19sp" />
     </RelativeLayout>
     <RelativeLayout
-        android:id="@+id/rlwithyourHome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/rlwithbackandmenumylobos">
-        <ImageView
-            android:id="@+id/ivHome"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="2dp"
-            android:src="@mipmap/ic_home_foreground" />
-        <Button
-            android:id="@+id/btnHome"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:gravity="start"
-            android:paddingStart="85dp"
-            android:text="Home"
-            android:textAllCaps="false"
-            android:fontFamily="@font/futura_medium"
-            android:textSize="27sp" />
-    </RelativeLayout>
-    <RelativeLayout
         android:id="@+id/rlwithBookmarksinmenumylobos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rlwithyourHome">
+        android:layout_below="@+id/rlwithbackandmenumylobos">
         <ImageView
             android:id="@+id/ivBookmark"
             android:layout_width="33dp"

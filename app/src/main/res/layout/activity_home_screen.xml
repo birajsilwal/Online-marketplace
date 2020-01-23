@@ -101,7 +101,7 @@
                     android:layout_height="65dp"
                     android:text="" />
                 <LinearLayout
-                    android:layout_width="230dp"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_centerVertical="true"
@@ -141,7 +141,7 @@
                     android:layout_height="65dp"
                     android:text="" />
                 <LinearLayout
-                    android:layout_width="230dp"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_centerVertical="true"
@@ -179,7 +179,7 @@
                     android:layout_height="65dp"
                     android:text="" />
                 <LinearLayout
-                    android:layout_width="230dp"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_centerVertical="true"
@@ -207,49 +207,10 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/rl_btnLobochat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/rl_btnLobotask">
-                <Button
-                    android:id="@+id/btnLobochat"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="65dp"
-                    android:text="" />
-                <LinearLayout
-                    android:layout_width="230dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true">
-
-                    <ImageView
-                        android:id="@+id/ivLobochat"
-                        android:layout_width="35dp"
-                        android:layout_height="30dp"
-                        android:layout_marginTop="2dp"
-                        android:layout_gravity="start|center_vertical"
-                        android:src="@mipmap/ic_lobochat_foreground" />
-
-                    <TextView
-                        android:id="@+id/tvLobochatHome"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lobochat"
-                        android:fontFamily="@font/futura"
-                        android:textSize="30sp"
-                        android:textColor="@color/black_95_transparent"
-                        android:gravity="center_vertical"
-                        android:layout_marginStart="10dp"/>
-                </LinearLayout>
-            </RelativeLayout>
-
-            <RelativeLayout
                 android:id="@+id/rl_btnFlashcard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/rl_btnLobochat">
+                android:layout_below="@+id/rl_btnLobotask">
                 <Button
                     android:id="@+id/btnFlashcard"
                     style="?android:attr/borderlessButtonStyle"
@@ -257,7 +218,7 @@
                     android:layout_height="65dp"
                     android:text="" />
                 <LinearLayout
-                    android:layout_width="230dp"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_centerVertical="true"
@@ -284,37 +245,37 @@
                 </LinearLayout>
             </RelativeLayout>
 
-
             <RelativeLayout
-                android:id="@+id/rl_btnmybooks"
+                android:id="@+id/rl_btnLobochat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rl_btnFlashcard">
                 <Button
-                    android:id="@+id/btnMyBooks"
+                    android:id="@+id/btnLobochat"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="65dp"
                     android:text="" />
                 <LinearLayout
-                    android:layout_width="230dp"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true">
 
                     <ImageView
-                        android:id="@+id/ivBook"
+                        android:id="@+id/ivLobochat"
                         android:layout_width="35dp"
                         android:layout_height="30dp"
                         android:layout_marginTop="2dp"
                         android:layout_gravity="start|center_vertical"
-                        android:src="@mipmap/ic_book_foreground" />
+                        android:src="@mipmap/ic_lobochat_foreground" />
+
                     <TextView
-                        android:id="@+id/tvmyBooksHome"
+                        android:id="@+id/tvLobochatHome"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="myBooks"
+                        android:text="Lobochat"
                         android:fontFamily="@font/futura"
                         android:textSize="30sp"
                         android:textColor="@color/black_95_transparent"
@@ -322,7 +283,6 @@
                         android:layout_marginStart="10dp"/>
                 </LinearLayout>
             </RelativeLayout>
-
 
         </RelativeLayout>
 

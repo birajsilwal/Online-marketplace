@@ -8,7 +8,6 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mylobo.HomeScreen;
 import com.example.mylobo.Marketplace.Marketplace;
 import com.example.mylobo.Marketplace.YourListingsActivity;
 import com.example.mylobo.R;
@@ -17,7 +16,7 @@ import com.example.mylobo.R;
 public class MenuActivityMarketplace extends AppCompatActivity {
 
     public static final String TAG = "MenuActivityMarketplace";
-    Button btnYourlistings, btnHome;
+    Button btnYourlistings;
     ImageView ivBackMenuMp;
 
     @Override
@@ -27,7 +26,6 @@ public class MenuActivityMarketplace extends AppCompatActivity {
 
         btnYourlistings = findViewById(R.id.btnYourlistings);
         ivBackMenuMp = findViewById(R.id.ivBackMenuMp);
-        btnHome = findViewById(R.id.btnHome);
 
         btnYourlistings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,14 +39,6 @@ public class MenuActivityMarketplace extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MenuActivityMarketplace.this, Marketplace.class);
-                startActivity(i);
-            }
-        });
-
-        btnHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MenuActivityMarketplace.this, HomeScreen.class);
                 startActivity(i);
             }
         });

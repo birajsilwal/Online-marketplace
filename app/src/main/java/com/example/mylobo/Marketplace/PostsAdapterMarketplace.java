@@ -66,7 +66,7 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
     // by this view holder so some of the return methods and parameter inputs will reference view holder rather than the generic view holder
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-//        private TextView tvTitle;
+        private TextView tvItemNamePMarketplace;
         public ImageView ivImageMp;
         private TextView etPriceMp;
         private RelativeLayout rlMarketplace;
@@ -75,7 +75,7 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
         public ViewHolder(View itemView) {
             super(itemView);
 
-//            tvTitle = itemView.findViewById(R.id.tvTitleMp);
+            tvItemNamePMarketplace = itemView.findViewById(R.id.tvItemNamePMarketplace);
             ivImageMp = itemView.findViewById(R.id.ivImageMp);
             etPriceMp = itemView.findViewById(R.id.etPriceMp);
             rlMarketplace = itemView.findViewById(R.id.rlMarketplace);
@@ -83,7 +83,7 @@ public class PostsAdapterMarketplace extends RecyclerView.Adapter<PostsAdapterMa
 
         // responsible for taking a post and binding it to the view that we have here
         public void bind(PostMarketplace postMarketplace){
-//            tvTitle.setText(postMarketplace.getTitle());
+            tvItemNamePMarketplace.setText(postMarketplace.getTitle());
             etPriceMp.setText(postMarketplace.getPrice());
             ParseFile image = postMarketplace.getImage();
             if (image != null) {

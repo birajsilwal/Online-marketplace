@@ -99,7 +99,5 @@ public class DetailPostMarketplace extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 }

@@ -60,32 +60,33 @@ public class PublicProfileEditorActivity extends AppCompatActivity {
         ivProfileImage = findViewById(R.id.ivProfileImage);
         tvChangePP = findViewById(R.id.tvChangePP);
 
-//        tvChangePP.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                launchCamera();
-//            }
-//        });
-
-        ivTickPPEditor.setOnClickListener(new View.OnClickListener() {
+        tvChangePP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nameEditor =  etNameEditor.getText().toString();
-                String userNameEditor =  etUsernameEditor.getText().toString();
-                String emailEditor =  etEmailEditor.getText().toString();
-                String majorEditor =  etMajorEditor.getText().toString();
-                String bioEditor =  etBioEditor.getText().toString();
+                launchCamera();
+            }
+        });
 
-
+//        ivTickPPEditor.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String nameEditor =  etNameEditor.getText().toString();
+//                String userNameEditor =  etUsernameEditor.getText().toString();
+//                String emailEditor =  etEmailEditor.getText().toString();
+//                String majorEditor =  etMajorEditor.getText().toString();
+//                String bioEditor =  etBioEditor.getText().toString();
+//
+//
 //                if (photoFile == null || ivProfileImage.getDrawable() == null) {
 //                    // if there is no photo taken, post will no be submit
 //                    Log.e(TAG, "No photo to submit");
 //                    Toast.makeText(PublicProfileEditorActivity.this, "There is no photo", Toast.LENGTH_SHORT).show();
 //                    return;
 //                }
-//                savePost(nameEditor, userNameEditor, emailEditor, majorEditor, bioEditor, user, photoFile);
-            }
-        });
+////                savePost(nameEditor, userNameEditor, emailEditor, majorEditor, bioEditor, user, photoFile);
+//                savePost(photoFile);
+//            }
+//        });
         queryItemPublicProfileEditer();
     }
 
@@ -182,6 +183,7 @@ public class PublicProfileEditorActivity extends AppCompatActivity {
 //            }
 //        });
 //    }
+
 
     public void previous(View view){
         Intent i = new Intent(PublicProfileEditorActivity.this, HomeScreen.class);
