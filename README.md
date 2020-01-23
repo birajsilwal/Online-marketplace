@@ -71,6 +71,12 @@ All of the user posts are stored temporarily on the server. For instance, in the
 
 There is no built-in payment service at the moment. For buying and selling purposes, the user can use cash or other publicly available online payment services, for instance, Venmo, Paypal, Zelle, etc. 
 
+## Screenshots
+
+![alt text](https://github.com/birajsilwal/myLobo/blob/master/pic1.png)
+![alt text](https://github.com/birajsilwal/myLobo/blob/master/pic2.png)
+![alt text](https://github.com/birajsilwal/myLobo/blob/master/pic3.png)
+![alt text](https://github.com/birajsilwal/myLobo/blob/master/pic4.png)
 
 ## Acknowledgements
 * [Codepath.org](https://codepath.org/)
