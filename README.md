@@ -10,7 +10,6 @@
 - [Personal website](https://birajsilwal.com/)
 - [Twitter](https://twitter.com/home)
 - [Github](https://github.com/birajsilwal)
-- (505)-271-8079
 
 ## Description of the app
 myLobo is a simple yet powerful way to study smart. 
