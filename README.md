@@ -6,7 +6,7 @@
 
 ## Contact information:
 - Biraj Silwal
-- bsilwal@cs.unm.edu
+- bsilwal@unm.edu
 - [Personal website](https://birajsilwal.com/)
 - [Twitter](https://twitter.com/home)
 - [Github](https://github.com/birajsilwal)
